@@ -1,0 +1,177 @@
+// Just the Class dependencies
+@import 'card';
+
+// Just the Class styles
+@import 'announcement';
+@import 'module';
+@import 'schedule';
+@import 'staffer';
+
+//new labels
+.label-orange{
+    background-color: #E84A27;
+}
+
+.label-light-blue{
+    background-color: #0455A4;
+}
+
+.label-dark-blue{
+    background-color: #13294b;
+}
+
+//overide some stuff with the logo
+.main-header{
+    max-height: 100px;
+    height: 85px;
+}
+
+.site-header{
+    max-height: 100px;
+    height: 85px;
+}
+
+.site-logo{
+	background-position: center;
+	background-color: #13294B;
+	border: black;
+	border-style: solid;
+    border-width: 1px;
+	border-radius: 10px;
+}
+
+//button overides
+.btn-outline, summary {
+	color: #FF552E;
+	background: #13294B;
+	box-shadow: inset 0 0 0 1px #000;
+	transition: 0.3s ease-in-out;
+}
+
+.btn-outline:hover, summary:focus, summary:focus:hover{
+	background: #FF552E;
+	color: #13294B;
+}
+
+//overide side banners
+.nav-list .nav-list-item .nav-list-link:hover, .nav-list .nav-list-item .nav-list-link.active {
+	background-image: linear-gradient(-90deg, #13294B 0%, rgba(32, 31, 35, 0.8) 80%, rgba(32, 31, 35, 0) 100%);
+}
+
+// Overrides
+a abbr[title] {
+  border-bottom: none;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+code {
+  font-size: 14px;
+  padding: 0.2em 0.4em;
+  border: none;
+}
+
+div.highlighter-rouge[overlay] {
+  position: relative;
+
+  &::after {
+    @extend .label, .text-grey-dk-100;
+
+    background-color: $white;
+    border-radius: $border-radius;
+    bottom: $sp-2;
+    content: attr(overlay);
+    position: absolute;
+    right: 0;
+    user-select: none;
+  }
+}
+
+details {
+  margin: 0 40px 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  align-items: center;
+  display: flex;
+}
+
+iframe,
+summary {
+  max-width: 100%;
+}
+
+summary {
+  @extend .btn, .btn-outline;
+}
+
+.main-content-wrap {
+  max-width: $content-width;
+  margin: auto;
+}
+
+.main-content {
+  a {
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  dl {
+    display: block;
+    grid-template-columns: none;
+  }
+
+  dt {
+    font-weight: 700;
+    text-align: start;
+
+    &::after {
+      content: normal;
+    }
+  }
+
+  dd {
+    font-weight: normal;
+
+    + dt {
+      margin-top: 1em;
+    }
+  }
+
+  .katex {
+    font-size: 1.1em;
+  }
+}
+
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+
+[style*="--aspect-ratio"] > img {
+  height: auto;
+}
+
+@supports (--custom:property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+
+  [style*="--add-height"]::before {
+    padding-bottom: calc(100% / (var(--aspect-ratio)) + (var(--add-height)));
+  }
+
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}

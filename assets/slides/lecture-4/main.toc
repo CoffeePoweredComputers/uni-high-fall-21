@@ -1,0 +1,8 @@
+\beamer@sectionintoc {1}{Announcements}{2}{0}{1}
+\beamer@sectionintoc {2}{Strings}{4}{0}{2}
+\beamer@sectionintoc {3}{String Formatting}{9}{0}{3}
+\beamer@sectionintoc {4}{Data Structures}{11}{0}{4}
+\beamer@sectionintoc {5}{Lists}{13}{0}{5}
+\beamer@sectionintoc {6}{Sets}{17}{0}{6}
+\beamer@sectionintoc {7}{Dictionaries}{21}{0}{7}
+\beamer@sectionintoc {8}{Final Reminders}{24}{0}{8}
