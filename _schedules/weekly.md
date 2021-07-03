@@ -23,7 +23,7 @@ schedule:
     events:
       - name: Lecture 
         start: 10:05 AM
-        end: 11:30 PM
+        end: 11:30 AM
   - name: Wednesday
     events:
       - name: Office Hours
