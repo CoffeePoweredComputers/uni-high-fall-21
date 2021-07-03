@@ -7,7 +7,7 @@ description: Listing of course modules and topics.
 # Calendar
 
 {% assign sortedModules = site.modules | sort:"n" %}
-{% for sortedModule in modules %}
+{% for module in sortedModules %}
 <details markdown="block">
 <summary> {{module.navtitle}} </summary>
 {{ module }}
