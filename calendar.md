@@ -6,10 +6,11 @@ description: Listing of course modules and topics.
 
 # Calendar
 
-{% assign modules = site.modules | sort:n %}
-{% for module in modules %}
+{% assign sortedModules = site.modules | sort:n %}
+{% for sortedModule in modules %}
 <details markdown="block">
 <summary> {{module.navtitle}} </summary>
-{{ module}}
+{{ module }}
+{{ module.n }}
 </details>
 {% endfor %}
