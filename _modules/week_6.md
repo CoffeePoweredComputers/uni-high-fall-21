@@ -1,5 +1,6 @@
 ---
 navtitle: Week 6 -
+n: 6
 ---
 
 Sep 20

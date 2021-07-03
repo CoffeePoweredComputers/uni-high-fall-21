@@ -1,5 +1,6 @@
 ---
 navtitle: Week 3 -
+n: 3
 ---
 
 Aug 30

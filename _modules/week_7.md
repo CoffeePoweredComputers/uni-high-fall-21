@@ -1,6 +1,6 @@
-
 ---
 navtitle: Week 7 -
+n: 7
 ---
 
 Sep 27
