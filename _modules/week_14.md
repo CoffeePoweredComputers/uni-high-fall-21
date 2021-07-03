@@ -1,6 +1,6 @@
 ---
 navtitle: Week 14 -
-n: 14
+n: "n" 
 ---
 
 Nov 15

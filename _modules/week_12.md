@@ -1,6 +1,6 @@
 ---
 navtitle: Week 12 -
-n: 12
+n:"l" 
 ---
 
 Nov 01

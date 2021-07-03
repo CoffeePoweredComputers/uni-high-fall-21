@@ -1,6 +1,6 @@
 ---
 navtitle: Week 2 -
-n: 2
+n: "b"
 ---
 
 Aug 23
