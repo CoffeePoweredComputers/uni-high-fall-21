@@ -1,4 +1,3 @@
-
 ---
 navtitle: Week 4 -
 ---
