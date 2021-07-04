@@ -1,5 +1,5 @@
 ---
-navtitle: Week 1 -
+navtitle: ▶ Week 1 - Introduction
 n: "a"
 ---
 
@@ -7,6 +7,7 @@ Aug 16
 
 Aug 17
 : First Day of Instruction!
+
 
 Aug 18
 
