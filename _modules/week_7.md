@@ -1,5 +1,5 @@
 ---
-navtitle: Week 7 -
+navtitle: Week 7 - More about Functions
 n: "g"
 ---
 

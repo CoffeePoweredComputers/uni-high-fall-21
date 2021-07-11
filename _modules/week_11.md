@@ -1,5 +1,5 @@
 ---
-navtitle: Week 11 -
+navtitle: Week 11 - Dictionaries
 n: "k"
 ---
 

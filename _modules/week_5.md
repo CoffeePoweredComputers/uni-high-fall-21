@@ -1,5 +1,5 @@
 ---
-navtitle: Week 5 -
+navtitle: Week 5 - Booleans, Conditional Execution, and Branching
 n: "e"
 ---
 

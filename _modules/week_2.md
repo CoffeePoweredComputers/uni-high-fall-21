@@ -1,5 +1,5 @@
 ---
-navtitle: Week 2 -
+navtitle: Week 2 - Variables & Expressions 
 n: "b"
 ---
 

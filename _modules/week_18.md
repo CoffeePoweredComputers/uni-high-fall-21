@@ -1,5 +1,5 @@
 ---
-navtitle: Week 18 -
+navtitle: Week 18 - Final Exam and Winter Break ❄️
 n: "r" 
 ---
 

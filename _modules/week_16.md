@@ -1,5 +1,5 @@
 ---
-navtitle: Week 16 -
+navtitle: Week 16 - Exceptions and Modules
 n: "p" 
 ---
 

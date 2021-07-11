@@ -1,5 +1,5 @@
 ---
-navtitle: Week 15 -
+navtitle: Week 15 - Review and Thanksgiving Break 🦃
 n: "o" 
 ---
 

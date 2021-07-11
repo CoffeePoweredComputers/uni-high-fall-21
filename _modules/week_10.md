@@ -1,5 +1,5 @@
 ---
-navtitle: Week 10 -
+navtitle: Week 10 - Lists
 n: "j"
 ---
 

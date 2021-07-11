@@ -1,6 +1,6 @@
 # Quizzes and Final Exam
 
-All quizzes will use the College of Engineering's ([Computer-Based Testing Facility CBTF](cbtf.engr.illinois.edu/)) with the quizzes being taken on [PrairieLearn](https://prairielearn.engr.illinois.edu/).
+All quizzes will use the College of Engineering's ([Computer-Based Testing Facility CBTF](https://cbtf.engr.illinois.edu/sched/)) with the quizzes being taken on [PrairieLearn](https://prairielearn.engr.illinois.edu/).
 
 The following is the set of steps you will follow when signing up and taking a quiz:
 1. Navigate the CBTF scheduler to reserve a seat for the quiz.

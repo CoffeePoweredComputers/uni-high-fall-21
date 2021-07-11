@@ -1,5 +1,5 @@
 ---
-navtitle: Week 4 -
+navtitle: Week 4 - Introduction to Functions
 n: "d"
 ---
 

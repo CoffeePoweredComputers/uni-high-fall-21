@@ -1,5 +1,5 @@
 ---
-navtitle: Week 8 -
+navtitle: Week 8 - Strings
 n: "h"
 ---
 
