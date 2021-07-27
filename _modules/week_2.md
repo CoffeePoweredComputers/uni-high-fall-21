@@ -4,6 +4,7 @@ n: "b"
 ---
 
 Aug 23
+: **Lab 1**{: .label .label-orange} [Introduction to Git and GitHub]({{ site.baseurl }}{% link assets/docs/lab/lab1/main.pdf %})
 
 Aug 24
 
