@@ -10,18 +10,42 @@ navtitle: Week {} -
 ---
 
 {}
+: **Lab**{{: .label .label-purp}}
 
+{}
+: **Lecture**{{: .label .label-light-blue}}
+: **Reading/Post-Reading**{{: .label .label-orange}}
+    : **Assigned**{{: .label .label-green}}
+: **Homework**{{: .label .label-grey}}
+    : **Assigned**{{: .label .label-green}}
+: **Challenge Questions**{{: .label .label-dark-blue}}
+    : **Assigned**{{: .label .label-green}}
+
+
+{}
+: **Reading/Post-Reading**{{: .label .label-orange}}
+    : **Due**{{: .label .label-red}}
+: **Homework**{{: .label .label-grey}}
+    : **Assigned**{{: .label .label-red}}
+
+
+{}
+: **Lecture**{{: .label .label-light-blue}}
+: **Reading/Post-Reading**{{: .label .label-orange}}
+    : **Assigned**{{: .label .label-green}}
+: **Homework**{{: .label .label-grey}}
+    : **Assigned**{{: .label .label-green}}
+
+{}
+: **Reading/Post-Reading**{{: .label .label-orange}}
+    : **Due**{{: .label .label-red}}
+: **Homework**{{: .label .label-grey}}
+    : **Due**{{: .label .label-red}}
 {}
 
 {}
-
-{}
-
-{}
-
-{}
-
-{}
+: **Challenge Questions**{{: .label .label-dark-blue}}
+    : **Due**{{: .label .label-red}}
 """
 
 startdate = time.asctime(time.strptime('2021 %d 0' % START_WEEK, '%Y %W %w'))
