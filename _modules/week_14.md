@@ -20,7 +20,7 @@ Nov 17
 : **Reading/Post-Reading**{: .label .label-orange}
     : **Due**{: .label .label-red}
 : **Homework**{: .label .label-grey}
-    : **Assigned**{: .label .label-red}
+    : **Due**{: .label .label-red}
 
 
 Nov 18
