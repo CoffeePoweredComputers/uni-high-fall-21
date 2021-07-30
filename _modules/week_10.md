@@ -37,6 +37,9 @@ Oct 22
     : **Due**{: .label .label-red}
 
 Oct 23
+: **Nothing Due**
+
+Oct 24
 : **Challenge Questions**{: .label .label-dark-blue}
     : **Due**{: .label .label-red}
 

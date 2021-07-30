@@ -37,6 +37,9 @@ Dec 10
     : **Due**{: .label .label-red}
 
 Dec 11
+: **Nothing Due**
+
+Dec 12
 : **Challenge Questions**{: .label .label-dark-blue}
     : **Due**{: .label .label-red}
 

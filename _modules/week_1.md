@@ -37,6 +37,9 @@ Aug 20
     : **Due**{: .label .label-red}
 
 Aug 21
+: **Nothing Due**
+
+Aug 22
 : **Challenge Questions**{: .label .label-dark-blue}
     : **Due**{: .label .label-red}
 
