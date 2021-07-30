@@ -4,42 +4,40 @@ n: "o"
 ---
 
 Nov 15
-: **Lab**{: .label .label-purp}
+: **Lab**{: .label .label-purp} [](#)
 
 Nov 16
-: **Lecture**{: .label .label-light-blue}
-: **Reading/Post-Reading**{: .label .label-orange}
+: **Lecture**{: .label .label-light-blue} X.1
+: **zyBooks**{: .label .label-orange} [Topic X.2 - Participation](#), [Topic X - Challenge](#)
     : **Assigned**{: .label .label-green}
-: **Homework**{: .label .label-grey}
-    : **Assigned**{: .label .label-green}
-: **Challenge Questions**{: .label .label-dark-blue}
+: **PrairieLearn**{: .label .label-dark-blue} [Homework X.1](#), [Post-reading X.2](#)
     : **Assigned**{: .label .label-green}
 
 
 Nov 17
-: **Reading/Post-Reading**{: .label .label-orange}
+: **zyBooks**{: .label .label-orange} [Topic X.2 - Participation](#)
     : **Due**{: .label .label-red}
-: **Homework**{: .label .label-grey}
+: **PrairieLearn**{: .label .label-dark-blue} [Homework X.1](#), [Post-reading X.2](#)
     : **Due**{: .label .label-red}
 
 
 Nov 18
-: **Lecture**{: .label .label-light-blue}
-: **Reading/Post-Reading**{: .label .label-orange}
+: **Lecture**{: .label .label-light-blue} X.2
+: **zyBooks**{: .label .label-orange} [Topic X.1 - Participation](#)
     : **Assigned**{: .label .label-green}
-: **Homework**{: .label .label-grey}
+: **PrairieLearn**{: .label .label-dark-blue} [Homework X.2](#), [Post-reading X.1](#)
     : **Assigned**{: .label .label-green}
 
 Nov 19
-: **Reading/Post-Reading**{: .label .label-orange}
+: **zyBooks**{: .label .label-orange} [Topic X.1 - Participation](#)
     : **Due**{: .label .label-red}
-: **Homework**{: .label .label-grey}
+: **PrairieLearn**{: .label .label-dark-blue} [Homework X.2](#), [Post-reading X.1](#)
     : **Due**{: .label .label-red}
 
 Nov 20
 : **Nothing Due**
 
 Nov 21
-: **Challenge Questions**{: .label .label-dark-blue}
+: **zyBooks**{: .label .label-orange} [Topic X - Challenge Activities](#)
     : **Due**{: .label .label-red}
 

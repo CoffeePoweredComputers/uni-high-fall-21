@@ -4,42 +4,40 @@ n: "c"
 ---
 
 Aug 23
-: **Lab**{: .label .label-purp} Intro to Version Control with Git/GitHub
+: **Lab**{: .label .label-purp} [](#)
 
 Aug 24
-: **Lecture**{: .label .label-light-blue} Topic 2.1
-: **Reading/Post-Reading**{: .label .label-orange} Topic 2.2
+: **Lecture**{: .label .label-light-blue} X.1
+: **zyBooks**{: .label .label-orange} [Topic X.2 - Participation](#), [Topic X - Challenge](#)
     : **Assigned**{: .label .label-green}
-: **Homework**{: .label .label-grey} Topic 2.1
-    : **Assigned**{: .label .label-green}
-: **Challenge Questions**{: .label .label-dark-blue} Topic 2
+: **PrairieLearn**{: .label .label-dark-blue} [Homework X.1](#), [Post-reading X.2](#)
     : **Assigned**{: .label .label-green}
 
 
 Aug 25
-: **Reading/Post-Reading**{: .label .label-orange} Topic 2.2
+: **zyBooks**{: .label .label-orange} [Topic X.2 - Participation](#)
     : **Due**{: .label .label-red}
-: **Homework**{: .label .label-grey} Topic 2.1
+: **PrairieLearn**{: .label .label-dark-blue} [Homework X.1](#), [Post-reading X.2](#)
     : **Due**{: .label .label-red}
 
 
 Aug 26
-: **Lecture**{: .label .label-light-blue} Topic 2.2
-: **Reading/Post-Reading**{: .label .label-orange} 3.1
+: **Lecture**{: .label .label-light-blue} X.2
+: **zyBooks**{: .label .label-orange} [Topic X.1 - Participation](#)
     : **Assigned**{: .label .label-green}
-: **Homework**{: .label .label-grey} Topic 2.2
+: **PrairieLearn**{: .label .label-dark-blue} [Homework X.2](#), [Post-reading X.1](#)
     : **Assigned**{: .label .label-green}
 
 Aug 27
-: **Reading/Post-Reading**{: .label .label-orange} Topic 3.2
+: **zyBooks**{: .label .label-orange} [Topic X.1 - Participation](#)
     : **Due**{: .label .label-red}
-: **Homework**{: .label .label-grey} Topic 2.2
+: **PrairieLearn**{: .label .label-dark-blue} [Homework X.2](#), [Post-reading X.1](#)
     : **Due**{: .label .label-red}
 
 Aug 28
 : **Nothing Due**
 
 Aug 29
-: **Challenge Questions**{: .label .label-dark-blue} Topic 2
+: **zyBooks**{: .label .label-orange} [Topic X - Challenge Activities](#)
     : **Due**{: .label .label-red}
 
