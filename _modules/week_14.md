@@ -36,6 +36,7 @@ Nov 19
 : **Homework**{: .label .label-grey}
     : **Due**{: .label .label-red}
 Nov 20
+: 
 
 Nov 21
 : **Challenge Questions**{: .label .label-dark-blue}
