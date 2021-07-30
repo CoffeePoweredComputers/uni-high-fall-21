@@ -4,9 +4,9 @@ import time
 
 START_WEEK = 31 + int(sys.argv[1])
 
-TEMPLATE = """
----
+TEMPLATE = """---
 navtitle: Week {} -
+n: "{}"
 ---
 
 {}
@@ -26,7 +26,7 @@ navtitle: Week {} -
 : **Reading/Post-Reading**{{: .label .label-orange}}
     : **Due**{{: .label .label-red}}
 : **Homework**{{: .label .label-grey}}
-    : **Assigned**{{: .label .label-red}}
+    : **Due**{{: .label .label-red}}
 
 
 {}
@@ -41,7 +41,9 @@ navtitle: Week {} -
     : **Due**{{: .label .label-red}}
 : **Homework**{{: .label .label-grey}}
     : **Due**{{: .label .label-red}}
+
 {}
+: **Nothing Due**
 
 {}
 : **Challenge Questions**{{: .label .label-dark-blue}}
@@ -53,4 +55,4 @@ startdate = datetime.datetime.strptime(startdate, '%a %b %d %H:%M:%S %Y')
 
 days = [(startdate + datetime.timedelta(days=i)).strftime("%b %d") for i in range(1, 8)]
 
-print(TEMPLATE.format(sys.argv[1], *days))
+print(TEMPLATE.format(sys.argv[1], chr(ord("a") + int(sys.argv[1])), *days))
