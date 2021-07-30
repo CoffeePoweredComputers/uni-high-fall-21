@@ -1,5 +1,6 @@
 ---
 navtitle: Week 10 -
+n: "k"
 ---
 
 Oct 18
