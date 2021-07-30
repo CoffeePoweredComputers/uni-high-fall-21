@@ -35,10 +35,8 @@ Aug 20
     : **Due**{: .label .label-red}
 : **Homework**{: .label .label-grey}
     : **Due**{: .label .label-red}
-Aug 21
-: 
 
-Aug 22
+Aug 21
 : **Challenge Questions**{: .label .label-dark-blue}
     : **Due**{: .label .label-red}
 

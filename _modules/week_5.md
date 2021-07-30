@@ -35,10 +35,8 @@ Sep 17
     : **Due**{: .label .label-red}
 : **Homework**{: .label .label-grey}
     : **Due**{: .label .label-red}
-Sep 18
-: 
 
-Sep 19
+Sep 18
 : **Challenge Questions**{: .label .label-dark-blue}
     : **Due**{: .label .label-red}
 
