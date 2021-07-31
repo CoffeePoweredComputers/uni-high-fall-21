@@ -23,13 +23,13 @@ Sep 01
 
 Sep 02
 : **Lecture**{: .label .label-light-blue} Introduction to Types (Part 2)
-: **zyBooks**{: .label .label-orange} [Topic 3 (Part 1) - Participation](#)
+: **zyBooks**{: .label .label-orange} [Topic 4 (Part 1) - Participation](#)
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 3 (Part 2)](#), [Post-reading 4 (Part 1)](#)
     : **Assigned**{: .label .label-green}
 
 Sep 03
-: **zyBooks**{: .label .label-orange} [Topic 3 (Part 1) - Participation](#)
+: **zyBooks**{: .label .label-orange} [Topic 4 (Part 1) - Participation](#)
     : **Due**{: .label .label-red}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 3 (Part 2)](#), [Post-reading 4 (Part 1)](#)
     : **Due**{: .label .label-red}
