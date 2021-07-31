@@ -1,5 +1,5 @@
 ---
-navtitle: Week 14 -
+navtitle: Week 14 - Advanced Functions
 n: "o"
 ---
 

@@ -1,5 +1,5 @@
 ---
-navtitle: Week 12 -
+navtitle: Week 12 - Dictionaries
 n: "m"
 ---
 
