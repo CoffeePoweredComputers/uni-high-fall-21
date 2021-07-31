@@ -1,5 +1,5 @@
 ---
-navtitle: Week 18 - Finals Week and Winter Break ❄️
+navtitle: Week 18 - Finals Week and Winter Break Begins ❄️
 n: "s"
 ---
 
