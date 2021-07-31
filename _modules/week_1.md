@@ -1,5 +1,5 @@
 ---
-navtitle: Week 1 - Introduction
+navtitle: ▶Week 1 - Introduction
 n: "b"
 ---
 
@@ -23,13 +23,13 @@ Aug 18
 
 Aug 19
 : **Lecture**{: .label .label-light-blue} Intro to Python
-: **zyBooks**{: .label .label-orange} [Topic X.1 - Participation](#)
+: **zyBooks**{: .label .label-orange} [Topic 2.1 - Participation](#)
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 1](#), [Post-reading 2.1](#)
     : **Assigned**{: .label .label-green}
 
 Aug 20
-: **zyBooks**{: .label .label-orange} [Topic X.1 - Participation](#)
+: **zyBooks**{: .label .label-orange} [Topic 2.1 - Participation](#)
     : **Due**{: .label .label-red}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 1](#), [Post-reading 2.1](#)
     : **Due**{: .label .label-red}
@@ -40,4 +40,3 @@ Aug 21
 Aug 22
 : **zyBooks**{: .label .label-orange} [Topic 1 - Challenge Activities](#)
     : **Due**{: .label .label-red}
-
