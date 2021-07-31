@@ -7,37 +7,35 @@ Nov 01
 : **Lab**{: .label .label-purp} [](#)
 
 Nov 02
-: **Lecture**{: .label .label-light-blue} X.1
-: **zyBooks**{: .label .label-orange} [Topic X.2 - Participation](#), [Topic X - Challenge](#)
+: **Lecture**{: .label .label-light-blue} Dictionaries
+: **zyBooks**{: .label .label-orange} [Topic 11 - Challenge](#)
     : **Assigned**{: .label .label-green}
-: **PrairieLearn**{: .label .label-dark-blue} [Homework X.1](#), [Post-reading X.2](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Homework 11](#)
     : **Assigned**{: .label .label-green}
 
 
 Nov 03
-: **zyBooks**{: .label .label-orange} [Topic X.2 - Participation](#)
-    : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} [Homework X.1](#), [Post-reading X.2](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Homework 11](#)
     : **Due**{: .label .label-red}
 
 
 Nov 04
-: **Lecture**{: .label .label-light-blue} X.2
-: **zyBooks**{: .label .label-orange} [Topic X.1 - Participation](#)
+: **Quiz 3**{: .label .label-grey} 
+: **zyBooks**{: .label .label-orange} [Topic 12 - Participation](#)
     : **Assigned**{: .label .label-green}
-: **PrairieLearn**{: .label .label-dark-blue} [Homework X.2](#), [Post-reading X.1](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Post-reading 12](#)
     : **Assigned**{: .label .label-green}
 
 Nov 05
-: **zyBooks**{: .label .label-orange} [Topic X.1 - Participation](#)
+: **zyBooks**{: .label .label-orange} [Topic 12 - Participation](#)
     : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} [Homework X.2](#), [Post-reading X.1](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Post-reading 12](#)
     : **Due**{: .label .label-red}
 
 Nov 06
 : **Nothing Due**
 
 Nov 07
-: **zyBooks**{: .label .label-orange} [Topic X - Challenge Activities](#)
+: **zyBooks**{: .label .label-orange} [Topic 11 - Challenge Activities](#)
     : **Due**{: .label .label-red}
 
