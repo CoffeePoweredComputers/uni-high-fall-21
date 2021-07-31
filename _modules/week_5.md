@@ -7,7 +7,7 @@ Sep 13
 : **Lab**{: .label .label-purp} [](#)
 
 Sep 14
-: **Lecture**{: .label .label-light-blue} Booleans, Condional Execution, and Branching (Part 1)
+: **Lecture**{: .label .label-light-blue} Booleans, Conditional Execution, and Branching (Part 1)
 : **zyBooks**{: .label .label-orange} [Topic 5 (Part 2) - Participation](#), [Topic 5 - Challenge](#)
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 5 (Part 1)](#), [Post-reading 5 (Part 2)](#)
