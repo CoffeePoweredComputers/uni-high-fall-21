@@ -1,5 +1,5 @@
 ---
-navtitle: Week 7 -
+navtitle: Week 7 - More on Functions
 n: "h"
 ---
 
@@ -22,7 +22,7 @@ Sep 29
 
 
 Sep 30
-: **Lecture**{: .label .label-light-blue} X.2
+: **Quiz**{: .label .label-grey} Quiz 2
 : **zyBooks**{: .label .label-orange} [Topic X.1 - Participation](#)
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework X.2](#), [Post-reading X.1](#)

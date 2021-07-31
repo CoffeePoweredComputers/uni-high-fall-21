@@ -1,5 +1,5 @@
 ---
-navtitle: Week 6 -
+navtitle: Week 6 - Loops
 n: "g"
 ---
 
