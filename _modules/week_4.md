@@ -23,13 +23,13 @@ Sep 09
 : **Quiz 1**{: .label .label-grey}
 : **zyBooks**{: .label .label-orange} [Topic 5 (Part 1) - Participation](#)
     : **Assigned**{: .label .label-green}
-: **PrairieLearn**{: .label .label-dark-blue} [Post-reading ](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Post-reading 5 (Part 1)](#)
     : **Assigned**{: .label .label-green}
 
 Sep 10
 : **zyBooks**{: .label .label-orange} [Topic 5 (Part 1) - Participation](#)
     : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} [Homework X.2](#), [Post-reading X.1](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Post-reading 5 (Part 1)](#)
     : **Due**{: .label .label-red}
 
 Sep 11
