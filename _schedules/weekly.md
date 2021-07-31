@@ -26,6 +26,7 @@ timeline:
   - '8:30 PM'
   - '9:00 PM'
 schedule:
+  - name: Time
   - name: Monday
     events:
       - name: Lecture
