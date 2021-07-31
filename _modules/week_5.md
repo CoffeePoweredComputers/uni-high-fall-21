@@ -8,14 +8,14 @@ Sep 13
 
 Sep 14
 : **Lecture**{: .label .label-light-blue} Booleans, Condional Execution, and Branching (Part 1)
-: **zyBooks**{: .label .label-orange} [Topic X.2 - Participation](#), [Topic 5 - Challenge](#)
+: **zyBooks**{: .label .label-orange} [Topic 5 (Part 2) - Participation](#), [Topic 5 - Challenge](#)
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 5 (Part 1)](#), [Post-reading 5 (Part 2)](#)
     : **Assigned**{: .label .label-green}
 
 
 Sep 15
-: **zyBooks**{: .label .label-orange} [Topic X.2 - Participation](#)
+: **zyBooks**{: .label .label-orange} [Topic 5 (Part 2) - Participation](#)
     : **Due**{: .label .label-red}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 5 (Part 1)](#), [Post-reading 5 (Part 2)](#)
     : **Due**{: .label .label-red}
