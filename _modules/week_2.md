@@ -5,7 +5,7 @@ n: "c"
 
 Aug 23
 : **Lab**{: .label .label-purp} Intro to Version Control
-	: [Assignment Doc]({{ site.baseurl }}{% link ./assets/docs/lab/lab1/main.pdf %}), [Invite Link](https://classroom.github.com/a/hdmi4qND)	
+	: [Assignment Doc]({{ site.baseurl }}{% link assets/docs/lab/lab1/main.pdf %}), [Invite Link](https://classroom.github.com/a/hdmi4qND)	
 Aug 24
 : **Lecture**{: .label .label-light-blue} Variables and Expressions (Part 1)
 : **zyBooks**{: .label .label-orange} Topic 2 (Part 2) - Participation, Topic 2 - Challenge
