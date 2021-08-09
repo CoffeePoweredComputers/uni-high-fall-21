@@ -8,6 +8,7 @@ Sep 20
 
 Sep 21
 : **Lecture**{: .label .label-light-blue} Loops (Part 1)
+	: Slides
 : **zyBooks**{: .label .label-orange} [Topic 6 (Part 2) - Participation](#), [Topic 6 - Challenge](#)
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 6 (Part 1)](#), [Post-reading 6 (Part 2)](#)
@@ -23,7 +24,8 @@ Sep 22
 
 Sep 23
 : **Lecture**{: .label .label-light-blue} Loops (Part 2)
-: **zyBooks**{: .label .label-orange} [Topic (7 Part 1) - Participation](#)
+	: Slides
+: **zyBooks**{: .label .label-orange} [Topic 7 - Participation](#)
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 6 (Part 2)](#), [Post-reading 7 (Part 1)](#)
     : **Assigned**{: .label .label-green}
