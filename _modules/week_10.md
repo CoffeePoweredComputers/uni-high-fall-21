@@ -17,15 +17,15 @@ Oct 20
 
 Oct 21
 : **Lecture**{: .label .label-light-blue} Review Topics 1-9
-: **zyBooks**{: .label .label-orange} [Topic 10 (Part 1) - Participation](#)
+: **zyBooks**{: .label .label-orange} Topic 10 (Part 1) - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Post-reading 10 (Part 1)](#)
     : **Assigned**{: .label .label-green}
 
 Oct 22
-: **zyBooks**{: .label .label-orange} [Topic 10 (Part 1) - Participation](#)
+: **zyBooks**{: .label .label-orange} Topic 10 (Part 1) - Participation
     : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} [Post-reading 10 (Part 1)](#)
+: **PrairieLearn**{: .label .label-dark-blue} Post-reading 10 (Part 1)
     : **Due**{: .label .label-red}
 
 Oct 23

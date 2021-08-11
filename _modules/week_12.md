@@ -8,34 +8,30 @@ Nov 01
 
 Nov 02
 : **Lecture**{: .label .label-light-blue} Dictionaries
-: **zyBooks**{: .label .label-orange} [Topic 11 - Challenge](#)
+: **zyBooks**{: .label .label-orange} Topic 11 - Challenge
     : **Assigned**{: .label .label-green}
-: **PrairieLearn**{: .label .label-dark-blue} [Homework 11](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Homework 11 (Part 1)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312024)
     : **Assigned**{: .label .label-green}
 
 
 Nov 03
-: **PrairieLearn**{: .label .label-dark-blue} [Homework 11](#)
+: **PrairieLearn**{: .label .label-dark-blue} Homework 11 (Part 1)
     : **Due**{: .label .label-red}
 
 
 Nov 04
 : **Quiz 3**{: .label .label-grey} 
-: **zyBooks**{: .label .label-orange} [Topic 12 - Participation](#)
-    : **Assigned**{: .label .label-green}
-: **PrairieLearn**{: .label .label-dark-blue} [Post-reading 12](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Homework 11 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312025)
     : **Assigned**{: .label .label-green}
 
 Nov 05
-: **zyBooks**{: .label .label-orange} [Topic 12 - Participation](#)
-    : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} [Post-reading 12](#)
+: **PrairieLearn**{: .label .label-dark-blue} Homework 11 (Part 2)
     : **Due**{: .label .label-red}
 
 Nov 06
 : **Nothing Due**
 
 Nov 07
-: **zyBooks**{: .label .label-orange} [Topic 11 - Challenge Activities](#)
+: **zyBooks**{: .label .label-orange} Topic 11 - Challenge Activities
     : **Due**{: .label .label-red}
 
