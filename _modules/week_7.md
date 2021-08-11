@@ -8,36 +8,36 @@ Sep 27
 
 Sep 28
 : **Lecture**{: .label .label-light-blue} More on Functions (Part 1)
-: **zyBooks**{: .label .label-orange} [Topic 7 - Challenge](#)
+: **zyBooks**{: .label .label-orange} Topic 7 - Challenge
     : **Assigned**{: .label .label-green}
-: **PrairieLearn**{: .label .label-dark-blue} [Homework 7 ](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Homework 7](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312039)
     : **Assigned**{: .label .label-green}
 
 
 Sep 29
-: **zyBooks**{: .label .label-orange} [Topic 7 - Challenge](#)
+: **zyBooks**{: .label .label-orange} Topic 7 - Challenge
     : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} [Homework 7 ](#)
+: **PrairieLearn**{: .label .label-dark-blue} Homework 7
     : **Due**{: .label .label-red}
 
 
 Sep 30
 : **Quiz**{: .label .label-grey} Quiz 2
-: **zyBooks**{: .label .label-orange} [Topic 8 (Part 1) - Participation](#)
+: **zyBooks**{: .label .label-orange} Topic 8 - Participation
     : **Assigned**{: .label .label-green}
-: **PrairieLearn**{: .label .label-dark-blue} [Post-reading 8 (Part 1)](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Post-reading 8](#)
     : **Assigned**{: .label .label-green}
 
 Oct 01
-: **zyBooks**{: .label .label-orange} [Topic 8 (Part 1) - Participation](#)
+: **zyBooks**{: .label .label-orange} Topic 8 - Participation
     : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} [Post-reading 8 (Part 1)](#)
+: **PrairieLearn**{: .label .label-dark-blue} Post-reading 8
     : **Due**{: .label .label-red}
 
 Oct 02
 : **Nothing Due**
 
 Oct 03
-: **zyBooks**{: .label .label-orange} [Topic 7 - Challenge Activities](#)
+: **zyBooks**{: .label .label-orange} Topic 7 - Challenge Activities
     : **Due**{: .label .label-red}
 
