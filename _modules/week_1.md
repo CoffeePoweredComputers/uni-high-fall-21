@@ -8,6 +8,7 @@ Aug 16
 
 Aug 17
 : **Lecture**{: .label .label-light-blue} Intro to the Course
+	:[Slides]({{ site.baseurl }}{% link assets/slides/lecture-1/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 1 - Participation, Topic 1 - Challenge
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Post-reading 1](#)
