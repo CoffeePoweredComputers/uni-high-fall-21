@@ -95,6 +95,7 @@ During quizzes and the final exam you are allowed access to [repl.it](https://re
 ### Activity Weights
 
 TENTATIVE GRADING SCALE
+
 | Activity                             | Grade Percentage                   |
 | ------------------------------------ | ---------------------------------- |
 | Textbook Exercises                   | 10%                                |
