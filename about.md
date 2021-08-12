@@ -45,11 +45,15 @@ The cost of the textbook is $33.50.
 ### Lecture
 
 Given the reading materials, participation activities, and post-readings are due before lecture. The lectures will be focused on the following:
+
 * Addressing the salient points of each section.
 * Addressing points of confusion as reported in the muddiest points.
+
 These two points will be done via in class poll questions. These polls will use ABCD cards which can be downloaded at the following links:
+
 * [Apple Version](https://apps.apple.com/us/app/abcd-cards/id1212769036)
 * [Android Version](https://play.google.com/store/apps/details?id=com.greeneb4.ABCDCards&hl=en&gl=US)
+
 If you do not wish or are unable to download the app there are paper versions I will happily provide. Any remaining time after the lecture is intended to be used for either homework or reading activities in an effort to further cut down on your homework. You are welcome to work with your peers and seek my assistance. In the event there is a question or set of questions that is causing several people in the class some amount of difficulty I may elect have the class solve it together with my assistance. 
 
 Additionally, some lectures have been allotted to cover special topics of interest or review days. The former will be treated as a sort of workshop day, half-way between a lecture and a lab. Review days will be used to review topics of interest based on muddiest points.
