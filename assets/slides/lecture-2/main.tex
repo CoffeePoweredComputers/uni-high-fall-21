@@ -78,16 +78,59 @@
 \begin{frame}
   \frametitle{Updates}
   \begin{enumerate}
-    \item zyBooks (participation activities) Topic 2 Assigned - Due Sunday at 11:00 PM CST
-    \item Homework 1 - Due Friday at 11:00 PM CST
-    \item Topic 1 zyBooks/Post-Reading 1 Extension - Due Sunday at 11:00 PM CST
-    \item First quiz is next week:
-      \begin{enumerate}
-        \item First lab section (SDA) please login to the CBTF scheduler and register for the exam.
-        \item Second lab section please check your email and reply to the messsge I sent yesterday.
-      \end{enumerate}
+    \item \textbf{Homework 1:} Posted and due this Friday.
+    \item \textbf{Topic 2 (Part 1) and Post-reading}: Posted and due this Friday.
+    \item Feel free to drop by office hours if you have any questions.
+    \item As a reminder, I encourage you all to work together to complete the homeworks.
   \end{enumerate}
 \end{frame}
+
+\section{A Brief Review}
+
+\begin{frame}
+  \frametitle{Input and Print}
+  \begin{itemize}
+    \item \underline{\textbf{The Input Function}}: A builtin function that gets a string from the user.
+      %\pause
+      \begin{itemize}
+        \item \textbf{input()} \textrightarrow Doesn't give a prompt.
+          %\pause
+        \item \textbf{input(`A test input: '')} \textrightarrow Will output the message \textit{"A test input:"} to the screen and let the user type their input in after it.
+          %\pause
+      \end{itemize}
+    \item \underline{\textbf{The Print Function}}: A builtin function that takes a string as a parameter (in between the parentheses) and outputs that string
+      %\pause
+      \begin{itemize}
+        \item \textbf{print(`Hello, World!'')} \textrightarrow Will output the `Hello, World!''. 
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+%
+% Slide 
+%
+\begin{frame}
+  \frametitle{Data Types in Python}
+  \begin{itemize}
+    \item Two types we'll need to know now:
+      \begin{itemize}
+        \item \textbf{Strings: } A long list of characters accompanied by surrounding quotes (e.g., `Hello, CS 105!'').
+        \item \textbf{Integers: } Whole numbers, both positive and negative.
+      \end{itemize}
+    \item You can check the type of a variable or expression with the \lstinline{type()} function.
+      %\pause
+    \item You can convert between them with the \lstinline{str()} and \lstinline{int()} functions.
+      %\pause
+    \item It's important to keep the type of your variables in mind when programming.
+      %\pause
+    \item Keeping types in mind when attempting to deduce what a program is doing is very important. 
+  \end{itemize}
+\end{frame}
+
+
+
+
+\section{Poll Questions}
 
 %
 % 
@@ -95,7 +138,7 @@
 \begin{frame}[fragile]
   \frametitle{Poll Question: Input and Print}
   Assuming there is a variable value with the value 7, which of the following statements prints: count = 7.
-  \begin{enumerate}
+  \begin{enumerate}[A]
     \item \lstinline{print("count = " value)}
     \item \lstinline{print("count = ", end="value")}
     \item \lstinline{print("count = ", value)}
@@ -109,12 +152,11 @@
 \begin{frame}
   \frametitle{Poll Question: Addition Operation}
   In Python x + y is:
-  \begin{enumerate}
+  \begin{enumerate}[A]
     \item an assignment
     \item a statement
     \item a variable
     \item an expression
-    \item a comment
   \end{enumerate}
 \end{frame}
 
@@ -126,12 +168,11 @@
   What happens if I type the following code into a \textbf{brand new} Python interpreter:
   \begin{lstlisting}[language=Python]
   x + y \end{lstlisting}
-  \begin{enumerate}
+  \begin{enumerate}[A]
     \item Nothing
     \item SyntaxError
     \item NameError
     \item ValueError
-    \item TypeError
   \end{enumerate}
 \end{frame}
 
@@ -143,11 +184,10 @@
   What happens if I type the following code into a Python interpreter?
   \begin{lstlisting}[language=Python]
   print(input("Enter a number: "))\end{lstlisting}
-  \begin{enumerate}
+  \begin{enumerate}[A]
     \item No error
     \item SyntaxError
     \item NameError
-    \item ValueError
     \item TypeError
   \end{enumerate}
 \end{frame}
@@ -161,10 +201,9 @@
   \begin{lstlisting}[language=Python]
   value = input("Input your favorite number!\n")
   print("Your new favorite number is", value + 1)\end{lstlisting}
-  \begin{enumerate}
+  \begin{enumerate}[A]
     \item No error
     \item SyntaxError
-    \item NameError
     \item ValueError
     \item TypeError
   \end{enumerate}
@@ -180,7 +219,7 @@
   x = "Hello, world"
   y = 5
   foo = x + y + z\end{lstlisting}
-  \begin{enumerate}
+  \begin{enumerate}[A]
     \item SyntaxError
     \item NameError
     \item ValueError
@@ -198,7 +237,7 @@
   a = input()
   b = input()
   x = a + b\end{lstlisting}
-  \begin{enumerate}
+  \begin{enumerate}[A]
     \item String
     \item Integer
   \end{enumerate}
@@ -223,52 +262,15 @@
   \end{enumerate}
 \end{frame}
 
-%
-%
-%
-%\begin{frame}[fragile]
-%  \frametitle{Poll Question: Spreadsheets}
-%  If I copy the contents of B1 to C4 what formula will be in C4?
-%  \vfill
-%  \begin{minipage}{.48\textwidth}
-%    \begin{enumerate}
-%      \item \lstinline{=$A0 + 2}
-%      \item \lstinline{=$A2 + 2}
-%      \item \lstinline{=$A3 + 2}
-%      \item \lstinline{=$C0 + 2}
-%      \item \lstinline{=$C2 + 2}
-%      \item \lstinline{=$C3 + 2}
-%    \end{enumerate}
-%  \end{minipage}
-%  \begin{minipage}{.48\textwidth}
-%    \includegraphics[width=\textwidth]{./imgs/spreadsheet-slide-2.png}
-%  \end{minipage}
-%\end{frame}
-
-%
-%
-%
-%\begin{frame}[fragile]
-%  \frametitle{Poll Question: Spreadsheets}
-%  What will be the expression when the cell at B0 is copied to D4?
-%  \vfill
-%  \begin{minipage}{.48\textwidth}
-%    \begin{enumerate}
-%      \item 
-%    \end{enumerate}
-%  \end{minipage}
-%  \begin{minipage}{.48\textwidth}
-%    \includegraphics[width=\textwidth]{./imgs/spreadsheet-slide-3.png}
-%  \end{minipage}
-%\end{frame}
-
-
-%
-%
-%
 \begin{frame}
   \frametitle{Your Questions!}
 \end{frame}
 
+\begin{frame}
+  \frametitle{15 minutes of homework}
+  \begin{itemize}
+    \item Spend 15 minutes working in groups to complete some of homework 1.
+  \end{itemize}
+\end{frame}
 
 \end{document}
