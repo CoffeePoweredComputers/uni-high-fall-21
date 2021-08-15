@@ -8,7 +8,7 @@ Aug 16
 
 Aug 17
 : **Lecture**{: .label .label-light-blue} Intro to the Course
-	:[Slides]({{ site.baseurl }}{% link assets/slides/lecture-1/main.pdf %})
+	:[Slides]({{ site.baseurl }}{% link assets/slides/lecture-1-part1/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 1 - Participation, Topic 1 - Challenge
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Post-reading 1](#)
@@ -16,6 +16,8 @@ Aug 17
 
 
 Aug 18
+: **Lecture** {.label .label-light-blue} History of the Modern Computer and Computer Science
+	:[Slides]({{ site.baseurl }}{% link assets/slides/lecture-1-part2/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 1 - Participation
     : **Due**{: .label .label-red}
 : **PrairieLearn**{: .label .label-dark-blue} Post-reading 1
@@ -24,6 +26,7 @@ Aug 18
 
 Aug 19
 : **Lecture**{: .label .label-light-blue} Intro to Python
+	:[Slides]({{ site.baseurl }}{% link assets/slides/lecture-2/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 2 (Part 1) - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 1](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312029), [Post-reading 2 (Part 1)](#)
