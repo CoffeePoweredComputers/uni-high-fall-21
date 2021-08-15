@@ -16,8 +16,8 @@ Aug 17
 
 
 Aug 18
-: **Lecture** {.label .label-light-blue} History of the Modern Computer and Computer Science
-	:[Slides]({{ site.baseurl }}{% link assets/slides/lecture-1-part2/main.pdf %})
+: **Lecture**{.label .label-light-blue} History of the Modern Computer and Computer Science
+	: [Slides]({{ site.baseurl }}{% link assets/slides/lecture-1-part2/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 1 - Participation
     : **Due**{: .label .label-red}
 : **PrairieLearn**{: .label .label-dark-blue} Post-reading 1
