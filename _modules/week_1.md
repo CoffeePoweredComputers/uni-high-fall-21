@@ -26,7 +26,7 @@ Aug 18
 
 Aug 19
 : **Lecture**{: .label .label-light-blue} Intro to Python
-	:[Slides]({{ site.baseurl }}{% link assets/slides/lecture-2/main.pdf %})
+	: [Slides]({{ site.baseurl }}{% link assets/slides/lecture-2/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 2 (Part 1) - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 1](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312029), [Post-reading 2 (Part 1)](#)
