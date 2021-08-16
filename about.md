@@ -110,6 +110,7 @@ TENTATIVE GRADING SCALE
 | Final Exam                           | 20%                                |
 | Lecture Polls                        | 5%                                 |
 
+<!--
 ### Percent to Letter Grades
 
 |  Score Percentage  |  Grade  |
@@ -126,4 +127,4 @@ TENTATIVE GRADING SCALE
 |  63 - 66.99        |  D      |
 |  60 - 62.99        |  D-     |
 |  59.99 and below   |  F      |
-
+-->
