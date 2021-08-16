@@ -11,6 +11,7 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
+
 \lstdefinestyle{python}{
   backgroundcolor=\color{backcolour},   
   commentstyle=\color{codegreen},
@@ -53,6 +54,16 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
+\AtBeginSection[]{
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
+}
 
 %Information to be included in the title page:
 \title{\textbf{Introduction to the Course - Part 1}}
@@ -71,6 +82,41 @@
 \begin{document}
 
 \frame{\titlepage}
+
+\section{Ice Breakers}
+
+\begin{frame}
+  \frametitle{About Me}
+  \begin{minipage}{0.39\textwidth}
+    \begin{itemize}
+      \item \textbf{Name: }David Smith (he/him)
+      \item Raised on Whidbey Island in the Saelish Sea of Washington State
+      \item \textbf{Hobbies: } Archery, backpacking, hiking, swimming, programming
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{0.59\textwidth}
+    \centering
+    \includegraphics[width=0.75\textwidth]{imgs/islandcounty.png}
+    \vfill
+    \begin{minipage}{0.49\textwidth}
+      \includegraphics[width=\textwidth]{imgs/roundeddeception.png}
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+      \includegraphics[width=\textwidth]{imgs/roundedgreywhale.pdf}
+    \end{minipage}
+  \end{minipage}
+\end{frame}
+
+\begin{frame}
+  \frametitle{What about you?}
+  \begin{itemize}
+    \item Name/Pronouns
+    \item What you want to get out of the course.
+    \item Something of interest (e.g., hobby)
+  \end{itemize}
+\end{frame}
+
+
 
 \section{Course Overview}
 
@@ -118,7 +164,7 @@
     \item Where office hours are posted.
     \item Please feel free to ping me in the group text channel if you have any questions by `@ing' me.
     \item Feel free to use the group discussion rooms to talk about homework and ping me if you get stuck. 
-    \item Please only message me or ping me through the public chat. Do not direct message me.
+    \item \textbf{Please only message me or ping me through the public chat. Do not direct message me.}
   \end{itemize}
 \end{frame}
 
