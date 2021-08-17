@@ -70,7 +70,7 @@ Homework assignment will be due after all other assignments relating to the topi
 You are encouraged to work on these problems with your peers either in person on on the class Discord. My schedule outside of office hours can be somewhat turbulent but you are always encouraged to ping me for help if a problem doesn't make sense of takes too long. If a problem is taking too long please do not spend undue time on it, rather, complete which problems you can and come to office hours to go over the rest.
 
  
-## Challenge Activities
+### Challenge Activities
 
 The challenge activities are assigned at the beginning of the week and are due the following Sunday. These are some of the more difficult problems in the course so I encourage you to get an early start and complete those which you can during the weeks participation readings. Those which you do not complete during the week can be completed on the weekends. I am available on Discord during the weekend so feel free to ping me with any of your confusions
 
@@ -102,10 +102,9 @@ TENTATIVE GRADING SCALE
 
 | Activity                             | Grade Percentage                   |
 | ------------------------------------ | ---------------------------------- |
-| Textbook Exercises                   | 10%                                |
+| zyBook Activities                    | 20%                                |
 | Post-reading Activities & Homework   | 25%                                |
-| Challenge Activities                 | 5%                                 |
-| Labs                                 | 15%                                |
+| Labs                                 | 10%                                |
 | Quizzes                              | 20%                                |
 | Final Exam                           | 20%                                |
 | Lecture Polls                        | 5%                                 |
