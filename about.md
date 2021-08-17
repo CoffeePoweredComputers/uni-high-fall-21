@@ -32,6 +32,8 @@ computer science. You will be covering:
 
 ### zyBooks and Post-Reading
 
+Please add the following course on PrairieLearn in order to access the Post-Readings: `CS 105: Introduction to Computing for Non-Tech Majors, Uni High - Fall 2021`.
+
 In a typical week there will be two zyBooks readings and post readings assigned. The zyBook activities are interleaved with the text and are intended to offer you the opportunity to actively practice the concepts you are reading about. After completing each zyBook activity you will complete an associated post reading activity on PrairieLearn that is intended to garner (1) your thoughts about the chapter, (2) your points of confusion, and (3) how long the activity took you. The third point is especially important early on the first semester as it will allow me to gauge and then scale the future assignment in order to ensure the course has a manageable workload.
 
 #### Adding the Course in zyBooks
@@ -60,6 +62,8 @@ Additionally, some lectures have been allotted to cover special topics of intere
 
 
 ### Homework
+
+Please add the following course on PrairieLearn in order to access the homeworks: `CS 105: Introduction to Computing for Non-Tech Majors, Uni High - Fall 2021`.
 
 Homework assignment will be due after all other assignments relating to the topic's sections that it covers. These will be completed on PrairieLearn and cover a variety of problem types including:
 * True/False
