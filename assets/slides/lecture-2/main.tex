@@ -56,7 +56,7 @@
 \usepackage{graphicx}
 
 %Information to be included in the title page:
-\title{\textbf{Topic 1: Programming, Spreadsheets, and Computers}}
+\title{\textbf{Topic 1: Intro to Python}}
 \author{\textbf{David H Smith IV}}
 \institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
 \date{\textbf{Wed, June 16 2021}}
@@ -88,20 +88,27 @@
 \section{A Brief Review}
 
 \begin{frame}
+  \frametitle{Anatomy of a Function Call}
+  \centering
+  \includegraphics[width=\textwidth]{./imgs/parameters.png}
+\end{frame}
+
+
+\begin{frame}
   \frametitle{Input and Print}
   \begin{itemize}
     \item \underline{\textbf{The Input Function}}: A builtin function that gets a string from the user.
-      %\pause
+      \pause
       \begin{itemize}
         \item \textbf{input()} \textrightarrow Doesn't give a prompt.
-          %\pause
-        \item \textbf{input(`A test input: '')} \textrightarrow Will output the message \textit{"A test input:"} to the screen and let the user type their input in after it.
-          %\pause
+          \pause
+        \item \textbf{input(`A test input: ')} \textrightarrow Will output the message \textit{"A test input:"} to the screen and let the user type their input in after it.
+          \pause
       \end{itemize}
     \item \underline{\textbf{The Print Function}}: A builtin function that takes a string as a parameter (in between the parentheses) and outputs that string
-      %\pause
+      \pause
       \begin{itemize}
-        \item \textbf{print(`Hello, World!'')} \textrightarrow Will output the `Hello, World!''. 
+        \item \textbf{print(`Hello, World!')} \textrightarrow Will output the `Hello, World!''. 
       \end{itemize}
   \end{itemize}
 \end{frame}
