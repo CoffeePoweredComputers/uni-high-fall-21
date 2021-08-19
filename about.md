@@ -110,7 +110,7 @@ TENTATIVE GRADING SCALE
 | Post-reading Activities & Homework   | 25%                                |
 | Labs                                 | 10%                                |
 | Quizzes                              | 20%                                |
-| Final Exam                           | 20%                                |
+| Final Exam                           | 10%                                |
 | Lecture Polls                        | 5%                                 |
 
 <!--

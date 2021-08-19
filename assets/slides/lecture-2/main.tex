@@ -55,6 +55,18 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
+\AtBeginSection[]{
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
+}
+
+
 %Information to be included in the title page:
 \title{\textbf{Topic 1: Intro to Python}}
 \author{\textbf{David H Smith IV}}
@@ -81,11 +93,22 @@
     \item \textbf{Homework 1:} Posted and due this Friday.
     \item \textbf{Topic 2 (Part 1) and Post-reading}: Posted and due this Friday.
     \item Feel free to drop by office hours if you have any questions.
-    \item As a reminder, I encourage you all to work together to complete the homeworks.
+    \item As a reminder, I encourage you all to work together to complete the homeworks. Don't share exact answers but feel free to discuss things at a high level.
   \end{enumerate}
 \end{frame}
 
 \section{A Brief Review}
+
+\begin{frame}
+  \frametitle{Computability}
+  \begin{itemize}
+    \item Complexity $\neq$ Non-computable (undecidable)
+      \pause
+    \item \textbf{The Halting Problem: }Given a description of a Turing Machine and it's initial input (the paper strip), determine whether the program, when executed on this input, ever halts.
+      \pause
+    \item There is no \textit{general solution} to the halting problem.
+  \end{itemize}
+\end{frame}
 
 \begin{frame}
   \frametitle{Anatomy of a Function Call}
@@ -121,16 +144,15 @@
   \begin{itemize}
     \item Two types we'll need to know now:
       \begin{itemize}
-        \item \textbf{Strings: } A long list of characters accompanied by surrounding quotes (e.g., `Hello, CS 105!'').
+        \item \textbf{Strings: } A long list of characters accompanied by surrounding quotes (e.g., `Hello, CS 105!').
         \item \textbf{Integers: } Whole numbers, both positive and negative.
       \end{itemize}
     \item You can check the type of a variable or expression with the \lstinline{type()} function.
-      %\pause
+      \pause
     \item You can convert between them with the \lstinline{str()} and \lstinline{int()} functions.
-      %\pause
+      \pause
     \item It's important to keep the type of your variables in mind when programming.
-      %\pause
-    \item Keeping types in mind when attempting to deduce what a program is doing is very important. 
+      \pause
   \end{itemize}
 \end{frame}
 
@@ -166,6 +188,8 @@
     \item an expression
   \end{enumerate}
 \end{frame}
+
+\section{Errors}
 
 %
 %
@@ -223,9 +247,9 @@
   \frametitle{Poll Question: The Print Function}
   What type of error will Python produce when this segment of code is run?
   \begin{lstlisting}[language=Python]
-  x = "Hello, world"
+  x = "Hello, world'
   y = 5
-  foo = x + y + z\end{lstlisting}
+  foo = x + y\end{lstlisting}
   \begin{enumerate}[A]
     \item SyntaxError
     \item NameError
@@ -234,19 +258,22 @@
   \end{enumerate}
 \end{frame}
 
+
 %
 %
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: Data Types}
-  What is the value of x after the following segment of code runs if the user inputs a 5 and then a 4?
+  \frametitle{Poll Question: The Print Function}
+  What type of error will Python produce when this segment of code is run?
   \begin{lstlisting}[language=Python]
-  a = input()
-  b = input()
-  x = a + b\end{lstlisting}
+  x = "Hello, world"
+  y = 5
+  foo = x + y + z\end{lstlisting}
   \begin{enumerate}[A]
-    \item String
-    \item Integer
+    \item SyntaxError
+    \item NameError
+    \item ValueError
+    \item TypeError
   \end{enumerate}
 \end{frame}
 
@@ -264,9 +291,60 @@
     \item No error
     \item SyntaxError
     \item NameError
+    \item TypeError
+  \end{enumerate}
+\end{frame}
+
+\section{Data Types and Errors}
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Data Types}
+  What is the type of x after the following segment of code runs if the user inputs a 5 and then a 4?
+  \begin{lstlisting}[language=Python]
+  a = input()
+  b = input()
+  x = a + b\end{lstlisting}
+  \begin{enumerate}[A]
+    \item String
+    \item Integer
+  \end{enumerate}
+\end{frame}
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Data Types}
+  What is the result of running the following code if the user types in \lstinline|world| and then \lstinline|hello|?
+  \begin{lstlisting}[language=Python]
+  a = int(input())
+  b = int(input())
+  x = a + b\end{lstlisting}
+  \begin{enumerate}[A]
+    \item No error
+    \item SyntaxError
+    \item NameError
     \item ValueError
     \item TypeError
   \end{enumerate}
+\end{frame}
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Converting from string to integer}
+  \begin{lstlisting}[language=Python]
+  x = input() #type(x) is str
+  x = int(x)  #type of x is int
+  \end{lstlisting}
+  is the same as
+  \begin{lstlisting}[language=Python]
+  x = int(input()) 
+  \end{lstlisting}
 \end{frame}
 
 \begin{frame}
@@ -274,10 +352,21 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{15 minutes of homework}
+  \frametitle{Two options for remaining time}
   \begin{itemize}
-    \item Spend 15 minutes working in groups to complete some of homework 1.
+    \item Get Python/text editor setup using the instructions on under the lab section on the course website's about page.
+    \item Get started on homework 1
   \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Updates}
+  \begin{enumerate}
+    \item \textbf{Homework 1:} Posted and due this Friday.
+    \item \textbf{Topic 2 (Part 1) and Post-reading}: Posted and due this Friday.
+    \item Feel free to drop by office hours if you have any questions.
+    \item As a reminder, I encourage you all to work together to complete the homeworks. Don't share exact answers but feel free to discuss things at a high level.
+  \end{enumerate}
 \end{frame}
 
 \end{document}
