@@ -44,16 +44,26 @@ schedule:
         start: 12:30 PM
         end: 2:00 PM
         location: Discord
+      - name: Office Hours
+        section: David
+        start: 6:30 PM
+        end: 8:00 PM
+        location: Discord
   - name: Thursday
     events:
       - name: Lecture 
         start: 10:05 AM
         end: 11:30 AM
+      - name: Office Hours
+        section: David
+        start: 7:00 PM
+        end: 8:00 PM
+        location: Discord
   - name: Friday
     events:
       - name: Office Hours
         section: David
-        start: 7:00 PM
+        start: 6:30 PM
         end: 8:00 PM
         location: Discord
   - name: Saturday
