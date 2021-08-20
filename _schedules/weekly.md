@@ -41,11 +41,6 @@ schedule:
     events:
       - name: Office Hours
         section: David
-        start: 12:30 PM
-        end: 2:00 PM
-        location: Discord
-      - name: Office Hours
-        section: David
         start: 6:30 PM
         end: 8:00 PM
         location: Discord
