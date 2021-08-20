@@ -37,6 +37,11 @@ schedule:
       - name: Lecture 
         start: 10:05 AM
         end: 11:30 AM
+      - name: Office Hours
+        section: David
+        start: 7:00 PM
+        end: 8:00 PM
+        location: Discord
   - name: Wednesday
     events:
       - name: Office Hours
