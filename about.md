@@ -102,12 +102,10 @@ During quizzes and the final exam you are allowed access to [repl.it](https://re
 
 ### Activity Weights
 
-TENTATIVE GRADING SCALE
-
 | Activity                             | Grade Percentage                   |
 | ------------------------------------ | ---------------------------------- |
-| zyBook Activities                    | 20%                                |
-| Post-reading Activities & Homework   | 25%                                |
+| zyBook Activities                    | 25%                                |
+| Post-reading Activities & Homework   | 30%                                |
 | Labs                                 | 10%                                |
 | Quizzes                              | 20%                                |
 | Final Exam                           | 10%                                |
