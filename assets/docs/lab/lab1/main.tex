@@ -81,7 +81,7 @@
 \large % Title text size
 Lab 1\\ % Assignment subtitle
 \normalsize % Subtitle text size
-Introduction to Git and GitHub\\
+Introduction to Python, Git, and GitHub\\
 \end{minipage}
 \begin{minipage}{0.295\textwidth} % Right side of title section
 \raggedleft
@@ -93,7 +93,32 @@ Introduction to Git and GitHub\\
 
 \printbibliography
 
-\section{Setting Up GitHub}
+\section{Setting Up Python}
+
+The labs in this course will take place on Anchor days and offer you a chance
+to exercise the material in a more traditional setting. Early on in the
+semester we will cover the basics of the Git version control system as well as
+some more straightforward lab both using a local editor and Python interpreter
+as well as Google Collaboratory.
+
+For the labs please download one of the following editors, or any other editor
+of your choice, to your machine:
+
+\begin{itemize}
+  \item VScode
+  \item Atom
+  \item vim
+  \item sublime 3
+  \item GNU Emacs
+\end{itemize}
+
+Additionally, please ensure the latest version of Python is installed to your
+machine (3.9.x).
+
+Please refer to the lab subsection on the course website's about page for all
+links.
+
+\section{Setting Up Git}
 
 \subsection{Installation and Settings}
 
@@ -117,19 +142,32 @@ What should be displayed is the username and email that you previously set.
 
 Congrats! You have successfully installed and configured the git version control on your computer. Onto the next step.
 
+\section{Setting up GitHub}
+
+\subsection{Making an Account}
+
+The first step is to to go to the GitHub website and make an account. 
+Once you have that account setup you will be able to move onto 
+the next sections which will allow you to setup your SSH key, clone,
+and use remote repositories.
+
 \subsection{Setting up an SSH key}
 
-Use the following command to generate an SSH key. We will use this key an your credentials when interacting with GitHub.
-\begin{lstlisting}[language=bash]
-$ ssh-keygen -t rsa -b 4096 -C "example@email.com"
-\end{lstlisting}
+Refer to the instructions at the following link for how to setup an SSH key on
+your respective operating system:
+\lstinline|https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent.|
 
-To view the generated key run the following command:
-\begin{lstlisting}[language=bash]
-$ cat ~/.ssh/id_rsa.pub
-\end{lstlisting}
+%Use the following command to generate an SSH key. We will use this key an your credentials when interacting with GitHub.
+%\begin{lstlisting}[language=bash]
+%$ ssh-keygen -t rsa -b 4096 -C "example@email.com"
+%\end{lstlisting}
+%
+%To view the generated key run the following command:
+%\begin{lstlisting}[language=bash]
+%$ cat ~/.ssh/id_rsa.pub
+%\end{lstlisting}
 
-Copy that key and navigate to the GitHub website. Once there go to your \lstinline|Settings| and then to \lstinline|SSH keys|. You will be greeted by the following prompt. Click on the \lstinline|New SSH Key| button.
+Once you have created that key, navigate to the GitHub website. Once there go to your \lstinline|Settings| and then to \lstinline|SSH keys|. You will be greeted by the following prompt. Click on the \lstinline|New SSH Key| button.
 
 \begin{figure}[H]
   \centering
