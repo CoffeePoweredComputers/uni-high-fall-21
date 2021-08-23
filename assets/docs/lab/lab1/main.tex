@@ -98,8 +98,7 @@ Introduction to Python, Git, and GitHub\\
 The labs in this course will take place on Anchor days and offer you a chance
 to exercise the material in a more traditional setting. Early on in the
 semester we will cover the basics of the Git version control system as well as
-some more straightforward lab both using a local editor and Python interpreter
-as well as Google Collaboratory.
+how to run Python scripts locally.\\
 
 For the labs please download one of the following editors, or any other editor
 of your choice, to your machine:
@@ -116,7 +115,7 @@ Additionally, please ensure the latest version of Python is installed to your
 machine (3.9.x).
 
 Please refer to the lab subsection on the course website's about page for all
-links.
+links. Once you have installed Python verify that it works by opening up a new terminal, typing in the command \lstinline|python|, and hitting enter. You should be greeted by a prompt with three left facing carrots (i.e., \lstinline|>>>|).
 
 \section{Setting Up Git}
 
@@ -193,9 +192,10 @@ In clicking on this link a repository will be generated on your GitHub account a
   \centering
   \includegraphics[width=0.75\textwidth]{./imgs/cloning.png}
 \end{figure}
-Then navigate to the terminal, navigate to the directory that you want to clone the repository to, and execute the following command being sure to replace it \lstinline|[url]| with the URL associated with your repo.
+Then, using the terminal, navigate to the directory that you want to clone the repository to, and execute the following command being sure to replace it \lstinline|[url]| with the URL associated with your repo.
 
 \begin{lstlisting}[language=bash]
+$ cd <directory path>
 $ git clone [url]
 \end{lstlisting}
 
