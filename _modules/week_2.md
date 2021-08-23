@@ -1,5 +1,5 @@
 ---
-navtitle: Week 2 - Variables and Expressions
+navtitle: ▶ Week 2 - Variables and Expressions
 n: "c"
 ---
 

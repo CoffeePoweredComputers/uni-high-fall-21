@@ -1,5 +1,5 @@
 ---
-navtitle: ▶Week 1 - Introduction
+navtitle: Week 1 - Introduction
 n: "b"
 ---
 
