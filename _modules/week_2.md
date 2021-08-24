@@ -9,9 +9,10 @@ Aug 23
 	
 Aug 24
 : **Lecture**{: .label .label-light-blue} Variables and Expressions (Part 1)
+	: [Slides]({{ site.baseurl }}{% link assets/slides/lecture-3/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 2 (Part 2) - Participation, Topic 2 - Challenge
     : **Assigned**{: .label .label-green}
-: **PrairieLearn**{: .label .label-dark-blue} [Homework 2 (Part 1)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312030), [Post-reading 2 (Part 2)](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Homework 2 (Part 1)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312030), [Post-reading 2 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2313201)
     : **Assigned**{: .label .label-green}
 
 
