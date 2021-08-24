@@ -11,6 +11,7 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
+
 \lstdefinestyle{python}{
   backgroundcolor=\color{backcolour},   
   commentstyle=\color{codegreen},
@@ -22,8 +23,8 @@
   %breaklines=true,                 
   captionpos=b,                    
   keepspaces=true,                 
-  numbers=left,                    
-  numbersep=5pt,                  
+  %numbers=left,                    
+  %numbersep=5pt,                  
   showspaces=false,                
   showstringspaces=false,
   showtabs=false,                  
@@ -53,6 +54,16 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
+\AtBeginSection[]{
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
+}
 
 %Information to be included in the title page:
 \title{\textbf{Topic 2: Variables and Expressions}}
@@ -90,7 +101,7 @@
 %
 \begin{frame}[fragile]
   \frametitle{Poll Question: Whitespace}
-  Which of the following are considered \'whitespace\'?
+  Which of the following are considered `whitespace'?
   \vfill
   \begin{enumerate}
     \item Spaces
@@ -101,13 +112,12 @@
   \end{enumerate}
   \pause
   \vfill
-  Whitespace is any character that takes up vertical or horizontal space bu does not produce an otherwise visible mark.
+  Whitespace is any character that takes up vertical or horizontal space but does not produce an otherwise visible mark.
 \end{frame}
 
 %
 %
 %
-\section{Topic Review: Escape Character}
 \begin{frame}[fragile]
   \frametitle{Topic Review: Escape Character}
   \begin{enumerate}
@@ -121,6 +131,21 @@
       \end{enumerate}
   \end{enumerate}
 \end{frame}
+
+\section{Objects and Mutability}
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Objects and Mutability}
+  \begin{itemize}
+    \item \textbf{Name binding} \textrightarrow \ Process of associating the variable name with the object.
+    \item When instantiated each object gets and id.
+    \item To check the id of an object call the \lstinline|id| function and pass the variable name that references the object.
+  \end{itemize}
+\end{frame}
+
 
 \section{Floating Points}
 %
@@ -179,7 +204,10 @@
   \end{lstlisting}
   \vfill
   \begin{enumerate}
-    \item
+    \item 5
+    \item 5.0
+    \item 5.5
+    \item 6.0
   \end{enumerate}
 \end{frame}
 
@@ -187,26 +215,21 @@
 %
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: }
-
+  \frametitle{Poll Question: Printing Floating Points}
+  If the user types in \lstinline|2.7182818284| which of the following string formatting function calls will produce \lstinline|2.718| when replacing it with the triple question marks?
+  \begin{lstlisting}[language=Python]
+  x = float(input())
+  print(???)
+  \end{lstlisting}
   \vfill
   \begin{enumerate}
-    \item
+    \item \lstinline|"{:.3f}".format(x)|
+    \item \lstinline|"{.3f}".format(x)|
+    \item \lstinline|"{:.5}".format(x)|
+    \item \lstinline|format("{:.3f}", x)|
+    \item \lstinline|"{:.4}".format(x)|
   \end{enumerate}
 \end{frame}
-
-%
-%
-%
-\begin{frame}[fragile]
-  \frametitle{Poll Question: }
-
-  \vfill
-  \begin{enumerate}
-    \item
-  \end{enumerate}
-\end{frame}
-
 
 %
 %
@@ -219,7 +242,7 @@
     \item 1E-7
     \item 1,097
     \item -3.00
-    \item \lstinline{'\'\'''}
+    \item \lstinline{'\'\''}
   \end{enumerate}
 \end{frame}
 
@@ -238,7 +261,7 @@
     \begin{itemize}
       \item \lstinline{____}
       \item \lstinline{12monkeys}
-      \item \lstinline{l33tCoder42}
+      \item \lstinline{testing123}
     \end{itemize}
   \end{minipage}
   \begin{minipage}{0.49\textwidth}
@@ -250,19 +273,6 @@
     \end{enumerate}
   \end{minipage}
 \end{frame}
-
-%
-%
-%
-\begin{frame}[fragile]
-  \frametitle{Poll Question: }
-
-  \vfill
-  \begin{enumerate}
-    \item
-  \end{enumerate}
-\end{frame}
-
 
 %
 %
