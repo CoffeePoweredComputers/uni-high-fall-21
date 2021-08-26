@@ -106,7 +106,7 @@
 %
 \begin{frame}[fragile]
   \frametitle{Poll Question: }
-  How many of the following characters are visible on the screen?\\
+  How many of the following characters are \textbf{visible} on the screen?\\
   \begin{lstlisting}[language=Python, autogobble]
   print("\t\\n\\\t")
   \end{lstlisting}
@@ -135,7 +135,7 @@
   \vfill
   What is the result of the following?
   \begin{lstlisting}[language=Python, autogobble]
-  x = 4(10 + 2)
+  x = 2(10 + 2)
   print(x)
   \end{lstlisting}
   \vfill
@@ -151,7 +151,7 @@
 %
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: Multiplication}
+  \frametitle{Poll Question: Math}
   \vfill
   What is the value of \lstinline|y| after this code executes?
   \begin{lstlisting}[language=Python, autogobble]
@@ -174,7 +174,7 @@
 %
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: Multiplication}
+  \frametitle{Poll Question: Math}
   \vfill
   What is the value of \lstinline|y| after this code executes?
   \begin{lstlisting}[language=Python, autogobble]
@@ -192,22 +192,47 @@
 \end{frame}
 
 %
-%
+% Key point of this slide: Don't get thrown off by the syntactic sugar of Python
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: Multiplication}
+  \frametitle{Poll Question: Math}
   \vfill
   What is the value of this expression?
-  \begin{lstlisting}
+  \begin{lstlisting}[language=Python, autogobble]
   -3 ** 2
   \end{lstlisting}
   \vfill
-  \begin{enumerate}
+  \begin{enumerate}[A]
     \item -9
     \item -8
     \item 8
     \item 9
   \end{enumerate}
+\end{frame}
+
+%
+%
+%
+\begin{frame}
+  \frametitle{Order of Operations in Python}
+  \centering
+  \begin{minipage}{0.49\textwidth}
+    \begin{itemize}
+      \item Parentheses 
+      \item Exponentiation
+      \item Positive and negative
+      \item Multiplication, Division, Modulo
+      \item Addition, Subtraction 
+    \end{itemize}
+  \end{minipage}
+  \begin{minipage}{0.2\textwidth}
+    \centering
+    Highest\\
+    $\xdownarrow{2cm}$\\
+    Lowest\\
+  \end{minipage}
+  \vfill
+  \textbf{Note:} Python evaluates from left to right within a precedence level
 \end{frame}
 
 
@@ -253,36 +278,28 @@
     \item Division operator (/) gives best approximation to true result and \textit{always return a float}.
     \item Floor division (//) rounds down the closet whole number. The type of the result will follow the normal rules.
     \item Modulo operator(\%) performs a division and returns the remainder. The type of the result will always be the same.
-    \item For any numbers x and y, the following equality holds: \lstinline|(y == (y // x) * x + (y \% x))|
+    \item For any numbers x and y, the following equality holds: \lstinline|(y == (y // x) * x + (y % x))|
   \end{enumerate}
 \end{frame}
 
 
-\section{Orders of Operation}
+\section{Math Module}
 
-\begin{frame}
-  \frametitle{Order of Operations in Python}
-  \centering
-  \begin{minipage}{0.49\textwidth}
-    \begin{itemize}
-      \item Parentheses 
-      \item Exponentiation
-      \item Positive and negative
-      \item Multiplication, Division, Modulo
-      \item Addition, Subtraction 
-    \end{itemize}
-  \end{minipage}
-  \begin{minipage}{0.2\textwidth}
-    \centering
-    Highest\\
-    $\xdownarrow{2cm}$\\
-    Lowest\\
-  \end{minipage}
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: More Math Operators}
   \vfill
-  \textbf{Note:} Python evaluates from left to right within a precedence level
+  Which of the following will print the value of $\pi$?
+  \begin{enumerate}[A]
+    \item \lstinline|print(math.pi)|
+    \item \lstinline|print(pi)|
+    \item import math.pi\\print(math.pi)
+    \item import math\\print(math.pi)
+  \end{enumerate}
 \end{frame}
 
-\section{Math Module}
 
 %
 %
@@ -323,33 +340,22 @@ print(x + y)
   \end{enumerate}
 \end{frame}
 
-%
-%
-%
-\begin{frame}[fragile]
-  \frametitle{Poll Question: More Math Operators}
-  \vfill
-  Which of the following will print the value of $\pi$?
-  \begin{enumerate}[A]
-    \item \lstinline|print(math.pi)|
-    \item \lstinline|print(pi)|
-    \item import math.pi\\print(math.pi)
-    \item import math\\print(math.pi)
-  \end{enumerate}
-\end{frame}
-
-
 \begin{frame}[fragile]
   \frametitle{Math Module}
   \begin{enumerate}[A]
     \item Should I memorize (operators, function, modules, module functions, etc.)?
+    \pause
     \item Yes and no. 
+    \pause
     \item Google + \lstinline|help()| function are your friends
+    \pause
     \item Modules vs Scripts: Modules are just (for the purposes of what we've discussed so far) scripts that someone else wrote that you can use in your own scripts.
+    \pause
   \end{enumerate}
   \vfill
+  \pause
   To get information on a module:
-  \begin{lstlisting}
+  \begin{lstlisting}[language=Python, autogobble]
   import math
   help(math)
   \end{lstlisting}
@@ -371,15 +377,34 @@ print(x + y)
 \section{Lab 1}
 
 \begin{frame}
-  \frametitle{Section 1 - Python + TextEditor}
+  \frametitle{Python + TextEditor}
+  \begin{enumerate}
+    \item Everyone should be able to open a zsh terminal (Mac), powershell cmd (Windows), or Git Bash (Either) and type: \lstinline|python|.
+    \item You should be greeted by a Python command line (e.g., \lstinline|>>>|).
+  \end{enumerate}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Section 2  - Git Setup}
+  \frametitle{Git Setup}
+  \begin{enumerate}
+    \item \lstinline|git config|: Sets up your local 
+    \item All of these local setting will be represented in your local "commit history".
+    \item When you push that commit history to GitHub (a remote repository) they will also be reflected there.
+  \end{enumerate}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Section 2  - GitHub Setup}
+  \frametitle{GitHub Setup}
+  \begin{enumerate}
+    \item \textbf{Secure Socket Shell (SSH) Key: } A "password" for remote access to a repository.
+    \item Follow the instructions listed on the link in the lab instructions.
+    \item The key generation command it will give you a path to a file that ends in \lstinline|.pub|
+    \item Open the aformentioned file and copy-paste it's contents into the key section of GitHub.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Cloning A Repository}
 \end{frame}
 
 %
@@ -390,6 +415,12 @@ print(x + y)
     \item Homework 2 (Part 2) and Post-Reading for Topic 3 (Part 1) are posted and due Friday.
     \item Participation Topic 3 (Part 1) is due Friday
     \item Challenge Activities for Topic 2 are due Sunday.
+    \item Lab 1 (100pts) will be due Sunday, Sept 4th:
+      \begin{itemize}
+        \item Setup (50pts).
+        \item README.md with some stuff filled in (25pts).
+        \item \lstinlne|hello-world.py| passes the test cases (25pts).
+      \end{itemize}
   \end{enumerate}
 \end{frame}
 
