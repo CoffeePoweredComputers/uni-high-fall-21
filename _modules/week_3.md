@@ -31,12 +31,12 @@ Sep 02
 Sep 03
 : **zyBooks**{: .label .label-orange} Topic 4 - Participation
     : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} Homework 3 (Part 2), Post-reading 4 (Part 1)
+: **PrairieLearn**{: .label .label-dark-blue} Post-reading 4 (Part 1)
     : **Due**{: .label .label-red}
 
 Sep 04
-: **Nothing Due**
-
+: **PrairieLearn**{: .label .label-dark-blue} Homework 3 (Part 2)
+    : **Due**{: .label .label-red}
 Sep 05
 : **zyBooks**{: .label .label-orange} Topic 3 - Challenge Activities
     : **Due**{: .label .label-red}

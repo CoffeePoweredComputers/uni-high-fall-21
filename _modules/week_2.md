@@ -31,13 +31,13 @@ Aug 26
     : **Assigned**{: .label .label-green}
 
 Aug 27
-: **zyBooks**{: .label .label-orange} Topic 3 (Part 1) - Participation
-    : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} Homework 2 (Part 2), Post-reading 3 (Part 1)
-    : **Due**{: .label .label-red}
+: **Nothing Due**
 
 Aug 28
-: **Nothing Due**
+: **zyBooks**{: .label .label-orange} Topic 3 (Part 1) - Participation
+    : **Due**{: .label .label-red}
+: **PrairieLearn**{: .label .label-dark-blue} Post-reading 3 (Part 1)
+    : **Due**{: .label .label-red}
 
 Aug 29
 : **zyBooks**{: .label .label-orange} Topic 2 - Challenge Activities
