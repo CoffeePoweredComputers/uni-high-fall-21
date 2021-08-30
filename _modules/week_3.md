@@ -1,5 +1,5 @@
 ---
-navtitle: Week 3 - Introduction to Types
+navtitle: ▶ Week 3 - Introduction to Types
 n: "d"
 ---
 
