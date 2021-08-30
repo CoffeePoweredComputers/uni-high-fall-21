@@ -193,13 +193,32 @@
   \end{lstlisting}
   \vfill
   \begin{enumerate}[A] 
-    \item \lstinline|2 3 None| %correct
+    \item \lstinline|2 3 None|
     \item \lstinline|None None 4|
     \item \lstinline|2 3 4|
     \item IndexError
   \end{enumerate}
 \end{frame}
 
+
+%
+% Slide 8
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Appending}
+  What is the the value of \lstinline|x| after the following code runs?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = [1, 2, 3]
+  x = x.append(4)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|[1, 2, 3, 4]|
+    \item AttributeError
+    \item \lstinline|[1, 2, 3, [4]]|
+    \item \lstinline|None|
+  \end{enumerate}
+\end{frame}
 
 
 %
@@ -219,7 +238,27 @@
     \item \lstinline|[1, 2, [3, 4]]| %correct
     \item \lstinline|[[1, 2], [3, 4]]|
   \end{enumerate}
-  \
+\end{frame}
+
+%
+% Slide 8
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Extending}
+  What is the result of the following code if the user types in
+  \lstinline|hello| and \lstinline|world|?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = list(input())
+  y = list(input())
+  x.extend(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|["hello", "world"]|
+    \item \lstinline|["h", "e", "l", "l", "o", "w", "o", "r", "l", "d"]|
+    \item \lstinline|[["hello"], ["world"]]|
+    \item \lstinline|[["h", "e", "l", "l", "o"], ["w", "o", "r", "l", "d"]]|
+  \end{enumerate}
 \end{frame}
 
 
@@ -267,7 +306,7 @@
 \section{Tuple}
 
 %
-% Slide 9
+% NOTE: Draw similarity between tuple function and int/float functions
 %
 \begin{frame}[fragile]
   \frametitle{Poll Question: Tuple Creation}
