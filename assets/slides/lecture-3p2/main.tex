@@ -1,0 +1,315 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\usetheme{Madrid}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  belowskip=-0.5em,
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\lstset{style=python}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}\insertsectionhead\par%
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+}
+
+\setbeamercolor{palette primary}{bg=UIUCorange,fg=white}
+\setbeamercolor{palette secondary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=UIUCblue,fg=white}
+\setbeamercolor{structure}{fg=UIUCorange} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=UIUCblue} % TOC sections
+
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+%\usepackage[shortlabels]{enumitem}
+
+\title{\textbf{Topic 3: Sets and Dictionaries}}
+\author{\textbf{David H Smith IV}}
+\institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
+\date{\textbf{Wed, June 23 2021}}
+
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
+\addtobeamertemplate{title page}{
+  \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
+    \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
+  \end{textblock*} 
+}{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Announcements}
+
+%
+% Slide 1
+%
+\begin{frame}
+  \frametitle{Announcements}
+  \begin{enumerate}
+    \item 
+  \end{enumerate}
+\end{frame}
+
+\section{Sets}
+
+%
+% Slide 10
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Making Sets}
+  Which of the following is an invalid way of making a set?
+  \begin{enumerate}[A] 
+    \item \lstinline|x = set(1, 2, 3)| 
+    \item \lstinline|x = set([1, 2, 3])| 
+    \item \lstinline|x = {1, 2, 3, 4}| 
+    \item \lstinline|x = set("1234")|
+  \end{enumerate}
+  \pause
+  \vfill
+  %\hline
+  \vfill
+  \begin{enumerate}
+    \item \textbf{set()} \textrightarrow Creates either a new set by either accepting and converting another sequence type (e.g., list, tuple) or creates an empty list if it's not given anything.
+    \item \textbf{set literal} \textrightarrow Written using the \lstinline|{}| with comma separated elements inside (e.g., \lstinline|{1, 2, 3}|).
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 11
+
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Updating Sets}
+  \begin{lstlisting}[language=Python, autogobble]
+  x = {1, 2, 3}
+  y = set("aeiou")
+  x.append(4)
+  z = x + y
+  print(z)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|{1, 2, 3, 4, "aeiou"}|
+    \item \lstinline|{1, 2, 3, 4, "a", "e", "i", "o", "u"}|
+    \item ValueError
+    \item AttributeError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 11
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Updating Sets}
+  \begin{lstlisting}[language=Python, autogobble]
+  x = {1, 2, 3}
+  y = set("aeiou")
+  x.add(4)
+  z = x + y
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|{1, 2, 3, 4, "aeiou"}|
+    \item \lstinline|{1, 2, 3, 4, "a", "e", "i", "o", "u"}|
+    \item ValueError
+    \item AttributeError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 11
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Updating Sets}
+  \begin{lstlisting}[language=Python, autogobble]
+  x = {1, 2, 3}
+  y = set("aeiou")
+  x.add(4)
+  z = x.union(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|{1, 2, 3, 4, "aeiou"}|
+    \item \lstinline|{1, 2, 3, 4, "a", "e", "i", "o", "u"}|
+  \end{enumerate}
+\end{frame}
+
+%
+% This is a good place to remphasize the difference between inplace
+% functions and functions that return a copy.
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Set Tracing}
+  How many total unique set objects are created throughout the duration of this
+  codes runtime?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = {1, 2, 3}
+  y = {4, 5}
+  x = x.union(y)
+  z = set("test")
+  x.update(z)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item 1
+    \item 3
+    \item 4
+    \item 5
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 11
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Set Tracing}
+  What is the final value of set1 after the following code finish's executing?
+  \begin{lstlisting}[language=Python, autogobble]
+  set1 = {"hi", 2, 3}
+
+  set2 = set([2, 3, 4])
+  set2.add("hi")
+
+  set1.update(set2)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|{"hi", 2, 3, 4}| %correct
+    \item \lstinline|{"hi", 2, 2, 3, 3, 4}|
+    \item \lstinline|{2, 3, 4}|
+    \item AttributeError
+  \end{enumerate}
+\end{frame}
+
+
+\section{Dictionaries}
+
+%
+% Slide 13
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Accessing Element in Dictionary}
+  Given the following dictionary, what is the correct way to access the value with the key \lstinline|"foo"|?
+  \begin{lstlisting}[language=Python, autogobble]
+  d = {"foo": 5, "bar": 10, "baz": }
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item You can't. Dictionaries are unordered.
+    \item \lstinline|d[0]|
+    \item \lstinline|d("foo")|
+    \item \lstinline|d["foo"]| %correct
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 13
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Accessing Element in Dictionary}
+  What is the resulting value of \lstinline|d| after the following code is executed?
+  \begin{lstlisting}[language=Python, autogobble]
+  d = {"foo": 5, "bar": 10, "baz": 2}
+  d["foo"] = 2
+  del d["baz"] 
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item You can't. Dictionaries are unordered.
+    \item \lstinline|{"foo": 2, "bar": 10}|  %correct
+    \item \lstinline|{"foo": 5, "foo": 2, "bar": 10, "baz": 2}|
+    \item \lstinline|{"foo": 5, "foo": 2, "bar": 10}|
+    \item \lstinline|{"foo": 2, "bar": 10, "baz": }|
+  \end{enumerate}
+\end{frame}
+
+\section{String Formatting}
+
+\begin{frame}[fragile]
+  \frametitle{Poll Question: String Formatting}
+  What is the value of x after the following code executes:
+  \begin{lstlisting}[language=Python, autogobble] 
+  x = "{1} {0} {1}".format("S", "O", "Y")
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|"S O Y"|
+    \item \lstinline|"SOY"|
+    \item \lstinline|"O S O"| %correct
+    \item \lstinline|"Y O Y"|
+    \item \lstinline|"OSO"|
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Poll Question: String Formatting}
+  What is the value of x after the following code executes:
+  \begin{lstlisting}[language=Python, autogobble] 
+  import math
+  x = "{1:.3f} {0:.2f} {2:.4f}".format(math.pi, math.e, math.tau)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item SyntaxError
+    \item \lstinline|"2.718 3.14 6.2832"|
+    \item \lstinline|"2.71 3.1 6.283"| 
+    \item \lstinline|"3.142 2.72 6.2832"|
+  \end{enumerate}
+\end{frame}
+
+\section{Final Reminders}
+
+\begin{frame}
+  \frametitle{Announcements}
+  \end{enumerate}
+\end{frame}
+
+
+
+\end{document}
