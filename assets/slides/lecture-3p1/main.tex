@@ -1,5 +1,6 @@
-\documentclass{beamer}
+\documentclass[xcolor=table]{beamer}
 
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{graphicx}
 \usepackage{textpos}
 \usepackage{listings}
@@ -200,6 +201,24 @@
   \end{enumerate}
 \end{frame}
 
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Max Function} 
+  \begin{lstlisting}[language=Python, autogobble]
+  x = max("hello")
+  print(x)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|e|
+    \item \lstinline|o|
+    \item ValueError
+    \item TypeError
+  \end{enumerate}
+\end{frame}
+
 
 %
 % Slide 8
@@ -303,6 +322,102 @@
     \item 4
   \end{enumerate}
 \end{frame}
+
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Max Function} 
+  Given the following list which of the following function calls will find the largest element?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = [1, 2, 3, 4, 5]
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|max(x)|
+    \item \lstinline|maximum(x)|
+    \item \lstinline|x.max()|
+    \item \lstinline|x.maximum()|
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Max Function} 
+  What will be outputted to the screen when the following code runs?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = max(["hello", "this", "is", "a", "test"])
+  print(x)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|"hello"|
+    \item \lstinline|"this"|
+    \item \lstinline|"a"|
+    \item \lstinline|"test"|
+    \item ValueError
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Max Function} 
+  \begin{lstlisting}[language=Python, autogobble]
+  x = max(["hello", "this", "is", "a", "test"])
+  print(x)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|"hello"|
+    \item \lstinline|"this"|
+    \item \lstinline|"is"|
+    \item \lstinline|"a"|
+    \item \lstinline|"test"|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Index Function} 
+  \begin{lstlisting}[language=Python, autogobble]
+  x = ["hello", "this", "is", "a", "hello"]
+  y = x.index("hello")
+  print(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item 0
+    \item 4
+    \item 5
+    \item 1
+  \end{enumerate}
+\end{frame}
+
+%
+% Note: Show how count can be used on strings as well
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function} 
+  Which of the following is the correct way to count the number of 1s in the list \lstinline|x| and store the result in a variable y?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = [1, 2, 3, 4, 5, 1, 2, 3, 2, 1, 2, 4, 1]
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|y = count(x, 1)|
+    \item \lstinline|y = x.count(1)|
+  \end{enumerate}
+\end{frame}
+
+
 \section{Tuple}
 
 %
@@ -400,6 +515,24 @@
     \item \textbf{list()} \ Takes a string, set, or tuple and converts it to a list.
   \end{enumerate}
 \end{frame}
+
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{Order and Mutability}
+  % Please add the following required packages to your document preamble:
+  \begin{table}[]
+    \begin{tabular}{l|l|l}
+      \hline
+      \multicolumn{1}{c|}{}       & \multicolumn{1}{c|}{Ordered}                  & \multicolumn{1}{c}{Mutable}                  \\ \hline
+      \multicolumn{1}{c|}{String} & \multicolumn{1}{c|}{\cellcolor[HTML]{34FF34}} & \multicolumn{1}{c}{\cellcolor[HTML]{FE0000}} \\ \hline
+      List                        & \cellcolor[HTML]{34FF34}                      & \cellcolor[HTML]{34FF34}                     \\ \hline
+      Tuple                       & \cellcolor[HTML]{34FF34}                      & \cellcolor[HTML]{FE0000}                    
+    \end{tabular}
+  \end{table}
+\end{frame}
+
 
 \section{Reminders}
 
