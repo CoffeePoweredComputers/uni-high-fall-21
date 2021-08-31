@@ -25,6 +25,7 @@ Aug 25
 
 Aug 26
 : **Lecture**{: .label .label-light-blue} Variables and Expressions (Part 2)
+    : [Slides]({{ site.baseurl }}{% link assets/slides/lecture-3p1/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 3 (Part 1) - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 2 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312031), [Post-reading 3 (Part 1)](#)
