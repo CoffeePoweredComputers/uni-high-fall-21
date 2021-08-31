@@ -9,7 +9,7 @@ Aug 30
 
 Aug 31
 : **Lecture**{: .label .label-light-blue} Introduction to Types (Part 1)
-	: [Slides]({{ site.baseurl }}{% link assets/slides/lecture-3p2/main.pdf %})
+	: [Slides]({{ site.baseurl }}{% link assets/slides/lecture-3p1/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 3 (Part 2) - Participation, Topic 3 - Challenge
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 3 (Part 1)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312032), [Post-reading 3 (Part 2)](#)
