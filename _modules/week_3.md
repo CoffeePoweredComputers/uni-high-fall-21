@@ -5,6 +5,7 @@ n: "d"
 
 Aug 30
 : **Lab**{: .label .label-purp} Intro to Version Control Cont'd
+	: [README.md Instructions](https://mediaspace.illinois.edu/media/t/1_1sxkfdd0 ), [Python File Instructions](https://mediaspace.illinois.edu/media/t/1_w762du93)
 
 Aug 31
 : **Lecture**{: .label .label-light-blue} Introduction to Types (Part 1)
