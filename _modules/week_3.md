@@ -4,7 +4,7 @@ n: "d"
 ---
 
 Aug 30
-: **Lab**{: .label .label-purp} [](#)
+: **Lab**{: .label .label-purp} Intro to Version Control Cont'd
 
 Aug 31
 : **Lecture**{: .label .label-light-blue} Introduction to Types (Part 1)
@@ -37,7 +37,9 @@ Sep 03
 Sep 04
 : **PrairieLearn**{: .label .label-dark-blue} Homework 3 (Part 2)
     : **Due**{: .label .label-red}
+
 Sep 05
 : **zyBooks**{: .label .label-orange} Topic 3 - Challenge Activities
     : **Due**{: .label .label-red}
-
+: **Lab**{: .label .label-purp} Intro to Version Control 
+    : **Due**{: .label .label-red}
