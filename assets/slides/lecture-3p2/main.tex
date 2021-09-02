@@ -1,5 +1,6 @@
-\documentclass{beamer}
+\documentclass[xcolor=table]{beamer}
 
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{graphicx}
 \usepackage{textpos}
 \usepackage{listings}
@@ -40,14 +41,14 @@
 \lstset{style=python}
 
 \AtBeginSection[]{
-  \begin{frame}
-    \vfill
-    \centering
-    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-      \usebeamerfont{title}\insertsectionhead\par%
-    \end{beamercolorbox}
-    \vfill
-  \end{frame}
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
 }
 
 \setbeamercolor{palette primary}{bg=UIUCorange,fg=white}
@@ -94,6 +95,61 @@
   \end{enumerate}
 \end{frame}
 
+%
+% Slide 8
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Appending}
+  What is the the value of \lstinline|x| after the following code runs?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = [1, 2, 3]
+  x = x.append(4)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|[1, 2, 3, 4]|
+    \item AttributeError
+    \item \lstinline|[1, 2, 3, [4]]|
+    \item \lstinline|None|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 8
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Appending}
+  What is the the type of \lstinline|x| after the following code runs?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = (1, 2, 3)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item Set
+    \item Dictionary
+    \item List
+    \item Tuple
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 8
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Appending}
+  What is the the type of \lstinline|x| after the following code runs?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = [1, 2, 3]
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item Set
+    \item Dictionary
+    \item List
+    \item Tuple
+  \end{enumerate}
+\end{frame}
+
 \section{Sets}
 
 %
@@ -106,7 +162,7 @@
     \item \lstinline|x = set(1, 2, 3)| 
     \item \lstinline|x = set([1, 2, 3])| 
     \item \lstinline|x = {1, 2, 3, 4}| 
-    \item \lstinline|x = set("1234")|
+    \item \lstinline|x = set()|
   \end{enumerate}
   \pause
   \vfill
@@ -118,10 +174,31 @@
   \end{enumerate}
 \end{frame}
 
+%
+% This is a good place to remphasize the difference between inplace
+% functions and functions that return a copy.
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Set Tracing}
+  What is the value of \lstinline|x| after this code has been run?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = {1, 2, 3}
+  y = {4, 5}
+  x.union(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item None
+    \item \lstinline|{1, 2, 3, 4, 5}|
+    \item \lstinline|{}|
+    \item \lstinline|{1, 2, 3}|
+  \end{enumerate}
+\end{frame}
+
 
 %
 % Slide 11
-
+%
 \begin{frame}[fragile]
   \frametitle{Poll Question: Updating Sets}
   \begin{lstlisting}[language=Python, autogobble]
@@ -226,17 +303,55 @@
   \end{enumerate}
 \end{frame}
 
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{Useful Set Functions}
+  \begin{enumerate}
+    \item \textbf{a.add(element)} \textrightarrow \ Adds a single element to a set.
+    \item \textbf{a.update(b)} \textrightarrow \ Adds all the elements from \lstinline|b| to \lstinline|a|. This function does not return anything.
+    \item \textbf{c = a.union(b)} \textrightarrow \ Creates a \textbf{new} set containing all of the elements from \lstinline|a| and \lstinline|b| and stores it in \lstinline|c|.
+    \item \textbf{c = a.intersection(b)} \textrightarrow \ Creates a \textbf{new} set containing the intersection of \lstinline|a| and \lstinline|b| and stores it in \lstinline|c|.
+    \item \textbf{c = a.difference(b)} \textrightarrow \ Creates a \textbf{new} set containing the intersection of \lstinline|a| and \lstinline|b| and stores it in \lstinline|c|.
+  \end{enumerate}
+\end{frame}
+
+
 
 \section{Dictionaries}
+
 
 %
 % Slide 13
 %
 \begin{frame}[fragile]
   \frametitle{Poll Question: Accessing Element in Dictionary}
+  What is the resulting value of \lstinline|d| after the following code is executed?
+  \begin{lstlisting}[language=Python, autogobble]
+  d = {}
+  d["foo"] = 1
+  d["bar"] = 2
+  d["baz"] = 3
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item SyntaxError
+    \item TypeError
+    \item \lstinline|{"foo": 1, "bar": 2, "baz": 3}|
+    \item \lstinline|{"baz": 3}|
+  \end{enumerate}
+\end{frame}
+
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Accessing Element in Dictionary}
   Given the following dictionary, what is the correct way to access the value with the key \lstinline|"foo"|?
   \begin{lstlisting}[language=Python, autogobble]
-  d = {"foo": 5, "bar": 10, "baz": }
+  d = {"foo": 5, "bar": 10, "baz": 2}
   \end{lstlisting}
   \vfill
   \begin{enumerate}[A] 
@@ -249,7 +364,7 @@
 
 
 %
-% Slide 13
+% Reference similarity between dictionaries and lists 
 %
 \begin{frame}[fragile]
   \frametitle{Poll Question: Accessing Element in Dictionary}
@@ -262,12 +377,66 @@
   \vfill
   \begin{enumerate}[A] 
     \item You can't. Dictionaries are unordered.
-    \item \lstinline|{"foo": 2, "bar": 10}|  %correct
+    \item \lstinline|{"foo": 2, "bar": 10}|
     \item \lstinline|{"foo": 5, "foo": 2, "bar": 10, "baz": 2}|
     \item \lstinline|{"foo": 5, "foo": 2, "bar": 10}|
     \item \lstinline|{"foo": 2, "bar": 10, "baz": }|
   \end{enumerate}
 \end{frame}
+
+%
+% Reference similarity between dictionaries and lists 
+%
+\begin{frame}[fragile]
+  \frametitle{New Dictionary Functions}
+  What is the resulting value of \lstinline|d| and \lstinline|x| after the following code is executed?
+  \begin{lstlisting}[language=Python, autogobble]
+  d = {"Washington": 5, "California": 10, "Oregon": 2}
+  x = d.pop("Washington")
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item AttributeError
+    \item \lstinline|d={"Washington": 5, "California": 10, "Oregon": 2}| and \lstinline|x=5|
+    \item \lstinline|d={"Washington": 5, "California": 10, "Oregon": 2}| and  \lstinline|x="Washington"|
+    \item \lstinline|d={"California": 10, "Oregon": 2}| and \lstinline|x=5|
+    \item \lstinline|d={"California": 10, "Oregon": 2}| and \lstinline|x={"Washington": 5}|
+  \end{enumerate}
+\end{frame}
+
+%
+% Reference similarity between dictionaries and lists 
+%
+\begin{frame}[fragile]
+  \frametitle{New Dictionary Functions}
+  What is the resulting value of \lstinline|x| after the following code is executed?
+  \begin{lstlisting}[language=Python, autogobble]
+    x = {"hello": 5, "world": 10}
+    y = {"world": 11, "!": 12}
+    x.update(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item AttributeError
+    \item \lstinline|{'hello': 5, 'world': 10, '!': 12}| 
+    \item \lstinline|{'hello': 5, 'world': 11, '!': 12}| 
+    \item \lstinline|{'hello': 5, 'world': 12, '!': 12}| 
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 13
+%
+\begin{frame}[fragile]
+  \frametitle{Dictionaries}
+  \begin{enumerate}[A] 
+    \item Consists of key:value pairs.
+    \item \lstinline|{key1:value1, key2:value2, key3:value3}|
+    \item All keys must be unique.
+    \item Access method is similar to lists but we use keys instead of indices (i.e., list[0] vs dict[key]).
+  \end{enumerate}
+\end{frame}
+
 
 \section{String Formatting}
 
@@ -303,11 +472,73 @@
   \end{enumerate}
 \end{frame}
 
+\section{Data Types Conclusion}
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Set Tracing}
+  What is the type of \lstinline|x|?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = {1, 2, 3}
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item 1
+    \item 3
+    \item 4
+    \item 5
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{}
+  Syntax for creation:
+  \begin{enumerate}
+    \item \textbf{\{\}} \textrightarrow \ For creating sets \textbf{only if there are elements in between}.
+    \item \textbf{\{\}} \textrightarrow \ Creating dictionaries when left blank.
+  \end{enumerate}
+  \vfill
+  Conversion/creation functions:
+  \begin{enumerate}
+    \item \textbf{set()} \textrightarrow \ Either converts a sequence type to a set or creates a blank set.
+    \item \textbf{dict()} \ Creates a blank dict or converts a list of tuples (where each tuple has \textbf{exactly} two elements) to a dictionary.
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{Order and Mutability}
+  % Please add the following required packages to your document preamble:
+  \begin{table}[]
+    \begin{tabular}{l|l|l}
+      \hline
+      \multicolumn{1}{c|}{}       & \multicolumn{1}{c|}{Ordered}                  & \multicolumn{1}{c}{Mutable}                  \\ \hline
+      \multicolumn{1}{c|}{String} & \multicolumn{1}{c|}{\cellcolor[HTML]{34FF34}} & \multicolumn{1}{c}{\cellcolor[HTML]{FE0000}} \\ \hline
+      List                        & \cellcolor[HTML]{34FF34}                      & \cellcolor[HTML]{34FF34}                     \\ \hline
+      Tuple                       & \cellcolor[HTML]{34FF34}                      & \cellcolor[HTML]{FE0000}                     \\ \hline
+      Set                         & \cellcolor[HTML]{FE0000}                      & \cellcolor[HTML]{34FF34}                     \\ \hline
+      Dict                        & \cellcolor[HTML]{FE0000}                      & \cellcolor[HTML]{34FF34}                     \\ \hline
+    \end{tabular}
+  \end{table}
+  \pause
+  This is a lot to remember. So memorize it through practice rather than through standard memorization. 
+\end{frame}
+
+
+
 \section{Final Reminders}
 
 \begin{frame}
   \frametitle{Announcements}
-  \end{enumerate}
 \end{frame}
 
 
