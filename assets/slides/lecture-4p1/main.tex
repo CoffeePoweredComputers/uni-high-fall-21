@@ -1,0 +1,503 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\usetheme{Madrid}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  belowskip=-0.5em,
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\lstset{style=python}
+
+\AtBeginSection[]{
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
+}
+
+
+\setbeamercolor{palette primary}{bg=UIUCorange,fg=white}
+\setbeamercolor{palette secondary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=UIUCblue,fg=white}
+\setbeamercolor{structure}{fg=UIUCorange} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=UIUCblue} % TOC sections
+
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+
+%Information to be included in the title page:
+\title{\textbf{Topic 4: Functions}}
+\author{\textbf{David H Smith IV}}
+\institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
+\date{\textbf{Fri, Sep 7 2021}}
+
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
+\addtobeamertemplate{title page}{
+  \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
+    \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
+  \end{textblock*} 
+}{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{String Formatting}
+
+\begin{frame}[fragile]
+  \frametitle{Poll Question: String Formatting}
+  What is the value of x after the following code executes:
+  \begin{lstlisting}[language=Python, autogobble] 
+  x = "{1} {0} {1}".format("S", "O", "Y")
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|"S O Y"|
+    \item \lstinline|"SOY"|
+    \item \lstinline|"O S O"| %correct
+    \item \lstinline|"Y O Y"|
+    \item \lstinline|"OSO"|
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Poll Question: String Formatting}
+  What is the value of x after the following code executes:
+  \begin{lstlisting}[language=Python, autogobble] 
+  import math
+  x = "{1:.3f} {0:.2f} {2:.4f}".format(math.pi, math.e, math.tau)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item SyntaxError
+    \item \lstinline|"2.718 3.14 6.2832"|
+    \item \lstinline|"2.71 3.1 6.283"| 
+    \item \lstinline|"3.142 2.72 6.2832"|
+  \end{enumerate}
+\end{frame}
+
+
+\section{Function Overview}
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Questions: Making Functions}
+  What bugs are in the following code?
+  \begin{lstlisting}[language=Python, autogobble]
+  def add_one(x):
+  return x + 1
+
+  x = 2
+  x = x + add_one(x)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item No bugs. The code is fine.
+    \item The function body is not indented.
+    \item We use \lstinline|x| as both a parameter and a variable, but we are not allowed to do that.
+    \item B and C
+  \end{enumerate}
+\end{frame}
+
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \centering
+  \begin{enumerate}[A]
+    \item In Python indentation is both \textbf{syntactic} and \textbf{semantic}.
+    \item These three programs are all different even through they have the same text
+  \end{enumerate}
+  \vfill
+  \begin{minipage}{0.29\textwidth}
+    \centering
+    \begin{lstlisting}[language=Python, autogobble]
+    def test():
+    print('first')
+    print('second')
+
+    test()
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.29\textwidth}
+    \centering
+    \begin{lstlisting}[language=Python, autogobble]
+    def test():
+      print('first')
+    print('second')
+
+    test()
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.29\textwidth}
+    \centering
+    \begin{lstlisting}[language=Python, autogobble]
+    def test():
+      print('first')
+      print('second')
+
+    test()
+    \end{lstlisting}
+  \end{minipage}
+\end{frame}
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Calling Functions}
+  What is the result of running the following code?
+  \begin{lstlisting}[language=Python, autogobble]
+  def test():
+  print('first')
+  print('second')
+  test()
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item SyntaxError
+    \item \fbox{\parbox{0.1\textwidth}{\lstinline|first|}}
+    \item \fbox{\parbox{0.1\textwidth}{\lstinline|first|\\\lstinline|second|}}
+    \item IndentationError
+    \item \fbox{\parbox{0.1\textwidth}{\lstinline|second|\\\lstinline|first|}} %correct
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Calling Functions}
+  What is the result of running the following code?
+  \begin{lstlisting}[language=Python, autogobble]
+  def test():
+    print('first')
+  print('second')
+  test()
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item SyntaxError
+    \item \fbox{\parbox{0.1\textwidth}{\lstinline|first|}}
+    \item \fbox{\parbox{0.1\textwidth}{\lstinline|first|\\\lstinline|second|}}
+    \item \fbox{\parbox{0.15\textwidth}{\lstinline|\ \ \ \ first|\\\lstinline|second|}}
+    \item \fbox{\parbox{0.1\textwidth}{\lstinline|second|\\\lstinline|first|}} %correct
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Calling Functions}
+  What is the result of running the following code?
+  \begin{lstlisting}[language=Python, autogobble]
+  def test():
+    print('first')
+    print('second')
+  test()
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item SyntaxError
+    \item \fbox{\parbox{0.1\textwidth}{\lstinline|first|}}
+    \item \fbox{\parbox{0.1\textwidth}{\lstinline|first|\\\lstinline|second|}}
+    \item \fbox{\parbox{0.15\textwidth}{\lstinline|\ \ \ \ first|\\\lstinline|second|}}
+    \item \fbox{\parbox{0.1\textwidth}{\lstinline|second|\\\lstinline|first|}} %correct
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Function Definition Template}
+  \begin{lstlisting}[language=Python, autogobble]
+  def <function_name>(parameter1, parameter2, ...):
+    <function_body>
+    ...
+    ...
+    return (optional)
+  \end{lstlisting}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Function Definitions vs Function Calls}
+  \textbf{Function Definition:}
+  \begin{lstlisting}[language=Python, autogobble]
+  def product_of_three(num1, num2, num3):
+    product = num1 * num2 * num3
+    return product
+  \end{lstlisting}
+  \pause
+  \vfill
+  \textbf{Function Definition:}
+  \begin{lstlisting}[language=Python, autogobble]
+  foo = product_of_three(1, 2, 3) # x = 6
+  bar = product_of_three(1, 5, 3) # x = 15
+  baz = product_of_three(2, 5, 3) # x = 30
+  qux = product_of_three(2, 5, 5) # x = 50
+  \end{lstlisting}
+\end{frame}
+
+\section{Function Polls}
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function Parameters}
+  What is x equal to?
+  \begin{lstlisting}[language=Python, autogobble]
+  def do_thing(v1, v2, v3):
+    a = v2
+    b = v1 + v3
+    print(a * b)
+
+  x = do_thing(3, 2, 1)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item None
+    \item 6
+    \item 8 
+    \item 9
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function Scope}
+  What value is printed?
+  \begin{lstlisting}[language=Python, autogobble]
+  def do_thing(var1):
+    var1 = 2
+
+  var1 = 1
+  do_thing(var1)
+  print(var1)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 0
+    \item 1 
+    \item 2
+    \item SyntaxError
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function Scope}
+  What value is printed?
+  \begin{lstlisting}[language=Python, autogobble]
+  def do_thing(var1):
+    var1.append(4)
+
+  var1 = [1, 2, 3]
+  do_thing(var1)
+  print(len(var1))
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 0
+    \item 3
+    \item 4 %correct
+    \item SyntaxError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Questions: Function Scope}
+  How many values does the following function return?
+  \begin{lstlisting}[language=Python, autogobble]
+  def do_thing(var1):
+    var1 = [1, 2, 3, 4]
+
+  var1 = [1, 2, 3]
+  do_thing(var1)
+  print(len(var1))
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 0
+    \item 3 %correct
+    \item 4
+    \item TypeError
+    \item SyntaxError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Questions: Making Functions}
+  \begin{minipage}{0.29\textwidth}
+    \centering
+    \begin{lstlisting}[language=Python, autogobble]
+    def f1():
+      return 5
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.29\textwidth}
+    \centering
+    \begin{lstlisting}[language=Python, autogobble]
+    def f2():
+      print(5)
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.29\textwidth}
+    \centering
+    \begin{lstlisting}[language=Python, autogobble]
+    def f3():
+      return print(5)
+    \end{lstlisting}
+  \end{minipage}
+  \vfill
+  Considering the previous functions, which of the following assigns \lstinline|x| to 5?
+  \centering
+  \begin{enumerate}[A]
+    \item \lstinline|x = f1()|
+    \item \lstinline|x = f2()|
+    \item \lstinline|x = f3()|
+    \item All of the above
+    \item None of the above
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Questions: Nesting Functions}
+  Given the following function, what value is returned by \lstinline|f(f(2))|?
+  \begin{lstlisting}[language=Python, autogobble]
+  def f(x):
+    return 3 * x
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 3
+    \item 6
+    \item 9
+    \item 12
+    \item 18
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Return Count} 
+  How many values does the following function return?
+  \begin{lstlisting}[language=Python, autogobble]
+  def return_stuff():
+    return "hello"
+    return "world"
+    return "foo"
+    return "bar"
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 1
+    \item 2
+    \item 3
+    \item 4
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}
+  \frametitle{Key Takeaways}
+  Most important takeaways from today's lecture:
+  \begin{enumerate}[A]
+    \item \lstinline|print()| is not the same as \lstinline|return|
+      \begin{enumerate}[A]
+        \item  \lstinline|print()| \textrightarrow Prints to the monitor. It does not give you a value you can work with.
+        \item  \lstinline|return| \textrightarrow Isn't used to print things to the screen. It's used to give data back after a function has finished doing stuff.
+      \end{enumerate}
+    \item A function only returns \textit{\textbf{once}}. No matter how many return statements you put in the program the only one that matters is the first one that's reached.
+  \end{enumerate}
+\end{frame}
+
+\section{Review}
+
+\section{Reminders}
+%
+% Slide 1
+%
+\begin{frame}
+  \frametitle{Weekly Reminders}
+  \begin{enumerate}[A]
+    \item No reading/post-reading due tomorow
+    \item Homework 4 due tommorow
+    \item Use the extra time to study
+  \end{enumerate}
+\end{frame}
+
+
+\end{document}
