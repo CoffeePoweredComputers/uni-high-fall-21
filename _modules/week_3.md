@@ -1,5 +1,5 @@
 ---
-navtitle: ▶ Week 3 - Introduction to Types
+navtitle: Week 3 - Introduction to Types
 n: "d"
 ---
 
@@ -25,6 +25,7 @@ Sep 01
 
 Sep 02
 : **Lecture**{: .label .label-light-blue} Introduction to Types (Part 2)
+	: [Slides]({{ site.baseurl }}{% link assets/slides/lecture-3p2/main.pdf %})
 : **zyBooks**{: .label .label-orange} [Topic 4 - Participation](#)
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 3 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312033), [Post-reading 4 (Part 1)](#)

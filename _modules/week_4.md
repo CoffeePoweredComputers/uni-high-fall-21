@@ -1,5 +1,5 @@
 ---
-navtitle: Week 4 - Introduction to Functions
+navtitle: ▶  Week 4 - Introduction to Functions
 n: "e"
 ---
 
@@ -8,6 +8,7 @@ Sep 06
 
 Sep 07
 : **Lecture**{: .label .label-light-blue} Functions
+	: [Slides]({{ site.baseurl }}{% link assets/slides/lecture-4p1/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 4 - Challenge
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 4](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312034)
