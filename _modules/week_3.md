@@ -28,13 +28,13 @@ Sep 02
 	: [Slides]({{ site.baseurl }}{% link assets/slides/lecture-3p2/main.pdf %})
 : **zyBooks**{: .label .label-orange} [Topic 4 - Participation](#)
     : **Assigned**{: .label .label-green}
-: **PrairieLearn**{: .label .label-dark-blue} [Homework 3 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312033), [Post-reading 4 (Part 1)](#)
+: **PrairieLearn**{: .label .label-dark-blue} [Homework 3 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312033), [Post-reading 4](#)
     : **Assigned**{: .label .label-green}
 
 Sep 03
 : **zyBooks**{: .label .label-orange} Topic 4 - Participation
     : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} Post-reading 4 (Part 1), Homework 3 (Part 2)
+: **PrairieLearn**{: .label .label-dark-blue} Post-reading 4, Homework 3 (Part 2)
     : **Due**{: .label .label-red}
 
 Sep 04
