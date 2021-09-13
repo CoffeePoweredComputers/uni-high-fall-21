@@ -1,10 +1,11 @@
 ---
-navtitle: Week 5 - Booleans, Conditional Execution, and Branching
+navtitle: ▶ Week 5 - Booleans, Conditional Execution, and Branching
 n: "f"
 ---
 
 Sep 13
-: **Lab**{: .label .label-purp} [](#)
+: **Lab 2**{: .label .label-purp}
+	: [Assignment Invite](https://classroom.github.com/a/I049Ldfq), [Walkthrough Video](https://mediaspace.illinois.edu/media/t/1_dfqi29tb)
 
 Sep 14
 : **Lecture**{: .label .label-light-blue} Topic 5(Part 1)
