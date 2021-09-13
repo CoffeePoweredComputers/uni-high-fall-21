@@ -41,4 +41,5 @@ Sep 18
 Sep 19
 : **zyBooks**{: .label .label-orange} Topic 5 - Challenge Activities
     : **Due**{: .label .label-red}
-
+: **Lab 2**{: .label .label-purp}
+    : **Due**{: .label .label-red}
