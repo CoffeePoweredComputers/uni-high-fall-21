@@ -83,16 +83,6 @@
 
 \frame{\titlepage}
 
-%
-% Slide 1
-%
-\begin{frame}
-	\frametitle{Weekly Reminders}
-	\begin{enumerate}[A]
-		\item 
-	\end{enumerate}
-\end{frame}
-
 \section{Truth Tables}
 
 %
@@ -108,10 +98,10 @@
 	\begin{table}[]
 		\begin{tabular}{|ccc|ccc|cc|}
 			{\color[HTML]{CD9934} \textbf{A}} & {\color[HTML]{3531FF} \textbf{B}} & \textbf{A OR B} & {\color[HTML]{CD9934} \textbf{A}} & {\color[HTML]{3531FF} \textbf{B}} & \textbf{A AND B} & {\color[HTML]{CD9934} \textbf{A}} & \textbf{NOT A} \\ \hline
-			{\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} T}          & T               & {\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} T}          & T                & {\color[HTML]{CD9934} T}          & T              \\
-			{\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} F}          & F               & {\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} F}          & F                & {\color[HTML]{CD9934} F}          & T              \\
-			{\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} T}          & T               & {\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} T}          & T                & {\color[HTML]{CD9934} T}          & F              \\
-			{\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} F}          & F               & {\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} F}          & F                & {\color[HTML]{CD9934} F}          & F             
+			{\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} T}          & T               & {\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} T}          & T                & {\color[HTML]{CD9934} T}          & F              \\
+			{\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} F}          & T               & {\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} F}          & F                & {\color[HTML]{CD9934} F}          & T              \\
+			{\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} T}          & T               & {\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} T}          & F                & {\color[HTML]{CD9934} T}          & F              \\
+			{\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} F}          & F               & {\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} F}          & F                & {\color[HTML]{CD9934} F}          & T             
 		\end{tabular}
 	\end{table}
 \end{frame}
@@ -145,15 +135,15 @@
 	% Please add the following required packages to your document preamble:
 	% \usepackage[table,xcdraw]{xcolor}
 	% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-	\begin{table}[]
-		\begin{tabular}{|cc|c|}
-			{\color[HTML]{CD9934} \textbf{A}} & {\color[HTML]{3531FF} \textbf{B}} & \textbf{(A OR B) AND (NOT B)} \\ \hline
-			{\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} T}          & T                             \\
-			{\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} F}          & F                             \\
-			{\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} T}          & T                             \\
-			{\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} F}          & F                            
-		\end{tabular}
-	\end{table}
+  \begin{table}[]
+    \begin{tabular}{|cc|c|c|c|}
+      {\color[HTML]{CD9934} \textbf{A}} & {\color[HTML]{3531FF} \textbf{B}} & \textbf{A OR B} & \textbf{A AND B} & \textbf{NOT A} \\ \hline
+      {\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} T}          & T               & T                & T              \\
+      {\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} F}          & F               & F                & T              \\
+      {\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} T}          & T               & T                & F              \\
+      {\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} F}          & F               & F                & F             
+    \end{tabular}
+  \end{table}
 \end{frame}
 
 
@@ -261,7 +251,7 @@
 	\frametitle{Poll Question: If Statements}
 	What does this code print?
 	\begin{lstlisting}[language=Python, autogobble]
-	x = 1
+	x = 10
 	if x < 7:
 		print(x) 
 	print(7)
@@ -292,7 +282,7 @@
 		\item Nothing
 		\item 17
 		\item 30
-		\item SyntaxError
+		\item NameError
 	\end{enumerate}
 \end{frame}
 
@@ -350,10 +340,10 @@
 	\vfill
 	\begin{minipage}{0.32\textwidth}
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
-		def print_grade(percent):
-			if grade >= 90:
+		def print_percent(percent):
+			if percent >= 90:
 				print("You got an A!")
-			elif grade >= 80:
+			elif percent >= 80:
 				print("You got a B!")
 			else:
 				print("Other")
@@ -361,10 +351,10 @@
 	\end{minipage}
 	\begin{minipage}{0.32\textwidth}
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
-		def print_grade(percent):
-			if grade >= 90:
+		def print_percent(percent):
+			if percent >= 90:
 				print("You got an A!")
-			if grade >= 80:
+			if percent >= 80:
 				print("You got a B!")
 			else:
 				print("Other")
@@ -372,12 +362,12 @@
 	\end{minipage}
 	\begin{minipage}{0.32\textwidth}
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
-		def print_grade(percent):
-			if grade >= 90:
+		def print_percent(percent):
+			if percent >= 90:
 				print("You got an A!")
-			if grade >= 80:
+			if percent >= 80:
 				print("You got a B!")
-			if grade < 80:
+			if percent < 80:
 				print("Other")
 		\end{lstlisting}
 	\end{minipage}
@@ -545,5 +535,22 @@
 	\end{lstlisting}
 	\vfill
 \end{frame}
+
+%
+% Slide 1
+%
+\begin{frame}
+	\frametitle{Weekly Reminders}
+	\begin{enumerate}[A]
+		\item Lab is due Sunday:
+      \begin{itemize}
+        \item 
+        \item
+      \end{itemize}
+    \item Usual mix of Homework 5p1, Post-Reading 5p2, zyBooks Participation 5p2
+	\end{enumerate}
+\end{frame}
+
+
 
 \end{document}
