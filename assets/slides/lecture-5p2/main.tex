@@ -172,7 +172,7 @@
       \item 2
       \item 3
       \item 1 and 2
-      \item All of the above
+      \item Another combo...
     \end{enumerate}
 	\end{minipage}
 \end{frame}
@@ -256,12 +256,12 @@
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
     y not in x
 		\end{lstlisting}
-    \vspace{1cm}
+    \vspace{.5cm}
     2)
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
     not (x in y)
 		\end{lstlisting}
-    \vspace{1cm}
+    \vspace{.5cm}
     3)
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
     x not in y
@@ -276,6 +276,7 @@
       \item All of the above
     \end{enumerate}
 	\end{minipage}
+  \vfill
   \pause
   With \lstinline|in|, position of operands matters. With \lstinline|is| and \lstinline|==|, it does not.
 \end{frame}
@@ -379,13 +380,97 @@
   What is I replace 5 with 1000?
 \end{frame}
 
-\section{Poll Questions: Correct Functions}
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  What is the result of the following code?
+  \begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+  x = None
+  y = None
+  print(y is x)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item True
+    \item False
+    \item SyntaxError
+    \item TypeError
+  \end{enumerate}
+\end{frame}
 
 %
 % Slide 2
 %
 \begin{frame}[fragile]
 	\frametitle{Poll Question: Constructing Conditionals}
+  What is the result of the following code?
+  \begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+  x = {"baz" : 2, "bar": 3}
+  y = {"foo": 1}
+  z = y
+  y.update(x)
+  print(y is z)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item True
+    \item False
+    \item SyntaxError
+    \item TypeError
+  \end{enumerate}
+\end{frame}
+
+\section{Poll Questions: Correct Functions}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Conditionals in Functions}
+  Which of the following functions will ask the user for a sentence and return that sentence only if it is of even length?
+	\vfill
+	\begin{minipage}{0.32\textwidth}
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def get_even_sentence():
+      x = input("Enter a string with an even number of letters: ")
+      if x % 2 == 0:
+        return x
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.32\textwidth}
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def get_even_sentence():
+      x = input("Enter a string with an even number of letters: ")
+      if len(x) % 2 == 0:
+        return x
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.32\textwidth}
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def get_even_sentence():
+      x = input("Enter a string with an even number of letters: ")
+      if len(x) % 2 is 0:
+        return x
+		\end{lstlisting}
+	\end{minipage}
+	\vfill
+	\begin{enumerate}[A]
+    \item 1
+    \item 2
+    \item 3
+    \item 2 and 3
+    \item All of the above
+	\end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Conditionals in Functions}
+  Which fuction(s) return true if both elem1 and elem2 are in some\_list?
 	\begin{minipage}{0.69\textwidth}
     1)
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
@@ -420,27 +505,27 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-	\frametitle{Poll Question: Constructing Conditionals}
-  Which of the functions will correctly execute the task?
+	\frametitle{Poll Question: Conditionals in Functions}
+  Which function will return the kth word in a list of words given any list of strings only if that kth word contains an even number of letters?
 	\vfill
 	\begin{minipage}{0.7\textwidth}
     1)
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
-    def get_kth_word_if_even(k, word):
-      if len(word) > k:
-        if len(word[k]) % 2 == 0:
+    def get_kth_word_if_even_len(k, words):
+      if len(words) > k:
+        if len(words[k]) % 2 == 0:
           return words[k]
 		\end{lstlisting}
     2)
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
-    def get_kth_word_if_even(k, word):
-      if len(word[k]) % 2 == 0 and len(word) > k:
+    def get_kth_word_if_even_len(k, words):
+      if len(words[k]) % 2 == 0 and len(words) > k:
           return words[k]
 		\end{lstlisting}
     3)
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
-    def get_kth_word_if_even(k, word):
-      if len(word) > k and len(word[k]) % 2 == 0:
+    def get_kth_word_if_even_len(k, words):
+      if len(words) > k and len(words[k]) % 2 == 0:
           return words[k]
 		\end{lstlisting}
 	\end{minipage}
@@ -450,7 +535,7 @@
       \item 2
       \item 3
       \item 1 and 2
-      \item All of the above
+      \item Another option
     \end{enumerate}
 	\end{minipage}
 \end{frame}
@@ -459,7 +544,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-	\frametitle{Poll Question: Constructing Conditionals}
+	\frametitle{Poll Question: Conditionals in Functions}
   Which of the functions will correctly execute the task?
 	\begin{minipage}{0.7\textwidth}
     1)
@@ -475,7 +560,7 @@
     3)
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
     def is_one_through_five(x):
-      return x == 1 or 2 or 3 or 4 or 5
+      return x == (1 or 2 or 3 or 4 or 5)
 		\end{lstlisting}
 	\end{minipage}
   \begin{minipage}{0.29\textwidth}
@@ -490,34 +575,6 @@
 \end{frame}
 
 
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-	\frametitle{Poll Question: Constructing Conditionals}
-  Which of the functions will correctly execute the task?
-	\vfill
-	\begin{minipage}{0.32\textwidth}
-		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
-		\end{lstlisting}
-	\end{minipage}
-	\begin{minipage}{0.32\textwidth}
-		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
-		\end{lstlisting}
-	\end{minipage}
-	\begin{minipage}{0.32\textwidth}
-		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
-		\end{lstlisting}
-	\end{minipage}
-	\vfill
-	\begin{enumerate}[A]
-    \item 1
-    \item 2
-    \item 3
-    \item 1 and 2
-    \item All of the above
-	\end{enumerate}
-\end{frame}
 
 
 %
@@ -622,6 +679,25 @@
     \item SyntaxError
     \item "Odd"
     \item "Even"
+    \item This code contains another error
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Questions: Conditional Expressions}
+  What is the the resulting value of \lstinline|x|?
+  \begin{lstlisting}[language=Python, autogobble]
+  y = 1.0
+  x = "It's a float!" if type(y) == float
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item SyntaxError
+    \item "It's a float!"
+    \item None
     \item This code contains another error
   \end{enumerate}
 \end{frame}
