@@ -25,6 +25,7 @@ Sep 15
 
 Sep 16
 : **Lecture**{: .label .label-light-blue} Topic 5 (Part 2)
+	: [Slides]({{ site.baseurl }}{% link assets/slides/lecture-5p2/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 6 (Part 1) - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 5 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312036), [Post-reading 6 (Part 1)](#)
