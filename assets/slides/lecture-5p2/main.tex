@@ -1,0 +1,631 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\usetheme{Madrid}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  belowskip=-0.5em,
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\lstset{style=python}
+
+\AtBeginSection[]{
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
+}
+
+
+\setbeamercolor{palette primary}{bg=UIUCorange,fg=white}
+\setbeamercolor{palette secondary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=UIUCblue,fg=white}
+\setbeamercolor{structure}{fg=UIUCorange} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=UIUCblue} % TOC sections
+
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+
+%Information to be included in the title page:
+\title{\textbf{Topic 5: Conditionals}}
+\author{\textbf{David H Smith IV}}
+\institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
+\date{\textbf{Mon, July 05 2021}}
+
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
+\addtobeamertemplate{title page}{
+  \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
+    \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
+  \end{textblock*} 
+}{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Truth Table to Expressions}
+	\vfill
+	The As and Bs in the truth tables correspond to \textit{the result of boolean expressions}.
+	\vfill
+	\begin{minipage}{0.4\textwidth}
+		\begin{lstlisting}[language=Python,autogobble]
+	# Get some variables 
+	x = int(input())
+	y = int(input())
+
+	# Construct the expr
+  # and assign to A or B
+	A = (x == 3)
+	B = (y > 5)
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.59\textwidth}
+		\begin{table}[]
+			\begin{tabular}{|cc|c|c|c|}
+				{\color[HTML]{CD9934} \textbf{A}} & {\color[HTML]{3531FF} \textbf{B}} & \textbf{A OR B} & \textbf{A AND B} & \textbf{NOT A} \\ \hline
+				{\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} T}          & T               & T                & F              \\
+				{\color[HTML]{CD9934} T}          & {\color[HTML]{3531FF} F}          & T               & F                & T              \\
+				{\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} T}          & T               & F                & F              \\
+				{\color[HTML]{CD9934} F}          & {\color[HTML]{3531FF} F}          & F               & F                & T             
+			\end{tabular}
+		\end{table}
+	\end{minipage}
+	\vfill
+	\begin{itemize}
+		\item You can have \textbf{as many operands (e.g., A, B, C, $\cdots$) as you like}.
+		\item The truth tables get BIG as you have to consider more permutations.
+	\end{itemize}
+\end{frame}
+
+\section{\lstinline|is| vs \lstinline|==|}
+
+%
+% Slide 1
+%
+\begin{frame}[fragile]
+	\frametitle{Muddiest Points: \lstinline|is| vs \lstinline|==|}
+  \begin{itemize}
+    \item \lstinline|x is y| translates to \lstinline|id(x) == id(y)|
+    \begin{itemize}
+      \item \lstinline|==| is for comparing literal values
+      \item \lstinline|is| is for comparing to see \textbf{two variables are referencing the same object}.
+    \end{itemize}
+    \item And there's a caveat\ldots 
+    \begin{itemize}
+      \item Python pre-instantiate the first few numbers. This isn't true for large numbers.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\section{Poll Questions: Conditional Syntax Check}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  Which of the following will correctly check if a number (int or float) is between 1 and 10 inclusive.
+	\begin{minipage}{0.69\textwidth}
+    1)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    1 <= x <= 10
+		\end{lstlisting}
+    \vspace{1cm}
+    2)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    1 =< x =< 10
+		\end{lstlisting}
+    \vspace{1cm}
+    3)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    x >= 1 and x <= 10
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item 1
+      \item 2
+      \item 3
+      \item 1 and 2
+      \item All of the above
+    \end{enumerate}
+	\end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  Which of the following evaluates to \lstinline|True| if a set contains an even number of elements?\\ \hfill
+
+	\begin{minipage}{0.69\textwidth}
+    1)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    0 == len(set1) % 2
+		\end{lstlisting}
+    \vspace{1cm}
+    2)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    len(set1) % 2 == 0
+		\end{lstlisting}
+    \vspace{1cm}
+    3)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    not (len(set1) % 2)
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item 1
+      \item 2
+      \item 3
+      \item 1 and 2
+      \item All of the above
+    \end{enumerate}
+	\end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  Which of the following evaluates to \lstinline|True| if x is greater than 10?
+	\begin{minipage}{0.69\textwidth}
+    1)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    x not <= 10 
+		\end{lstlisting}
+    \vspace{1cm}
+    2)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    not x <= 10
+		\end{lstlisting}
+    \vspace{1cm}
+    3)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    x > 10
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item 1
+      \item 2
+      \item 3
+      \item 2 and 3
+      \item 1 and 3
+    \end{enumerate}
+	\end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  Which of the following will correctly check to make sure a list \lstinline|x| does not contain a variable \lstinline|y|.
+
+	\begin{minipage}{0.69\textwidth}
+    1)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    y not in x
+		\end{lstlisting}
+    \vspace{1cm}
+    2)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    not (x in y)
+		\end{lstlisting}
+    \vspace{1cm}
+    3)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    x not in y
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item 1
+      \item 2
+      \item 3
+      \item 1 and 2
+      \item All of the above
+    \end{enumerate}
+	\end{minipage}
+  \pause
+  With \lstinline|in|, position of operands matters. With \lstinline|is| and \lstinline|==|, it does not.
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  Which of the following will check if a value \lstinline|y| is in a dictionary \lstinline|x|?
+	\begin{minipage}{0.69\textwidth}
+    1)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    y in x
+		\end{lstlisting}
+    \vspace{1cm}
+    2)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    y == x
+		\end{lstlisting}
+    \vspace{1cm}
+    3)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    y is x
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item 1
+      \item 2
+      \item 3
+      \item All of the above
+      \item None of the above
+    \end{enumerate}
+	\end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  Does this segment of code evaluate to True or False in the end?
+  \begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+  y = list("hello")
+  x = y
+  y.append("!")
+  print(y is x)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item True
+    \item False
+    \item SyntaxError
+    \item TypeError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  Does this segment of code evaluate to True or False in the end?
+  \begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+  y = 5
+  x = y
+  x = x + 1
+  print(y is x)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item True
+    \item False
+    \item SyntaxError
+    \item TypeError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  What is the result of the following code?
+  \begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+  x = 5
+  y = 5
+  x += 1
+  y += 1
+  print(x is y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item True
+    \item False
+    \item SyntaxError
+    \item TypeError
+  \end{enumerate}
+  \pause
+  What is I replace 5 with 1000?
+\end{frame}
+
+\section{Poll Questions: Correct Functions}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+	\begin{minipage}{0.69\textwidth}
+    1)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def are_in_list(elem1, elem2, some_list):
+      return elem1 and elem2 in some_list
+		\end{lstlisting}
+    \vspace{1cm}
+    2)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def are_in_list(elem1, elem2, some_list):
+      return (elem1 in some_list) and (elem2 in some_list)
+		\end{lstlisting}
+    \vspace{1cm}
+    3)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def are_in_list(elem1, elem2, some_list):
+      return (elem1 in some_list) or (elem2 in some_list)
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item 1
+      \item 2
+      \item 3
+      \item 2 and 3
+      \item All of the above
+    \end{enumerate}
+	\end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  Which of the functions will correctly execute the task?
+	\vfill
+	\begin{minipage}{0.7\textwidth}
+    1)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def get_kth_word_if_even(k, word):
+      if len(word) > k:
+        if len(word[k]) % 2 == 0:
+          return words[k]
+		\end{lstlisting}
+    2)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def get_kth_word_if_even(k, word):
+      if len(word[k]) % 2 == 0 and len(word) > k:
+          return words[k]
+		\end{lstlisting}
+    3)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def get_kth_word_if_even(k, word):
+      if len(word) > k and len(word[k]) % 2 == 0:
+          return words[k]
+		\end{lstlisting}
+	\end{minipage}
+  \begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item 1
+      \item 2
+      \item 3
+      \item 1 and 2
+      \item All of the above
+    \end{enumerate}
+	\end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  Which of the functions will correctly execute the task?
+	\begin{minipage}{0.7\textwidth}
+    1)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def is_one_through_five(x):
+      return 1 <= x <=5
+		\end{lstlisting}
+    2)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def is_one_through_five(x):
+      return x in [1, 2, 3, 4, 5]
+		\end{lstlisting}
+    3)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def is_one_through_five(x):
+      return x == 1 or 2 or 3 or 4 or 5
+		\end{lstlisting}
+	\end{minipage}
+  \begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item 1
+      \item 2
+      \item 3
+      \item 1 and 2
+      \item All of the above
+    \end{enumerate}
+	\end{minipage}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  Which of the functions will correctly execute the task?
+	\vfill
+	\begin{minipage}{0.32\textwidth}
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.32\textwidth}
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.32\textwidth}
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+		\end{lstlisting}
+	\end{minipage}
+	\vfill
+	\begin{enumerate}[A]
+    \item 1
+    \item 2
+    \item 3
+    \item 1 and 2
+    \item All of the above
+	\end{enumerate}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Nesting}
+  What does the code on the right print?
+  \vfill
+  \begin{minipage}{0.49\textwidth}
+    \begin{enumerate}[A]
+      \item 2
+      \item 5
+      \item 8
+      \item SyntaxError
+    \end{enumerate}
+  \end{minipage}
+  \begin{minipage}{0.49\textwidth}
+    \begin{lstlisting}[language=Python, autogobble]
+    x = 2
+    if x < 8:
+      if x > 5:
+        print(8)
+      else:
+        print(5)
+    else:
+      print(2)
+    \end{lstlisting}
+  \end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\section{Code Blocks}
+\begin{frame}[fragile]
+  \frametitle{Code Blocks}
+
+  \begin{itemize}
+    \item Fancy term for defining a unit of execution.
+  \end{itemize}
+  \begin{lstlisting}[language=Python, autogobble]
+  model = input('Enter car model: ')
+  year = int(input('Enter year of car manufacture: '))
+
+  antique = False
+  domestic = False
+
+  if year < 1970:
+    antique = True
+
+  if model in ['Ford', 'Chevrolet', 'Dodge']:
+    domestic = True
+
+  if antique:
+    if domestic:
+      print('My own model-T still runs like a charm...')
+  \end{lstlisting}
+\end{frame}
+
+%
+% Slide 2
+%
+\section{Conditional Expressions}
+\begin{frame}[fragile]
+  \frametitle{Conditional Expressions vs if-else}
+
+  \begin{itemize}
+    \item Follows this template: \lstinline|x if <cond> else y|
+    \item Useful for item assignment where a condition must be met in order to avoid errors
+    \item More concise
+  \end{itemize}
+  \vfill
+  \begin{minipage}{0.49\textwidth}
+    \begin{lstlisting}[language=Python, autogobble]
+    x = input()
+    if len(x) > 9:
+      y = x[9]
+    else:
+      y = None
+    \end{lstlisting}
+  \end{minipage}
+  \begin{minipage}{0.49\textwidth}
+    \begin{lstlisting}[language=Python, autogobble]
+    x = input()
+    y = x[9] if len(x) > 9 else None
+    \end{lstlisting}
+  \end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Questions: Conditional Expressions}
+  What is the value of \lstinline|x| after this code runs and the user attempts to enter the value 10?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = "Odd" if int(input("Enter a number")) % 2 != 0 else "Even"
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item SyntaxError
+    \item "Odd"
+    \item "Even"
+    \item This code contains another error
+  \end{enumerate}
+\end{frame}
+
+
+
+\end{document}
