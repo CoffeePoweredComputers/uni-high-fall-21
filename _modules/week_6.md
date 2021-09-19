@@ -1,10 +1,12 @@
 ---
-navtitle: Week 6 - Loops
+navtitle: ▶ Week 6 - Loops
 n: "g"
 ---
 
 Sep 20
-: **Lab**{: .label .label-purp} [](#) Chromakey 
+: **Lab**{: .label .label-purp} Chromakey 
+    : [Assignment Invite](https://classroom.github.com/a/VkFa3hrl), [Walkthrough Video](https://mediaspace.illinois.edu/media/t/1_0ph3b1xk)
+
 
 Sep 21
 : **Lecture**{: .label .label-light-blue} Loops (Part 1)
