@@ -1,0 +1,616 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\usetheme{Madrid}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  belowskip=-0.5em,
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\lstset{style=python}
+
+\AtBeginSection[]{
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
+}
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+
+\setbeamercolor{palette primary}{bg=UIUCorange,fg=white}
+\setbeamercolor{palette secondary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=UIUCblue,fg=white}
+\setbeamercolor{structure}{fg=UIUCorange} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=UIUCblue} % TOC sections
+
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+
+%Information to be included in the title page:
+\title{\textbf{Topic 6: Loops}}
+\author{\textbf{David H Smith IV}}
+\institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
+\date{\textbf{Sat, Sep 18 2021}}
+
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
+\addtobeamertemplate{title page}{
+  \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
+    \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
+  \end{textblock*} 
+}{}
+
+\begin{document}
+
+\section{Updates}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Course Updates}
+  \begin{enumerate}[A]
+    \item Homework (PrairieLearn) will now have a 24 hours grace period with a 20\% penalty for late work.
+    \item Policy is not retroactive.
+  \end{enumerate}
+\end{frame}
+
+
+
+\frame{\titlepage}
+
+\section{The \lstinline|range()| Function}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Range Function Variations}
+  The following are all variations of the range function:
+  \begin{enumerate}[A]
+    \item \lstinline|range(end)|
+    \item \lstinline|range(start, end)|
+    \item \lstinline|range(start, end, increment)|
+  \end{enumerate}
+  \vfill
+  \textbf{Note: } $start \leq x < end$ for all \lstinline|x| in the range.
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Range Function}
+  What is printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = range(1, 5)
+  print(x)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|range(1, 5)|
+    \item \lstinline|[1, 2, 3, 4]|
+    \item \lstinline|1, 2, 3, 4|
+    \item \lstinline|1, 2, 3, 4, 5|
+    \item \lstinline|[1, 2, 3, 4, 5]|
+  \end{enumerate}
+  \vfill \pause
+  Why? What does the output of \lstinline|type(x)| tell us?
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Range Function}
+  What is printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = range(1, 5)
+  y = list(x)
+  print(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|[1, 2, 3, 4]|
+    \item \lstinline|[1, 2, 3, 4, 5]|
+    \item TypeError
+    \item ValueError
+  \end{enumerate}
+  \vfill \pause
+  Why? What does the output of \lstinline|type(x)| tell us?
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Range Function}
+  What is printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = range(5)
+  y = list(x)
+  print(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|[1, 2, 3, 4]|
+    \item \lstinline|[1, 2, 3, 4, 5]|
+    \item \lstinline|[0, 1, 2, 3, 4]|
+    \item \lstinline|[0, 1, 2, 3, 4, 5]|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Range Function}
+  What is printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = range(0, 11, 2)
+  y = list(x)
+  print(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item Some error
+    \item \lstinline|[1, 3, 5, 7, 9]|
+    \item \lstinline|[1, 3, 5, 7, 11]|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Range Function}
+  What is printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = range(0, 11, 2)
+  y = list(x)
+  print(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item Some error
+    \item \lstinline|[1, 3, 5, 7, 9]|
+    \item \lstinline|[1, 3, 5, 7, 11]|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Range Function}
+  What is printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = range(5, 2)
+  y = list(x)
+  print(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item Error
+    \item \lstinline|[]|
+    \item \lstinline|[5, 4, 3]|
+    \item \lstinline|[4, 3, 2]|
+    \item \lstinline|[5, 4, 3, 2]|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Range Function}
+  What is printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = range(5, 2, -1)
+  y = list(x)
+  print(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item Error
+    \item \lstinline|[]|
+    \item \lstinline|[5, 4, 3]|
+    \item \lstinline|[4, 3, 2]|
+    \item \lstinline|[5, 4, 3, 2]|
+  \end{enumerate}
+\end{frame}
+
+\section{For Loops}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: For Loops}
+  How many lines are printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  course_times = {'CS 105': 'F9-11', "CS 125": "MWF11-12"}
+  for course in course_times:
+    print(course, 'meets', course_times(course))
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 0
+    \item 2
+    \item 4
+    \item SyntaxError
+  \end{enumerate}
+  \pause
+  What do we need to do to fix it?
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: For Loop}
+  How many lines will be printed?
+  \begin{lstlisting}[language=Python, autogobble]
+  things = [22, [33, 44], 55, [66]]
+  for thing in things:
+    print(thing)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item SyntaxError
+    \item 5
+    \item 4
+    \item TypeError
+  \end{enumerate}
+  \pause
+  What will be printed to the screen?
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: For Loop and Range}
+  How many lines are printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  for i in range(0, 10):
+    print(i)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 11
+    \item 10
+    \item 9
+    \item TypeError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: For Loop and Range}
+  How many lines are printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  for i in range(-3, 9, 4):
+    print(i)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 3
+    \item 4
+    \item 5
+    \item 0
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Nested For Loops}
+  How many lines are printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  list1 = ['lemon', 'orange', 'lime']
+  list2 = ['banana', 'lemon']
+
+  for thing1 in list1:
+    for thing2 in list2:
+      print(thing2)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 5
+    \item 6
+    \item 7
+    \item SyntaxError
+  \end{enumerate}
+\end{frame}
+
+\section{While Loops}
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{While Loops: If Statements that Just Keep Going}
+    Key differences beween for loops and while loops:
+    \begin{enumerate}
+      \item For loops iterate over collection. While loops iterate while boolean expression is true.
+      \item For loops terminate when they run out of values. While loops terminate when a boolean expression is false.
+    \end{enumerate}
+    \vfill
+  \begin{lstlisting}
+  while <cond>:
+    # Function body code below
+    ...
+  \end{lstlisting}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: While Loops}
+  How many lines are printed?
+  \begin{lstlisting}[language=Python, autogobble]
+  num = 14
+  while num >= 1:
+    print(num)
+    num = num // 2
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 3
+    \item 4
+    \item 5
+    \item 7
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: While Loops}
+  How many lines are printed?
+  \begin{lstlisting}[language=Python, autogobble]
+  i = 0 
+  while i < 3:
+    i + 1
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 2
+    \item 3
+    \item 4
+    \item $\infty$
+  \end{enumerate}
+  \pause
+  How do we fix this?
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: While Loops}
+  What is the resulting value of \lstinline|sum| if the user attempts this sequence of responses: y, 10, y, 5, n, 3, y, 5.
+  \begin{lstlisting}[language=Python, autogobble]
+  sum = 0
+  while input("Enter another number?") == "y":
+    sum += int(input("Num: "))
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item This code is not valid 
+    \item \lstinline|"y10y5n3y5"|
+    \item \lstinline|15|
+    \item \lstinline|20|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{For vs While Loop: Side by Side}
+  These two pieces of code are equivalant:
+  \begin{minipage}{0.48\textwidth}
+    \begin{lstlisting}[language=Python, autogobble]
+    x = [1, 2, 3, 4]
+    for item in x:
+      print(item)
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\textwidth}
+    \begin{lstlisting}[language=Python, autogobble]
+    x = [1, 2, 3, 4]
+    i = 0
+    while i < len(item):
+      item = x[i]
+      print(item)
+      i += 1
+    \end{lstlisting}
+  \end{minipage}
+\end{frame}
+
+
+
+\section{Loops in Functions}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  Which of the followig functions correctly counts and returns the number of strings in a list of strings that are of an event length.
+	\vfill
+	\begin{minipage}{0.49\textwidth}
+    1)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def count_even_len(str_list):
+      count = 0 
+      for string in str_list:
+        if len(string) % 2 == 0:
+          count += 1
+      return count
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.49\textwidth}
+    2)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def count_even_len(str_list):
+      count = 0 
+      while i < len(str_list)
+        if len(string) % 2 == 0:
+          count += 1
+      return count
+		\end{lstlisting}
+	\end{minipage}
+  \vfill
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    3)
+    \begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def count_even_len(str_list):
+      count = 0 
+      i = 0
+      while i <= len(str_list)
+        if len(str_list[i]) % 2 == 0:
+          count += 1
+        i += 1
+      return count
+    \end{lstlisting}
+  \end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Constructing Conditionals}
+  Which of the following will append vals from the parameter that are strings that contain a substring?
+  \tiny
+  \vfill
+  1)
+  \begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def append_if_has_substring(my_list, substr, val1, val2, val3):
+      for val in [val1, val2, val3]:
+        if substr in val and type(val) is str:
+          my_list.append(val)
+  \end{lstlisting}
+  \vfill
+  2)
+  \begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def append_if_has_substring(my_list, substr, val1, val2, val3):
+      for val in [val1, val2, val3]:
+        if type(val) is str and substr in val:
+          my_list.append(val)
+  \end{lstlisting}
+  \vfill
+  3)
+  \begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def append_if_has_substring(my_list, substr, val1, val2, val3):
+      for val in [val1, val2, val3]:
+        if type(val) is str and substr in val:
+          my_list = my_list.append(val)
+  \end{lstlisting}
+  \vfill
+  4)
+  \begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def append_if_has_substring(my_list, substr, val1, val2, val3):
+      for val in [val1, val2, val3]:
+        if type(val) is str and substr in val:
+          my_list.add(val)
+  \end{lstlisting}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: Constructing Conditionals}
+  What function returns a list of keys that are associated with even values? You can assume that the values are of type int.
+	\vfill
+	\begin{minipage}{0.32\textwidth}
+    1)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def get_even_value_keys(d):
+      l = []
+      for foo in d:
+        if d[foo] % 2 == 0:
+          l.append(d[foo])
+      return l
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.32\textwidth}
+    2)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def get_even_value_keys(d):
+      l = []
+      i = 0
+      while i < len(d):
+        if d[i] % 2 == 0:
+          l.append(d[i])
+      return l
+		\end{lstlisting}
+	\end{minipage}
+	\begin{minipage}{0.32\textwidth}
+    3)
+		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
+    def get_even_value_keys(d):
+      l = []
+      for foo in d:
+        if foo % 2 == 0:
+          l.append(foo)
+      return l
+		\end{lstlisting}
+	\end{minipage}
+\end{frame}
+
+
+\end{document}
