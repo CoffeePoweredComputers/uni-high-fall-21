@@ -84,6 +84,8 @@
 
 \begin{document}
 
+\frame{\titlepage}
+
 \section{Updates}
 
 %
@@ -93,13 +95,12 @@
   \frametitle{Course Updates}
   \begin{enumerate}[A]
     \item Homework (PrairieLearn) will now have a 24 hours grace period with a 20\% penalty for late work.
-    \item Policy is not retroactive.
+    \item Lab 3 (Chromakey) - Due Sunday after next.
   \end{enumerate}
 \end{frame}
 
 
 
-\frame{\titlepage}
 
 \section{The \lstinline|range()| Function}
 
@@ -158,8 +159,6 @@
     \item TypeError
     \item ValueError
   \end{enumerate}
-  \vfill \pause
-  Why? What does the output of \lstinline|type(x)| tell us?
 \end{frame}
 
 %
@@ -198,6 +197,7 @@
     \item Some error
     \item \lstinline|[1, 3, 5, 7, 9]|
     \item \lstinline|[1, 3, 5, 7, 11]|
+    \item \lstinline|[0, 2, 4, 6, 8, 10]|
   \end{enumerate}
 \end{frame}
 
@@ -208,7 +208,7 @@
   \frametitle{Poll Question: Range Function}
   What is printed to the screen?
   \begin{lstlisting}[language=Python, autogobble]
-  x = range(0, 11, 2)
+  x = range(1, 11, 2)
   y = list(x)
   print(y)
   \end{lstlisting}
@@ -217,6 +217,7 @@
     \item Some error
     \item \lstinline|[1, 3, 5, 7, 9]|
     \item \lstinline|[1, 3, 5, 7, 11]|
+    \item \lstinline|[0, 2, 4, 6, 8, 10]|
   \end{enumerate}
 \end{frame}
 
@@ -280,10 +281,29 @@
     \item 0
     \item 2
     \item 4
-    \item SyntaxError
+    \item error
   \end{enumerate}
   \pause
   What do we need to do to fix it?
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: For Loops}
+  How many lines are printed to the screen?
+  \begin{lstlisting}[language=Python, autogobble]
+  course_times = {'CS 105': 'F9-11', "CS 125": "MWF11-12"}
+  for course in course_times:
+    print(course, 'meets', course_times[course])
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 0
+    \item 2
+    \item 4
+  \end{enumerate}
 \end{frame}
 
 %
@@ -470,7 +490,7 @@
     \begin{lstlisting}[language=Python, autogobble]
     x = [1, 2, 3, 4]
     i = 0
-    while i < len(item):
+    while i < len(x):
       item = x[i]
       print(item)
       i += 1
@@ -505,9 +525,11 @@
 		\begin{lstlisting}[language=Python, autogobble,basicstyle=\tiny,numbers=none]
     def count_even_len(str_list):
       count = 0 
-      while i < len(str_list)
-        if len(string) % 2 == 0:
+      i = 0
+      while i < len(str_list):
+        if len(str_list[i]) % 2 == 0:
           count += 1
+        i += 1
       return count
 		\end{lstlisting}
 	\end{minipage}
@@ -519,7 +541,7 @@
     def count_even_len(str_list):
       count = 0 
       i = 0
-      while i <= len(str_list)
+      while i <= len(str_list):
         if len(str_list[i]) % 2 == 0:
           count += 1
         i += 1
@@ -583,7 +605,7 @@
       l = []
       for foo in d:
         if d[foo] % 2 == 0:
-          l.append(d[foo])
+          l.append(foo)
       return l
 		\end{lstlisting}
 	\end{minipage}
@@ -595,7 +617,7 @@
       i = 0
       while i < len(d):
         if d[i] % 2 == 0:
-          l.append(d[i])
+          l.append(i)
       return l
 		\end{lstlisting}
 	\end{minipage}
