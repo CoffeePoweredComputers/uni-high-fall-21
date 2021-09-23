@@ -72,7 +72,7 @@
 \title{\textbf{Topic 6: Loops}}
 \author{\textbf{David H Smith IV}}
 \institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
-\date{\textbf{Wed, July 07 2021}}
+\date{\textbf{Wed, Sep 22 2021}}
 
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 \addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
@@ -110,8 +110,70 @@
 % Slide 2
 %
 \begin{frame}[fragile]
+  \frametitle{Poll Question: Unpacking}
+  What is the value of z?
+  \begin{lstlisting}[language=Python, autogobble]
+  x, y, z = [22, [33, 44], [66]]
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item 22
+    \item 33
+    \item \lstinline|[33, 44]|
+    \item \lstinline|[66]|
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
   \frametitle{Poll Question: Enumerate}
-  For this code, what is the type of item at each iteration?
+  What is the value of \lstinline|x| after this code runs?
+  \begin{lstlisting}[language=Python, autogobble]
+  orig_list = ["I", "am", "Groot"]
+  x = enumerate(orig_list)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item Error
+    \item \lstinline|[(1, "I"), (2, "am"), (3, "Groot")]|
+    \item \lstinline|[(0, "I"), (1, "am"), (2, "Groot")]|
+    \item \lstinline|[[0, "I"], [1, "am"], [2, "Groot"]]|
+    \item Something else
+  \end{enumerate}
+  \pause
+  Enumerate is like \lstinline|range()|. On it's own it's just an object that we can iterate over.
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Enumerate}
+  What is the value of \lstinline|y| after this code runs?
+  \begin{lstlisting}[language=Python, autogobble]
+  orig_list = ["I", "am", "Groot"]
+  x = enumerate(orig_list)
+  y = list(x)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item Error
+    \item \lstinline|[(1, "I"), (2, "am"), (3, "Groot")]|
+    \item \lstinline|[(0, "I"), (1, "am"), (2, "Groot")]|
+    \item \lstinline|[[0, "I"], [1, "am"], [2, "Groot"]]|
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Enumerate}
+  For this code, what is the varible \lstinline|type| of item at each iteration?
   \begin{lstlisting}[language=Python, autogobble]
   orig_list = [3, 7, 22, 90]
   for item in enumerate(orig_list):
@@ -127,6 +189,35 @@
 \end{frame}
 
 
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Enumerate}
+  \begin{minipage}{0.3\textwidth}
+    \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+    for item in enumerate(x):
+      print(item)
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  +
+  \hfill
+  \begin{minipage}{0.2\textwidth}
+    \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+    i, val = (0, 2)
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  =
+  \hfill
+  \begin{minipage}{0.32\textwidth}
+    \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+    for i, val in enumerate(x):
+      print(i, val)
+    \end{lstlisting}
+  \end{minipage}
+\end{frame}
 
 %
 % Slide 2
@@ -154,42 +245,64 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: Unpacking}
-  What is the value of z?
-  \begin{lstlisting}[language=Python, autogobble]
-  x, y, z = [22, [33, 44], [66]]
-  \end{lstlisting}
-  \vfill
-  \begin{enumerate}[A]
-    \item 22
-    \item 33
-    \item \lstinline|[33, 44]|
-    \item \lstinline|[66]|
-  \end{enumerate}
+  \frametitle{Why?!?}
+  \textbf{Why would we ever want to use this enumerate?}
 \end{frame}
 
-
-\section{While Loops}
 
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: While Loops}
-  How many lines are printed?
+  \frametitle{Consider the Following}
+  I want to replace all even numbers in a list with the word "Even" and odd numbers with the word "Odd". Will this code do it?
   \begin{lstlisting}[language=Python, autogobble]
-  num = 14
-  while num >= 1:
-    print(num)
-    num = num // 2
+  x = [1, 2, 3, 4]
+  for item in x:
+    item = "Even" if item % 2 == 0 else "Odd"
   \end{lstlisting}
   \vfill
   \begin{enumerate}[A]
-    \item 3
-    \item 4
-    \item 5
-    \item 7
+    \item Yes :D
+    \item No D:
   \end{enumerate}
+  \pause
+  How could we accomplish this task?
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Consider the Following}
+  Will this work?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = [1, 2, 3, 4]
+  for i, item in enumerate(x):
+    x[i] = "Even" if item % 2 == 0 else "Odd"
+  \end{lstlisting}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Now Side by Side}
+  1) Doesn't update the list because \lstinline|item| is a different variable that simply references a value in the list. Setting it equal to a new value only updates the value it is references and doesn't change the original list.
+  \begin{lstlisting}[language=Python, autogobble]
+  x = [1, 2, 3, 4]
+  for item in x:
+    item = "Even" if item % 2 == 0 else "Odd"
+  \end{lstlisting}
+  \vfill
+  2) This directly references the list via the index \lstinline|i| and updates the value in the list.
+  \begin{lstlisting}[language=Python, autogobble]
+  x = [1, 2, 3, 4]
+  for i, item in enumerate(x):
+    x[i] = "Even" if item % 2 == 0 else "Odd"
+  \end{lstlisting}
 \end{frame}
 
 \section{Break vs Continue}
@@ -258,7 +371,7 @@
   \frametitle{Poll Question: Continue}
   How many items are printed?
   \begin{lstlisting}[language=Python, autogobble]
-  mixed_list = ['hi', '3', math.pi, 'there', ['CS', 105]]
+  mixed_list = ['hi', '3', math.pi, 'there', ['CS', 437]]
   for item in mixed_list:
     if type(item) != str:
       continue
@@ -283,6 +396,123 @@
     \item \textbf{return} \textrightarrow Leaves function with return value.
     \item \textbf{break} \textrightarrow Exits loop it is apart of.
     \end{itemize}
+\end{frame}
+
+%
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{When would we want to use these?}
+  \begin{enumerate}
+    \item When would we want to use continue?
+      \pause
+      \begin{enumerate}
+        \item Concatenating all strings in a list of things.
+        \item Summing all integers/floats in a list of things.
+        \item Validating user input.
+      \end{enumerate}
+      \pause
+    \item When would we want to use break?
+      \pause
+      \begin{enumerate}
+        \item Searching for the occurance of an item that meats a condition in the list.
+        \item Exiting an otherwise infinite loop when the user wants to exit.
+      \end{enumerate}
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Summing Nums in List}
+  What should we replace the question marks with?
+  \begin{lstlisting}[language=Python, autogobble]
+  def sum_nums(x):
+    s = 0
+    for item in x:
+      if type(item) != int or float:
+        ???
+      s += item
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item break
+    \item continue
+    \item There's another issue with this code
+  \end{enumerate}
+  \pause
+  \vfill
+  What should we replace this line of code with?
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Summing Nums in List}
+  What should we replace the question marks with?
+  \begin{lstlisting}[language=Python, autogobble]
+  def sum_nums(x):
+    s = 0
+    for item in x:
+      if type(item) != int or type(item) != float:
+        ???
+      s += item
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item break
+    \item continue
+    \item There's another issue with this code
+  \end{enumerate}
+  \pause
+  \vfill
+  \textbf{Key Takeaway:} Break leaves the loop. Continue skips to the next iteration. 
+\end{frame}
+
+
+
+\section{General Loop Practice}
+
+%
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Task: Validate User Input}
+  \textbf{Problem Statement:} Create a function that gets 10 words that contain the letter "e", stores them in a list, then returns them. Note that this problems uses nested loops but not break or enumerate.
+  \vfill
+  \pause
+  \begin{lstlisting}[language=Python, autogobble]
+  def no_e():
+    l = []
+    for i in range(0, 10):
+      word = input("Enter a word with the letter e: ")
+      while "e" not in word:
+        word = input("Enter a word with the letter e: ")
+      l.append(word)
+    return l
+  \end{lstlisting}
+\end{frame}
+
+%
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Task: Validate User Input}
+  \textbf{Problem Statement:} Create a function that keeps asking the user for strings of an even length and adding them to a list until the user enters a string of an odd length. Then return the final list. You'll want to use a "while True:" loop here.
+  \vfill
+  \pause
+  \begin{lstlisting}[language=Python, autogobble]
+  def get_even_words():
+    l = []
+    while True:
+      user_in = input("Enter a word with an even number of vowels: ")
+      if len(user_in) % 2 != 0:
+        print("That word has an odd number of letters. Terminating!!")
+        break
+      l.append(user_in)
+  \end{lstlisting}
 \end{frame}
 
 
