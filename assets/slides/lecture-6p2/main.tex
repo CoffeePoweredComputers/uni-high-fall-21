@@ -357,8 +357,8 @@
   \end{minipage}
   \vfill
   \begin{enumerate}[A]
-    \item \lstinline|["a", "b", "", "d"]|
-    \item \lstinline|["a", "b", "c", ""]|
+    \item \lstinline|func(["a", "b", "", "d"])|
+    \item \lstinline|func(["a", "b", "c", ""])|
     \item both
     \item neither
   \end{enumerate}
@@ -456,7 +456,7 @@
   def sum_nums(x):
     s = 0
     for item in x:
-      if type(item) != int or type(item) != float:
+      if type(item) != int and type(item) != float:
         ???
       s += item
   \end{lstlisting}
@@ -483,7 +483,7 @@
   \textbf{Problem Statement:} Create a function that gets 10 words that contain the letter "e", stores them in a list, then returns them. Note that this problems uses nested loops but not break or enumerate.
   \vfill
   \pause
-  \begin{lstlisting}[language=Python, autogobble]
+  \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
   def no_e():
     l = []
     for i in range(0, 10):
@@ -503,7 +503,7 @@
   \textbf{Problem Statement:} Create a function that keeps asking the user for strings of an even length and adding them to a list until the user enters a string of an odd length. Then return the final list. You'll want to use a "while True:" loop here.
   \vfill
   \pause
-  \begin{lstlisting}[language=Python, autogobble]
+  \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
   def get_even_words():
     l = []
     while True:
