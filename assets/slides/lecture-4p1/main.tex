@@ -282,7 +282,7 @@
   \end{lstlisting}
   \pause
   \vfill
-  \textbf{Function Definition:}
+  \textbf{Function Call:}
   \begin{lstlisting}[language=Python, autogobble]
   foo = product_of_three(1, 2, 3) # x = 6
   bar = product_of_three(1, 5, 3) # x = 15
@@ -292,28 +292,6 @@
 \end{frame}
 
 \section{Function Polls}
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-  \frametitle{Poll Question: Function Parameters}
-  What is x equal to?
-  \begin{lstlisting}[language=Python, autogobble]
-  def do_thing(v1, v2, v3):
-    a = v2
-    b = v1 + v3
-    print(a * b)
-
-  x = do_thing(3, 2, 1)
-  \end{lstlisting}
-  \vfill
-  \begin{enumerate}[A]
-    \item None
-    \item 6
-    \item 8 
-    \item 9
-  \end{enumerate}
-\end{frame}
 
 %
 % Slide 2
@@ -367,7 +345,7 @@
 %
 \begin{frame}[fragile]
   \frametitle{Poll Questions: Function Scope}
-  How many values does the following function return?
+  What value is printed?
   \begin{lstlisting}[language=Python, autogobble]
   def do_thing(var1):
     var1 = [1, 2, 3, 4]
@@ -423,6 +401,29 @@
     \item \lstinline|x = f3()|
     \item All of the above
     \item None of the above
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function Parameters}
+  What is x equal to?
+  \begin{lstlisting}[language=Python, autogobble]
+  def do_thing(v1, v2, v3):
+    a = v2
+    b = v1 + v3
+    print(a * b)
+
+  x = do_thing(3, 2, 1)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item None
+    \item 6
+    \item 8 
+    \item 9
   \end{enumerate}
 \end{frame}
 
@@ -573,6 +574,21 @@
   \end{enumerate}
 \end{frame}
 
+%
+% Slide 8
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Appending}
+  Given two dictionaries, \lstinline|x| and \lstinline|y|, how do you combine them such that \lstinline|x| contains the result of the operation?
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|x.update(y)|
+    \item \lstinline|x.union(y)|
+    \item \lstinline|x = x + y| 
+    \item \lstinline|x = x.update(y)|
+  \end{enumerate}
+\end{frame}
+
 
 
 \section{Reminders}
@@ -582,8 +598,8 @@
 \begin{frame}
   \frametitle{Weekly Reminders}
   \begin{enumerate}[A]
-    \item No reading/post-reading due tomorow
-    \item Homework 4 due tommorow
+    \item No reading/post-reading due tomorrow
+    \item Homework 4 due tomorrow
     \item Use the extra time to study
   \end{enumerate}
 \end{frame}

@@ -1,0 +1,465 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\usetheme{Madrid}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  belowskip=-0.5em,
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\lstset{style=python}
+
+\AtBeginSection[]{
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
+}
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+
+\setbeamercolor{palette primary}{bg=UIUCorange,fg=white}
+\setbeamercolor{palette secondary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=UIUCblue,fg=white}
+\setbeamercolor{structure}{fg=UIUCorange} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=UIUCblue} % TOC sections
+
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+%Information to be included in the title page:
+\title{\textbf{Functions}}
+\author{\textbf{David H Smith IV}}
+\institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
+\date{\textbf{Mon, Sept 28 2021}}
+
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
+\addtobeamertemplate{title page}{
+  \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
+    \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
+  \end{textblock*} 
+}{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+%
+% Slide 1
+%
+\section{Reminders}
+\begin{frame}
+  \frametitle{Announcements}
+  \begin{itemize}
+    \item \textbf{No post-reading or participation since we have a quiz.}
+    \item Homework 7 is a review homework that is useful as practice for the quiz.
+    \item Chromakey lab due on Sunday.
+    \item Quiz 2 is Thursday.
+  \end{itemize}
+\end{frame}
+
+\section{More on Functions}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Dynamic Typing}
+  Python is a dynamically typed language
+  \begin{itemize}
+    \item The \lstinline|+| does several different things:
+      \begin{enumerate}
+        \item Integer addition
+        \item Floating point addition
+        \item String concatenation
+      \end{enumerate}
+    \item At \textbf{runtime} Python looks at the \lstinline|+| operator and determines the correct behaviours based on the types or it's operands.
+    \item \textbf{Polymorphism} \textrightarrow A single piece of code can do several things depending on the type of data it's working with.
+      \begin{enumerate}
+        \item You can write less code.
+        \item Can be harder to find bugs.
+      \end{enumerate}
+
+  \end{itemize}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Polymorphic Functions}
+  Which function produces an error?\\
+  \vfill
+  \begin{minipage}{0.69\textwidth}
+    \begin{lstlisting}[language=Python, autogobble]
+    def print_all(collection):
+      for item in collection:
+        print(item)
+
+    print_all({ 'k': 'v', 'CS': '105' }) #A
+    print_all(7)                         #B
+    print_all('a string')                #C
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item A error
+      \item B error
+      \item C error
+      \item A \& B error
+      \item A \& C error
+      \item B \& C error
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\section{Scoping}
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function Scoping}
+  \begin{minipage}{0.69\textwidth}
+    What is produced by the following code?
+    \begin{lstlisting}[language=Python, autogobble]
+    my_var = 11
+    def my_print(my_var):
+      print(my_var)
+
+    my_print(22)
+    print(my_var)
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item 11\\11
+      \item 11\\22
+      \item 22\\11
+      \item 22\\22
+      \item NameError
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function Scoping}
+  \begin{minipage}{0.69\textwidth}
+    What is produced by the following code?
+    \begin{lstlisting}[language=Python, autogobble]
+    my_var = 11
+    def change_my_var():
+      my_var = 12
+
+    change_my_var()
+    print(my_var)
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item 11
+      \item 12
+      \item NameError
+      \item None
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function Scoping}
+  \begin{minipage}{0.69\textwidth}
+    What is produced by the following code?
+    \begin{lstlisting}[language=Python, autogobble]
+    my_var = 11
+    def print_my_var():
+      print(my_var)
+
+    change_my_var()
+    print(print_my_var)
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item 11
+      \item 12
+      \item NameError
+      \item None
+    \end{enumerate}
+  \end{minipage}
+  \pause
+  \vfill
+  \begin{enumerate}
+    \item We have read access but not write access in the function's scope. 
+    \item How do we get write access to the global scope from within a function?
+  \end{enumerate}
+\end{frame}
+
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function Scoping}
+  What goes where the ?? is in order to (1) change the \textbf{global} value of my\_var and (2) such that the value 12 is printed to the screen when the code finishes running?
+  \begin{lstlisting}[language=Python, autogobble]
+    my_var = 11
+    def print_my_var(new_my_var):
+      ??
+
+    change_my_var(int(input("Enter a new number: ")))
+    print(print_my_var)
+  \end{lstlisting}
+  \vfill
+  \textbf{For this activity, have one person connect their laptop to the monitor and work on a solution as a group.}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Scoping}
+  \begin{itemize}
+    \item Every function is given a clean slate.
+    \item Any variables written in a function are defined in the function's scope.
+    \item The scope is destroyed when the function returns.
+    \item If a name is read that doesn't exist in the function's scope, it tries the scope the function was defined in.
+  \end{itemize}
+\end{frame}
+
+\section{Docstrings}
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Docstrings!}
+  \centering
+  Off to Repl.it we go\ldots
+\end{frame}
+
+\section{Generator Functions}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Generators}
+  \begin{lstlisting}[language=Python, autogobble]
+  def foo(x):
+    while x > 0:
+      yield x
+      x -= 1
+  foo_gen = foo(10)
+  next(foo_gen)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item Generator objects: \lstinline|yield| multiple values until they have finish running.
+    \item Are defined like functions but are noteably different:
+      \begin{enumerate}
+        \item They \lstinline|yield| instead of return.
+        \item You use \lstinline|next()| to get each successive yield.
+        \item Perserve their internal state until they terminate.
+        \item Throws StopIteration error if you try calling next() after the generator has already finished.
+        \item Almost always involve iteration (i.e., at least one for or while loop).
+      \end{enumerate}
+    \item This is how the \lstinline|enumerate()| function is implemented.
+  \end{enumerate}
+\end{frame}
+
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function Scoping}
+  \begin{minipage}{0.69\textwidth}
+    What is produced by the following code?
+    \begin{lstlisting}[language=Python, autogobble]
+    def foo(x):
+      while x > 0:
+        yield x
+        x -= 2
+    foo_gen = foo(10)
+    a = next(foo_gen)
+    b = next(foo_gen)
+    c = next(foo_gen)
+    print(a, b, c)
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.29\textwidth}
+    \begin{enumerate}[A]
+      \item \lstinline|10 8 6|
+      \item \lstinline|10 10 10|
+      \item \lstinline|10 8 6 4 2|
+      \item This code contains an error
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function Scoping}
+  \begin{minipage}{0.6\textwidth}
+    What is produced by the following code?
+    \begin{lstlisting}[language=Python, autogobble]
+    def foo(x):
+      while x > 0:
+        yield x
+        x -= 2
+    foo_gen = foo(10)
+    foo_gen_list = list(foo_gen)
+    print(foo_gen_list)
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.39\textwidth}
+    \begin{enumerate}[A]
+      \item \lstinline|[10, 8, 6, 4, 2]|
+      \item \lstinline|[10, 8, 6, 4, 2, 0]|
+      \item None
+      \item StopIteration error
+    \end{enumerate}
+  \end{minipage}
+  \pause
+  \vfill
+  Starting to look familiar?
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Function Scoping}
+  Fill in the ??? in this function\ldots
+  \begin{lstlisting}[language=Python, autogobble]
+    def my_enumerate(x):
+      ???
+
+    my_enumerate_gen = my_enumerate([1, 2, 3, 4])
+    my_enumerate_list = list(my_enumerate_gen)
+    print(my_enumerate_list)
+  \end{lstlisting}
+  \vfill
+  So that the above code behaves like this code. 
+  \begin{lstlisting}[language=Python, autogobble]
+    enumerate_class = enumerate([1, 2, 3])
+    foo_gen_list = list(enumerate_class)
+    print(foo_gen_list)
+  \end{lstlisting}
+  \vfill
+  Once you finish enumerate do the \lstinline|my_range()| function so that it replicates the behaviour of the builtin \lstinline|range_)| function.
+\end{frame}
+
+
+\section{General Loop Practice}
+
+%
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Task: Validate User Input}
+  \textbf{Problem Statement:} Create a function that gets 10 words that contain the letter "e", stores them in a list, then returns them. Note that this problems uses nested loops but not break or enumerate.
+  \vfill
+  \pause
+  \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+  def no_e():
+    l = []
+    for i in range(0, 10):
+      word = input("Enter a word with the letter e: ")
+      while "e" not in word:
+        word = input("Enter a word with the letter e: ")
+      l.append(word)
+    return l
+  \end{lstlisting}
+\end{frame}
+
+%
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Task: Validate User Input}
+  \textbf{Problem Statement:} Create a function that keeps asking the user for strings of an even length and adding them to a list until the user enters a string of an odd length. Then return the final list. You'll want to use a "while True:" loop here.
+  \vfill
+  \pause
+  \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+  def get_even_words():
+    l = []
+    while True:
+      user_in = input("Enter a word with an even number of vowels: ")
+      if len(user_in) % 2 != 0:
+        print("That word has an odd number of letters. Terminating!!")
+        break
+      l.append(user_in)
+  \end{lstlisting}
+\end{frame}
+
+%
+% Slide 1
+%
+\section{Reminders}
+\begin{frame}
+  \frametitle{Announcements}
+  \begin{itemize}
+    \item \textbf{No post-reading or participation since we have a quiz.}
+    \item Homework 7 is a review homework that is useful as practice for the quiz.
+    \item Chromakey lab due on Sunday.
+    \item Quiz 2 is Thursday.
+  \end{itemize}
+\end{frame}
+
+\end{document}
