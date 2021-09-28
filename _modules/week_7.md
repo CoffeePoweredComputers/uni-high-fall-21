@@ -15,8 +15,6 @@ Sep 28
 
 
 Sep 29
-: **zyBooks**{: .label .label-orange} Topic 7 - Challenge
-    : **Due**{: .label .label-red}
 : **PrairieLearn**{: .label .label-dark-blue} Homework 7
     : **Due**{: .label .label-red}
 
