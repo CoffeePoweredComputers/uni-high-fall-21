@@ -114,7 +114,9 @@
         \item Floating point addition
         \item String concatenation
       \end{enumerate}
+      \pause
     \item At \textbf{runtime} Python looks at the \lstinline|+| operator and determines the correct behaviours based on the types or it's operands.
+      \pause
     \item \textbf{Polymorphism} \textrightarrow A single piece of code can do several things depending on the type of data it's working with.
       \begin{enumerate}
         \item You can write less code.
@@ -224,8 +226,7 @@
     def print_my_var():
       print(my_var)
 
-    change_my_var()
-    print(print_my_var)
+    print_my_var()
     \end{lstlisting}
   \end{minipage}
   \hfill
@@ -251,10 +252,10 @@
 %
 \begin{frame}[fragile]
   \frametitle{Poll Question: Function Scoping}
-  What goes where the ?? is in order to (1) change the \textbf{global} value of my\_var and (2) such that the value 12 is printed to the screen when the code finishes running?
+  What goes where the ?? is in order to (1) change the \textbf{global} value of my\_var and (2) such that the user enters is printed to the screen when the code finishes running?
   \begin{lstlisting}[language=Python, autogobble]
     my_var = 11
-    def print_my_var(new_my_var):
+    def change_my_var(new_my_var):
       ??
 
     change_my_var(int(input("Enter a new number: ")))
@@ -305,6 +306,7 @@
   \vfill
   \begin{enumerate}[A]
     \item Generator objects: \lstinline|yield| multiple values until they have finish running.
+      \pause
     \item Are defined like functions but are noteably different:
       \begin{enumerate}
         \item They \lstinline|yield| instead of return.
@@ -313,6 +315,7 @@
         \item Throws StopIteration error if you try calling next() after the generator has already finished.
         \item Almost always involve iteration (i.e., at least one for or while loop).
       \end{enumerate}
+      \pause
     \item This is how the \lstinline|enumerate()| function is implemented.
   \end{enumerate}
 \end{frame}
