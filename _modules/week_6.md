@@ -1,5 +1,5 @@
 ---
-navtitle: ▶ Week 6 - Loops
+navtitle: Week 6 - Loops
 n: "g"
 ---
 
@@ -10,7 +10,7 @@ Sep 20
 
 Sep 21
 : **Lecture**{: .label .label-light-blue} Loops (Part 1)
-	: Slides
+    : [Slides]({{ site.baseurl }}{% link assets/slides/lecture-6p1/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 6 (Part 2) - Participation, Topic 6 - Challenge
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 6 (Part 1)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312037), [Post-reading 6 (Part 2)](#)
@@ -26,7 +26,7 @@ Sep 22
 
 Sep 23
 : **Lecture**{: .label .label-light-blue} Loops (Part 2)
-	: Slides
+    : [Slides]({{ site.baseurl }}{% link assets/slides/lecture-6p2/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 7 - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 6 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312038), [Post-reading 7 (Part 1)](#)

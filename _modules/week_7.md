@@ -1,5 +1,5 @@
 ---
-navtitle: Week 7 - More on Functions
+navtitle: ▶ Week 7 - More on Functions
 n: "h"
 ---
 
