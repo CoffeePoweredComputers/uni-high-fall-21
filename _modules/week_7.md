@@ -38,4 +38,5 @@ Oct 02
 Oct 03
 : **zyBooks**{: .label .label-orange} Topic 7 - Challenge Activities
     : **Due**{: .label .label-red}
-
+: **Lab**{: .label .label-purp} [](#) Chromakey 
+    : **Due**{: .label .label-red}
