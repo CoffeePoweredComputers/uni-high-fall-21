@@ -4,7 +4,8 @@ n: "i"
 ---
 
 Oct 04
-: **Lab**{: .label .label-purp} [](#)
+: **Lab**{: .label .label-purp} Ciphers 
+	: [Assignment Invite](https://classroom.github.com/a/sN_cxOMs)
 
 Oct 05
 : **Lecture**{: .label .label-light-blue} Strings (Part 1)
