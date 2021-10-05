@@ -32,5 +32,6 @@ Oct 23
 : **Nothing Due**
 
 Oct 24
-: **Nothing Due**
+: **Lab**{: .label .label-purp} Ciphers 
+    : **Due**{: .label .label-red}
 
