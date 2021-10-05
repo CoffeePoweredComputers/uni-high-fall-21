@@ -93,7 +93,10 @@
 \begin{frame}
   \frametitle{Reminders}
   \begin{itemize}
-    \item
+    \item Post-reading 9p1 is due Tommorow (will be posted after class).
+    \item Homework 8 is due tommorow.
+    \item Participation 9p1 is due Tommorow.
+    \item Lab 4 is due Sunday after next.
   \end{itemize}
 \end{frame}
 
@@ -235,9 +238,11 @@
   \begin{enumerate}[A]
     \item \lstinline|'1234'|
     \item \lstinline|'1,2,3,4'|
-    \item \lstinline|'1, 2, 3, 4|
+    \item \lstinline|'1, 2, 3, 4'|
     \item \lstinline|TypeError|
   \end{enumerate}
+  \pause
+  How do we fix this?
 \end{frame}
 
 
@@ -255,7 +260,7 @@
   \vfill
   An example of this being done on one line:
   \begin{lstlisting}[language=Python, autogobble]
-  output = ",".join(input.split(",")[::2])
+  output = ",".join(string.split(",")[::2])
   \end{lstlisting}
 \end{frame}
 
@@ -267,11 +272,7 @@
   \frametitle{Pattern Practice}
   Write some code that takes a string with comma separated integers
   that converts the string into the square of each original value.
-  \begin{lstlisting}[language=Python, autogobble]
-  numlist = "1, 2, 3, 4"
-
-  #your code here
-  \end{lstlisting}
+  \vfill
   \textbf{Go to PrairieLearn to do this problem}
 \end{frame}
 
@@ -281,59 +282,141 @@
 \begin{frame}[fragile]
   \frametitle{Pattern Practice}
   \begin{lstlisting}[language=Python, autogobble]
-  numlist = "1, 2, 3, 4"
-  
-  squaredlist = []
-  for num in numlist.split(","):
-    squaredlist.append(int(num) ** 2)
-  squared_csv = ",".join(squredlist)
+  def foo(numlist):
+    squaredlist = []
+    for num in numlist.split(","):
+      squaredlist.append(str(int(num) ** 2))
+    return squared_csv = ",".join(squaredlist)
   \end{lstlisting}
 \end{frame}
 
 \section{Adv. String Formatting}
 
-
-\section{General Loop Practice}
-
 %
-% Slide
+% Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Task: Validate User Input}
-  \textbf{Problem Statement:} Create a function that gets 10 words that contain the letter "e", stores them in a list, then returns them. Note that this problems uses nested loops but not break or enumerate.
+  \frametitle{Adv. String Formatting}
+	\begin{figure}
+		\includegraphics[width=\textwidth]{./imgs/width.png}
+	\end{figure}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Alignment}
+  For a field width of 10:
+  \begin{enumerate}
+    \item \textbf{Left-aligned: } \lstinline|"{:<10}".format(x)|
+    \item \textbf{Right-aligned: } \lstinline|"{:>10}".format(x)|
+    \item \textbf{Centered: } \lstinline|"{:^10}".format(x)|
+  \end{enumerate}
   \vfill
+  Notice the similarity between field width and how we set the number of decimals after a floating point: \lstinline|"{:.2f}".format(math.pi)| \textrightarrow $3.14$.
   \pause
-  \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
-  def no_e():
-    l = []
-    for i in range(0, 10):
-      word = input("Enter a word with the letter e: ")
-      while "e" not in word:
-        word = input("Enter a word with the letter e: ")
-      l.append(word)
-    return l
+  \vfill
+  We can use a fill character to consume any unused spaces in the field width:
+  \begin{enumerate}
+    \item \textbf{Left-aligned: } \lstinline|"{:-<10}".format(x)|
+    \item \textbf{Right-aligned: } \lstinline|"{:->10}".format(x)|
+    \item \textbf{Centered: } \lstinline|"{:-^10}".format(x)|
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Formatting Practice}
+	Create a function that takes a list of lists where each sub list contains 4
+	elements. Create and return a new list of strings where each string is composed
+	of the four elements in each sublist and:
+	\begin{enumerate}
+		\item the first element is center aligned with a field with of 10
+		\item the second element is right aligned with a field width of 8
+		\item the third element is left aligned with a field width of 9
+		\item the fourth element is center aligned with a field width of 10 and the filler character "-".
+	\end{enumerate}
+	\textbf{Problem is on PrairieLearn}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Example Function Call}
+  \begin{lstlisting}[language=Python, autogobble]
+	x = [
+		["This", "is", "a", "list"],
+		["This", "is", "a", "list"],
+		["This", "is", "a", "list"],
+		["This", "is", "a", "list"]
+	]
+	formatted_x = formatted_str_list(x)
+  \end{lstlisting}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Pattern Practice}
+  \begin{lstlisting}[language=Python, autogobble]
+	def formatted_str_list(x):
+		formatted_strs = []
+		for a, b, c, d in x:
+			x = "{:^10}{:>8}{:<9}{:-^10}".format(a, b, c, d)
+			formatted_strs.append(x)
+		return formatted_strs
+
+	x = [
+		["This", "is", "a", "list"],
+		["This", "is", "a", "list"],
+		["This", "is", "a", "list"],
+		["This", "is", "a", "list"]
+	]
+	formatted_x = formatted_str_list(x)
+  \end{lstlisting}
+\end{frame}
+
+\section{Patterns (Part 1)}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Counting Pattern}
+  \begin{lstlisting}[language=Python, autogobble][language=Python, autogobble]
+  def count(collection):
+    counter = 0
+    for item in collection:
+      if <item meets condition>:
+        counter += 1
+    return counter
   \end{lstlisting}
 \end{frame}
 
 %
-% Slide
+% Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Task: Validate User Input}
-  \textbf{Problem Statement:} Create a function that keeps asking the user for strings of an even length and adding them to a list until the user enters a string of an odd length. Then return the final list. You'll want to use a "while True:" loop here.
-  \vfill
-  \pause
-  \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
-  def get_even_words():
-    l = []
-    while True:
-      user_in = input("Enter a word with an even number of vowels: ")
-      if len(user_in) % 2 != 0:
-        print("That word has an odd number of letters. Terminating!!")
-        break
-      l.append(user_in)
+  \frametitle{Computing a Sum/Total}
+  \begin{lstlisting}[language=Python, autogobble][language=Python, autogobble]
+  def sum(collection):
+    total = 0
+    for item in collection:
+      total += item
+    return total
   \end{lstlisting}
 \end{frame}
 
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Pattern Practice}
+  Spend remaining class time working on last three problems in PrairieLearn.
+\end{frame}
 
 \end{document}
