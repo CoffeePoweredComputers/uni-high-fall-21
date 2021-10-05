@@ -216,7 +216,7 @@
   \begin{enumerate}[A]
     \item \lstinline|['1']|
     \item \lstinline|['1, 2, 3, 4']|
-    \item \lstinline|['1', '2', '3', '4']|
+    \item \lstinline|['1', ' 2', ' 3', ' 4']|
     \item \lstinline|['1,', '2,', '3,', '4']|
   \end{enumerate}
 \end{frame}
@@ -286,7 +286,7 @@
     squaredlist = []
     for num in numlist.split(","):
       squaredlist.append(str(int(num) ** 2))
-    return squared_csv = ",".join(squaredlist)
+    return ",".join(squaredlist)
   \end{lstlisting}
 \end{frame}
 
@@ -349,7 +349,12 @@
 		["This", "is", "a", "list"],
 		["This", "is", "a", "list"],
 		["This", "is", "a", "list"],
-		["This", "is", "a", "list"]
+		["This", "is", "a", "list"],
+		["This", "is", "a", "list"],
+		["This", "is", "a", "list"],
+		["This", "is", "a", "list"],
+		["This", "is", "a", "list"],
+    ...
 	]
 	formatted_x = formatted_str_list(x)
   \end{lstlisting}
@@ -365,8 +370,8 @@
 	def formatted_str_list(x):
 		formatted_strs = []
 		for a, b, c, d in x:
-			x = "{:^10}{:>8}{:<9}{:-^10}".format(a, b, c, d)
-			formatted_strs.append(x)
+			y = "{:^10}{:>8}{:<9}{:-^10}".format(a, b, c, d)
+			formatted_strs.append(y)
 		return formatted_strs
 
 	x = [
