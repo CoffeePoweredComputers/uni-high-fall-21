@@ -8,7 +8,8 @@ Oct 04
 	: [Assignment Invite](https://classroom.github.com/a/sN_cxOMs)
 
 Oct 05
-: **Lecture**{: .label .label-light-blue} Strings (Part 1)
+: **Lecture**{: .label .label-light-blue} Strings and Patterns
+    : [Slides]({{ site.baseurl }}{% link assets/slides/lecture-8/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 9 (Part 1) - Participation, Topic 8 - Challenge
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 8](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312040), [Post-reading 9 (Part 1)](#)
@@ -23,7 +24,7 @@ Oct 06
 
 
 Oct 07
-: **Lecture**{: .label .label-light-blue} Strings (Part 2)
+: **Lecture**{: .label .label-light-blue} Strings, Files, and Patterns
 : **zyBooks**{: .label .label-orange} Topic 9 (Part 2) - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 9 (Part 1)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312041), [Post-reading 9 (Part 2)](#)
