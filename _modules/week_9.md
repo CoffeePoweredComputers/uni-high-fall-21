@@ -20,6 +20,8 @@ Oct 14
 : **Lecture**{: .label .label-light-blue} Special Topics - LaTex
 : **PrairieLearn**{: .label .label-dark-blue} Homework 9 (Part 2)
     : **Due**{: .label .label-red}
+: **zyBooks**{: .label .label-orange} Topic 8 - Challenge Activities
+    : **Due**{: .label .label-red}
 
 Oct 15
 : **End of Quarter**{: .label .label-yellow}
