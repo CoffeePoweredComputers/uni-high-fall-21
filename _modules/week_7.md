@@ -8,7 +8,6 @@ Sep 27
 
 Sep 28
 : **Lecture**{: .label .label-light-blue} More on Functions 
-    : [Slides]({{ site.baseurl }}{% link assets/slides/lecture-7/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 7 - Challenge
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 7](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312039)
