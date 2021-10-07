@@ -25,6 +25,7 @@ Oct 06
 
 Oct 07
 : **Lecture**{: .label .label-light-blue} Strings, Files, and Patterns
+    : [Slides]({{ site.baseurl }}{% link assets/slides/lecture9p1/main.pdf %})
 : **zyBooks**{: .label .label-orange} Topic 9 (Part 2) - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 9 (Part 1)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312041), [Post-reading 9 (Part 2)](#)
