@@ -17,7 +17,7 @@ Oct 13
 
 
 Oct 14
-: **Lecture**{: .label .label-light-blue} Special Topics - LaTex
+: **Lecture**{: .label .label-light-blue} File Workshop
 : **PrairieLearn**{: .label .label-dark-blue} Homework 9 (Part 2)
     : **Due**{: .label .label-red}
 : **zyBooks**{: .label .label-orange} Topic 8 - Challenge Activities
