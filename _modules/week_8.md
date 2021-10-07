@@ -17,7 +17,7 @@ Oct 05
 
 
 Oct 06
-: **zyBooks**{: .label .label-orange} Topic 8 - Participation
+: **zyBooks**{: .label .label-orange} Topic 9 (Part 1) - Participation
     : **Due**{: .label .label-red}
 : **PrairieLearn**{: .label .label-dark-blue} Homework 8, Post-reading 9 (Part 1)
     : **Due**{: .label .label-red}
@@ -31,7 +31,7 @@ Oct 07
     : **Assigned**{: .label .label-green}
 
 Oct 08
-: **zyBooks**{: .label .label-orange} Topic 9 (Part 1) - Participation
+: **zyBooks**{: .label .label-orange} Topic 9 (Part 2) - Participation
     : **Due**{: .label .label-red}
 : **PrairieLearn**{: .label .label-dark-blue} Homework 9 (Part 1), Post-reading 9 (Part 2)
     : **Due**{: .label .label-red}
