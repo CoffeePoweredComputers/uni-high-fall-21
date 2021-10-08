@@ -38,6 +38,6 @@ Nov 20
 : **Nothing Due**
 
 Nov 21
-: **zyBooks**{: .label .label-orange} Topic 13 - Challenge Activities
-    : **Due**{: .label .label-red}
+: **Nothing Due**
+
 

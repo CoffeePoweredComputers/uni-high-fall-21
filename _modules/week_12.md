@@ -5,6 +5,8 @@ n: "m"
 
 Nov 01
 : **Lab**{: .label .label-purp} [](#)
+: **zyBooks**{: .label .label-orange} Topic 10 - Challenge Activities
+    : **Due**{: .label .label-red}
 
 Nov 02
 : **Lecture**{: .label .label-light-blue} Dictionaries
@@ -32,6 +34,6 @@ Nov 06
 : **Nothing Due**
 
 Nov 07
-: **zyBooks**{: .label .label-orange} Topic 11 - Challenge Activities
-    : **Due**{: .label .label-red}
+: **Nothing Due**
+
 

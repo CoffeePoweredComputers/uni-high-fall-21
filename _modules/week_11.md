@@ -38,6 +38,7 @@ Oct 30
 : **Nothing Due**
 
 Oct 31
-: **zyBooks**{: .label .label-orange} Topic 10 - Challenge Activities
-    : **Due**{: .label .label-red}
+: **Nothing Due**
+
+
 

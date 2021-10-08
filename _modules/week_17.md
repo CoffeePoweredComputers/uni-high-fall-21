@@ -5,6 +5,8 @@ n: "r"
 
 Dec 06
 : **Lab**{: .label .label-purp} [](#)
+: **zyBooks**{: .label .label-orange} Topic 14 - Challenge Activities
+    : **Due**{: .label .label-red}
 
 Dec 07
 : **Lecture**{: .label .label-light-blue} 15
@@ -31,6 +33,6 @@ Dec 11
 : **Nothing Due**
 
 Dec 12
-: **zyBooks**{: .label .label-orange} Topic 15 - Challenge Activities
-    : **Due**{: .label .label-red}
+: **Nothing Due**
+
 

@@ -5,6 +5,8 @@ n: "n"
 
 Nov 08
 : **Lab**{: .label .label-purp} [](#)
+: **zyBooks**{: .label .label-orange} Topic 11 - Challenge Activities
+    : **Due**{: .label .label-red}
 
 Nov 09
 : **Lecture**{: .label .label-light-blue} Troubleshooting Process

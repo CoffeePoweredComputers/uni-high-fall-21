@@ -38,6 +38,6 @@ Dec 04
 : **Nothing Due**
 
 Dec 05
-: **zyBooks**{: .label .label-orange} Topic 14 - Challenge Activities
-    : **Due**{: .label .label-red}
+: **Nothing Due**
+
 

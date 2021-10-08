@@ -5,6 +5,9 @@ n: "p"
 
 Nov 22
 : **Lab**{: .label .label-purp} [](#)
+: **zyBooks**{: .label .label-orange} Topic 13 - Challenge Activities
+    : **Due**{: .label .label-red}
+
 
 Nov 23
 : **Lecture**{: .label .label-light-blue} Special Topic (TBD)

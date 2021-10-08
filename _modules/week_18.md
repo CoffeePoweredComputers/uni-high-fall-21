@@ -5,6 +5,8 @@ n: "s"
 
 Dec 13
 : **Lab**{: .label .label-purp} [Review Lab](#)
+: **zyBooks**{: .label .label-orange} Topic 15 - Challenge Activities
+    : **Due**{: .label .label-red}
 
 Dec 14
 : **Lecture**{: .label .label-light-blue} Review Lecture
