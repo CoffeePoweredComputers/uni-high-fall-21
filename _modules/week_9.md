@@ -1,10 +1,10 @@
 ---
-navtitle: Week 9 - Files and End of Quarter 🌓
+navtitle: ▶ Week 9 - Files and End of Quarter 🌓
 n: "j"
 ---
 
 Oct 11
-: **Lab**{: .label .label-purp} [](#)
+: **Lab**{: .label .label-purp} Files, Filesystems, and Paths
 
 Oct 12
 : **Lecture**{: .label .label-light-blue} Topic 9 (Part 2)
