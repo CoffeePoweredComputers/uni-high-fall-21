@@ -4,6 +4,8 @@ n: "l"
 ---
 
 Oct 25
+: **Lab**{: .label .label-purp} Ciphers 
+    : **Due**{: .label .label-red}
 : **Lab**{: .label .label-purp} [](#)
 
 Oct 26

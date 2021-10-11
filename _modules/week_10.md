@@ -27,8 +27,6 @@ Oct 22
     : **Due**{: .label .label-red}
 : **PrairieLearn**{: .label .label-dark-blue} Post-reading 10 (Part 1)
     : **Due**{: .label .label-red}
-: **Lab**{: .label .label-purp} Ciphers 
-    : **Due**{: .label .label-red}
 
 Oct 23
 : **Nothing Due**
