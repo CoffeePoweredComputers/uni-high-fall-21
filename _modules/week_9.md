@@ -8,7 +8,7 @@ Oct 11
 
 Oct 12
 : **Lecture**{: .label .label-light-blue} Topic 9 (Part 2)
-    : [Patterns]({{ site.baseurl }}{% link assets/slides/lecture-9p2/main.pdf %}), [Patterns]({{ site.baseurl }}{% link assets/slides/patterns/main.pdf %})
+    : [Lecture Slides]({{ site.baseurl }}{% link assets/slides/lecture-9p2/main.pdf %}), [Patterns]({{ site.baseurl }}{% link assets/slides/patterns/main.pdf %})
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 9 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312042)
     : **Assigned**{: .label .label-green}
 
