@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Reminders}{2}{0}{1}
+\beamer@sectionintoc {2}{OS Review}{4}{0}{2}
+\beamer@sectionintoc {3}{With-As vs Open-Close}{11}{0}{3}
+\beamer@sectionintoc {4}{Argument Vector (argv)}{14}{0}{4}

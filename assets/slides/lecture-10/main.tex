@@ -68,10 +68,10 @@
 \usepackage{graphicx}
 
 %Information to be included in the title page:
-\title{\textbf{Files Continued}}
+\title{\textbf{Files and Argv Continued}}
 \author{\textbf{David H Smith IV}}
 \institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
-\date{\textbf{Tues, Oct 12 2021}}
+\date{\textbf{Thurs, Oct 14 2021}}
 
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 \addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
@@ -131,8 +131,8 @@
 %
 \begin{frame}[fragile]
   \frametitle{Poll Question: Opening a File}
-  Imagine file.csv has four lines of text. What is the value of \lstinline|total_len| after the code has finished running?
-  \begin{lstlisting}
+  Imagine file.csv has three lines of text. What is the value of \lstinline|total_len| after the code has finished running?
+  \begin{lstlisting}[language=Python, autogobble]
   fo = open("file.csv")
   read1 = fo.readlines()
   read2 = fo.readlines()
@@ -177,10 +177,10 @@
 \begin{frame}[fragile]
   \frametitle{Poll Question: Reading a File}
   Imagine file.csv has four lines of text. What is the value of \lstinline|read1| after the code has finished running?
-  \begin{lstlisting}
+  \begin{lstlisting}[language=Python, autogobble]
   fo = open("file.csv")
   fo.close()
-  read1 = fo.readlines()
+  read1 = len(fo.readlines())
   \end{lstlisting} 
   \vfill
   \begin{enumerate}[A]
@@ -198,7 +198,7 @@
 \begin{frame}[fragile]
   \frametitle{Poll Question: Reading a File}
   Imagine file.csv has one line that says "This is a file". What is the result of the code?
-  \begin{lstlisting}
+  \begin{lstlisting}[language=Python, autogobble]
   fo = open("file.csv")
   read1 = fo.read(1)
   read2 = fo.read(1)
@@ -221,7 +221,7 @@
 \begin{frame}[fragile]
   \frametitle{Poll Question: Reading a File}
   Imagine file.csv has four lines of text. What is the value of \lstinline|total_len| after the code has finished running?
-  \begin{lstlisting}
+  \begin{lstlisting}[language=Python, autogobble]
   fo = open("file.csv")
   read1 = fo.readlines()
   read2 = fo.readlines()
@@ -291,9 +291,9 @@
 \begin{frame}[fragile]
   \frametitle{Poll Question: Argv}
   What value is printed to the screen if the file, test.py, is run as such: \lstinline|python test.py 1 2 3|?
-  \begin{lstlisting}
+  \begin{lstlisting}[language=Python, autogobble]
   import sys
-  print(sys.argv)
+  print(len(sys.argv))
   \end{lstlisting} 
   \vfill
   \begin{enumerate}[A]
@@ -310,7 +310,7 @@
 \begin{frame}[fragile]
   \frametitle{Poll Question: Argv}
   What value is printed to the screen if the file, test.py, is run as such: \lstinline|python test.py 1 2 3|?
-  \begin{lstlisting}
+  \begin{lstlisting}[language=Python, autogobble]
   import sys
   print(sum(sys.argv[1:]))
   \end{lstlisting} 
