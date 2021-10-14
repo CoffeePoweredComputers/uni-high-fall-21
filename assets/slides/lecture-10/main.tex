@@ -1,0 +1,335 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\usetheme{Madrid}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  belowskip=-0.5em,
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\lstset{style=python}
+
+\AtBeginSection[]{
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
+}
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+
+\setbeamercolor{palette primary}{bg=UIUCorange,fg=white}
+\setbeamercolor{palette secondary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=UIUCblue,fg=white}
+\setbeamercolor{structure}{fg=UIUCorange} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=UIUCblue} % TOC sections
+
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+%Information to be included in the title page:
+\title{\textbf{Files Continued}}
+\author{\textbf{David H Smith IV}}
+\institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
+\date{\textbf{Tues, Oct 12 2021}}
+
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
+\addtobeamertemplate{title page}{
+  \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
+    \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
+  \end{textblock*} 
+}{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Reminders}
+
+%
+% Slide 1
+%
+\begin{frame}
+  \frametitle{Reminders}
+  \begin{itemize}
+    \item Last homework of the quarter is due Thursday by the end of the day.
+  \end{itemize}
+\end{frame}
+
+\section{OS Review}
+
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Opening a File}
+  How many times will this function call iterate if placed in a for loop: \lstinline|os.walk("dev_website")|?
+  \begin{minipage}{0.74\textwidth}
+    \begin{lstlisting}
+  dev_website
+  |---index.html
+  |___elements
+  |   |--- about.html
+  |   |--- cv.html
+  |   |--- myfile.py
+  |   |___ projects.html
+  |__inner_dir
+     |--- thing1.txt
+     |___ thing2.txt
+    \end{lstlisting} 
+  \end{minipage}
+  \begin{minipage}{0.24\textwidth}
+    \begin{enumerate}[A]
+      \item 1
+      \item 3
+      \item 10
+      \item 9
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Opening a File}
+  Imagine file.csv has four lines of text. What is the value of \lstinline|total_len| after the code has finished running?
+  \begin{lstlisting}
+  fo = open("file.csv")
+  read1 = fo.readlines()
+  read2 = fo.readlines()
+  total_len = len(read1) + len(read2)
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item 3
+    \item 6
+    \item 0
+    \item Error
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Opening a File}
+  We are script myfile.py and we want to open mydata.csv.
+  \begin{lstlisting}
+  home
+  |__tracertong
+     |---mydata.csv
+     |___dev_website
+         |---index.html
+         |___elements
+             |___ myfile.py   <-- You are here
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|fo = open("../../mydata.csv")|
+    \item \lstinline|fo = open("/../../mydata.csv")|
+    \item \lstinline|fo = open("/tracertong/mydata.csv")|
+    \item \lstinline|fo = open("../../../mydata.csv")|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Reading a File}
+  Imagine file.csv has four lines of text. What is the value of \lstinline|read1| after the code has finished running?
+  \begin{lstlisting}
+  fo = open("file.csv")
+  fo.close()
+  read1 = fo.readlines()
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item 4
+    \item Cannot determine from info given
+    \item 0
+    \item ValueError
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Reading a File}
+  Imagine file.csv has one line that says "This is a file". What is the result of the code?
+  \begin{lstlisting}
+  fo = open("file.csv")
+  read1 = fo.read(1)
+  read2 = fo.read(1)
+  print(read1, read2)
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item This is
+    \item T h
+    \item T T
+    \item This This
+    \item Error
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Reading a File}
+  Imagine file.csv has four lines of text. What is the value of \lstinline|total_len| after the code has finished running?
+  \begin{lstlisting}
+  fo = open("file.csv")
+  read1 = fo.readlines()
+  read2 = fo.readlines()
+  total_len = len(read1) + len(read2)
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item 3
+    \item 6
+    \item 0
+    \item Error
+  \end{enumerate}
+\end{frame}
+
+
+\section{With-As vs Open-Close}
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Reading from Files}
+  Method 1:
+  \begin{lstlisting}[language=Python, autogobble]
+  file_object = open('filename')
+  lines = file_object.readlines()
+  for line in lines:
+    print(line)
+  file_object.close()
+  \end{lstlisting}
+  \vfill
+  Method 2:
+  \begin{lstlisting}[language=Python, autogobble]
+  with open('filename') as inf:
+    lines = inf.readlines()
+    for line in lines:
+      print(line)
+    #automatic file close
+  \end{lstlisting}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Writing to Files}
+  Method 1:
+  \begin{lstlisting}[language=Python, autogobble]
+  file_object = open('filename', 'w')
+  file_object.write('thing to write')
+  file_objet.close()  #automatic at program end
+  file_object.flush() #optional
+  \end{lstlisting}
+  \vfill
+  Method 2:
+  \begin{lstlisting}[language=Python, autogobble]
+  with open('filename', 'w') as outf:
+    outf.write('thing to write')
+    #automatic file close
+  \end{lstlisting}
+\end{frame}
+
+\section{Argument Vector (argv)}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Argv}
+  What value is printed to the screen if the file, test.py, is run as such: \lstinline|python test.py 1 2 3|?
+  \begin{lstlisting}
+  import sys
+  print(sys.argv)
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item 3
+    \item 4
+    \item 5
+    \item Error
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Argv}
+  What value is printed to the screen if the file, test.py, is run as such: \lstinline|python test.py 1 2 3|?
+  \begin{lstlisting}
+  import sys
+  print(sum(sys.argv[1:]))
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item 6
+    \item 1
+    \item 5
+    \item TypeError
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Argument Vector (argv)}
+  Example script time...
+\end{frame}
+
+\end{document}
