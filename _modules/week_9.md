@@ -1,5 +1,5 @@
 ---
-navtitle: ▶ Week 9 - Files and End of Quarter 🌓
+navtitle: Week 9 - Files and End of Quarter 🌓
 n: "j"
 ---
 
