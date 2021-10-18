@@ -13,6 +13,8 @@ Oct 19
 
 Oct 20
 : **First Day Back: Nothing Due**
+: **Lab**{: .label .label-purp} Revisiting Ciphers
+
 
 
 Oct 21
