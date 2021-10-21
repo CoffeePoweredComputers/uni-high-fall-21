@@ -1,0 +1,494 @@
+\documentclass[xcolor=table]{beamer}
+
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\usetheme{Madrid}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  belowskip=-0.5em,
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\lstset{style=python}
+
+\AtBeginSection[]{
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
+}
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+
+\setbeamercolor{palette primary}{bg=UIUCorange,fg=white}
+\setbeamercolor{palette secondary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=UIUCblue,fg=white}
+\setbeamercolor{structure}{fg=UIUCorange} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=UIUCblue} % TOC sections
+
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+%Information to be included in the title page:
+\title{\textbf{Review(ish)}}
+\author{\textbf{David H Smith IV}}
+\institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
+\date{\textbf{Thurs, Oct 21 2021}}
+
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
+\addtobeamertemplate{title page}{
+  \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
+    \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
+  \end{textblock*} 
+}{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Reminders}
+
+%
+% Slide 1
+%
+\begin{frame}
+  \frametitle{Reminders}
+  \begin{itemize}
+    \item Last homework of the quarter is due Thursday by the end of the day.
+  \end{itemize}
+\end{frame}
+
+\section{User Input}
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Data Types}
+  What is the type of x after the following segment of code runs if the user inputs a 5 and then a 4?
+  \begin{lstlisting}[language=Python,autogobble]
+  a = input()
+  b = input()
+  x = a + b\end{lstlisting}
+  \hfill
+  \begin{enumerate}[A]
+    \item String
+    \item Integer
+  \end{enumerate}
+\end{frame}
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Data Types}
+  What is the result of running the following code if the user types in \lstinline|world| and then \lstinline|hello|?
+  \begin{lstlisting}[language=Python,autogobble]
+  a = int(input())
+  b = int(input())
+  x = a + b\end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item SyntaxError
+    \item NameError
+    \item ValueError
+    \item TypeError
+  \end{enumerate}
+\end{frame}
+
+
+
+%
+%
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Data Types}
+  What is the result of the following code?
+  \begin{lstlisting}[language=Python, autogobble]
+  def foo(a, b):
+    a = int(input())
+    b = int(input())
+    return a + b
+  foo(5, 6)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item Error
+    \item 11
+    \item "11"
+    \item Nothing
+  \end{enumerate}
+\end{frame}
+
+\section{Data Types}
+
+%
+% Slide 6
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Changing Strings}
+  What is the value of \lstinline|str1| after the following segment of code executes?
+  \begin{lstlisting}[language=Python, autogobble] 
+  str1 = "urbana"
+  str1[0] = "e"
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item SyntaxError
+    \item IndexError
+    \item TypeError
+    \item \lstinline{'erbana'}
+    \item \lstinline{'eurbana'}
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 7
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Indexing with Lists}
+  What is the result of the following code?
+  \begin{lstlisting}[language=Python, autogobble]
+  l = [1, 2, 3, 4]
+  x = l.pop(1)
+  y = l.pop(1)
+  z = l.remove(1)
+  print(x, y, z)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|2 3 None|
+    \item \lstinline|None None 4|
+    \item \lstinline|2 3 4|
+    \item IndexError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 8
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Appending}
+  What is the the value of \lstinline|x| after the following code runs?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = [1, 2, 3]
+  x = x.append(4)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|[1, 2, 3, 4]|
+    \item AttributeError
+    \item \lstinline|[1, 2, 3, [4]]|
+    \item \lstinline|None|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 8
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Extending}
+  What is the result of the following code if the user types in
+  \lstinline|hello| and \lstinline|world|?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = list(input())
+  y = list(input())
+  x.extend(y)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|["hello", "world"]|
+    \item \lstinline|["h", "e", "l", "l", "o", "w", "o", "r", "l", "d"]|
+    \item \lstinline|[["hello"], ["world"]]|
+    \item \lstinline|[["h", "e", "l", "l", "o"], ["w", "o", "r", "l", "d"]]|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Modify Tuple}
+  What is the result of the following code?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = (1, 2, 3, 4)
+  x[1] = 5
+  print(x)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|(5, 2, 3, 4)|
+    \item \lstinline|(1, 5, 3, 4)|
+    \item TypeError
+    \item SyntaxError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Creating Tuples} 
+  What is the result of the following code?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = (1, 2, 3, 4)
+  y = (1, 2)
+  z = x + y
+  print(z)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|((1, 2, 3, 4), (1, 2))|
+    \item \lstinline|(1, 2, 3, 4, 1, 2)|
+    \item \lstinline|[(1, 2, 3, 4), (1, 2)]|
+    \item TypeError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 11
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Updating Sets}
+  \begin{lstlisting}[language=Python, autogobble]
+  x = {1, 2, 3}
+  y = set("aeiou")
+  x.append(4)
+  z = x + y
+  print(z)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A] 
+    \item \lstinline|{1, 2, 3, 4, "aeiou"}|
+    \item \lstinline|{1, 2, 3, 4, "a", "e", "i", "o", "u"}|
+    \item ValueError
+    \item AttributeError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 9
+%
+\begin{frame}[fragile]
+  \frametitle{Order and Mutability}
+  % Please add the following required packages to your document preamble:
+  \begin{table}[]
+    \begin{tabular}{l|l|l}
+      \hline
+      \multicolumn{1}{c|}{}       & \multicolumn{1}{c|}{Ordered}                  & \multicolumn{1}{c}{Mutable}                  \\ \hline
+      \multicolumn{1}{c|}{String} & \multicolumn{1}{c|}{\cellcolor[HTML]{34FF34}} & \multicolumn{1}{c}{\cellcolor[HTML]{FE0000}} \\ \hline
+      List                        & \cellcolor[HTML]{34FF34}                      & \cellcolor[HTML]{34FF34}                     \\ \hline
+      Tuple                       & \cellcolor[HTML]{34FF34}                      & \cellcolor[HTML]{FE0000}                     \\ \hline
+      Set                         & \cellcolor[HTML]{FE0000}                      & \cellcolor[HTML]{34FF34}                     \\ \hline
+      Dict                        & \cellcolor[HTML]{FE0000}                      & \cellcolor[HTML]{34FF34}                     \\ \hline
+    \end{tabular}
+  \end{table}
+  \pause
+  This is a lot to remember. So memorize it through practice rather than through standard memorization. 
+\end{frame}
+
+
+\section{Conditionals}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Poll Question: If Statements}
+	What's the result of running the following code?
+	\begin{lstlisting}[language=Python, autogobble]
+	x = 5
+  y = bool(x == 3 or 4)
+	\end{lstlisting}
+	\vfill
+	\begin{enumerate}[A]
+		\item True
+		\item False
+		\item SyntaxError
+	\end{enumerate}
+	\pause
+  Will it ever be false?
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+	\frametitle{Boolean Operators}
+	\begin{enumerate}[A]
+		\item Why is \lstinline|x == 3 or 4| always True?
+		\item Alternatives:
+			\begin{enumerate}
+				\item \lstinline|x == 3 or x == 4|
+				\item \lstinline|x in [3, 4]|
+			\end{enumerate}
+		\item Types of operators:
+			\begin{enumerate}
+				\item \textbf{Binary operators:} and, or
+				\item \textbf{Unary Operators: } not
+			\end{enumerate}
+	\end{enumerate}
+\end{frame}
+
+\section{Loops}
+
+
+%
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Task: Validate User Input}
+  \textbf{Problem Statement:} Create a function that gets 10 words that contain the letter "e", stores them in a list, then returns them. Note that this problems uses nested loops but not break or enumerate.
+  \vfill
+  \pause
+  \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+  def no_e():
+    l = []
+    for i in range(0, 10):
+      word = input("Enter a word with the letter e: ")
+      while "e" not in word:
+        word = input("Enter a word with the letter e: ")
+      l.append(word)
+    return l
+  \end{lstlisting}
+\end{frame}
+
+%
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Task: Validate User Input}
+  \textbf{Problem Statement:} Create a function that keeps asking the user for strings of an even length and adding them to a list until the user enters a string of an odd length. Then return the final list. You'll want to use a "while True:" loop here.
+  \vfill
+  \pause
+  \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+  def get_even_words():
+    l = []
+    while True:
+      user_in = input("Enter a word with an even number of vowels: ")
+      if len(user_in) % 2 != 0:
+        print("That word has an odd number of letters. Terminating!!")
+        break
+      l.append(user_in)
+  \end{lstlisting}
+\end{frame}
+
+
+\section{OS and Files}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Opening a File}
+  What is returned by os.getcwd() when called in myfile.py?
+  \begin{lstlisting}
+  home
+  |__tracertong
+     |---mydata.csv
+     |___dev_website
+         |---index.html
+         |___elements
+             |--- myfile.py   <-- You are here
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|"/home/tracertong/dev_website/elements"|
+    \item \lstinline|"/home/tracertong/dev_website/elements/myfile.py"|
+    \item \lstinline|"dev_website/elements/myfile.py"|
+    \item \lstinline|"elements/myfile.py"|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Opening a File}
+  My data.csv contains three rows. What is the result of: \lstinline|len(open("mydata.csv").readlines())|.
+  \begin{lstlisting}
+  home
+  |__tracertong
+     |---mydata.csv
+     |___dev_website
+         |---index.html
+         |___elements
+             |___ myfile.py   <-- You are here
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item 2
+    \item 3
+    \item 4
+    \item FileNotFoundError
+    \item SyntaxError
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Opening a File}
+  We are script myfile.py and we want to open mydata.csv.
+  \begin{lstlisting}
+  home
+  |__tracertong
+     |---mydata.csv
+     |___dev_website
+         |---index.html
+         |___elements
+             |___ myfile.py   <-- You are here
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|fo = open("../../mydata.csv")|
+    \item \lstinline|fo = open("/../../mydata.csv")|
+    \item \lstinline|fo = open("/tracertong/mydata.csv")|
+    \item \lstinline|fo = open("../../../mydata.csv")|
+  \end{enumerate}
+\end{frame}
+
+
+
+\end{document}
