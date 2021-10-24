@@ -1,0 +1,401 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\usetheme{Madrid}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  belowskip=-0.5em,
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\lstset{style=python}
+
+\AtBeginSection[]{
+  \begin{frame}
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+      \usebeamerfont{title}\insertsectionhead\par%
+    \end{beamercolorbox}
+    \vfill
+  \end{frame}
+}
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+
+\setbeamercolor{palette primary}{bg=UIUCorange,fg=white}
+\setbeamercolor{palette secondary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=UIUCblue,fg=white}
+\setbeamercolor{structure}{fg=UIUCorange} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=UIUCblue} % TOC sections
+
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+%Information to be included in the title page:
+\title{\textbf{Lists}}
+\author{\textbf{David H Smith IV}}
+\institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
+\date{\textbf{Tues, Thu 21 2021}}
+
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
+\addtobeamertemplate{title page}{
+  \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
+    \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
+  \end{textblock*} 
+}{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Reminders}
+
+%
+% Slide 1
+%
+\begin{frame}
+  \frametitle{Reminders}
+  \begin{itemize}
+    \item 
+  \end{itemize}
+\end{frame}
+
+\section{Lists: General Review}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: List Function}
+  What is the value of x?
+  \begin{lstlisting}[language=Python, autogobble]
+  x = list('abc')
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|'abc'|
+    \item \lstinline|['abc']|
+    \item \lstinline|['a', 'b','c']|
+    \item \lstinline|[]|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{List Methods}
+  Use \lstinline|help(list.<method name>)| for information on a given method:
+  \begin{itemize}
+    \item \lstinline|L.append(elem)| \textrightarrow \ Add element to the end of L.
+    \item \lstinline|L.extend(lst)| \textrightarrow \ Add all elements of lst to the end of L.
+    \item \lstinline|L.insert(index, elem)| \textrightarrow \ Insert element at index of L pushing other elements forward.
+    \item \lstinline|L.pop()| \textrightarrow \ Remove and return the element at the end of L.
+    \item \lstinline|L.pop(index)| \textrightarrow \ Remove and return the element at index of L.
+    \item \lstinline|L.remove(elem)| \textrightarrow \ Remove first occurrence of element from L.
+    \item \lstinline|L.sort(elem)| \textrightarrow \ Sort the elements of L.
+  \end{itemize}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: List Functions}
+  What is the value of \lstinline|a| after this code is run?
+  \begin{lstlisting}[language=Python, autogobble]
+  a = [2, 4, 6, 8]
+  a.remove(4)
+  a.pop(2)
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|[2, 4]|
+    \item \lstinline|[6, 8]|
+    \item \lstinline|[2, 6]|
+    \item \lstinline|[2, 8]|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: List Slicing/Indexing}
+  What is the value of A after this code executes?
+  \begin{lstlisting}[language=Python, autogobble]
+  A = [1, 2, 3]
+  B = A
+  C = A[:]
+  B[1] = "pirate"
+  C[2] = "scurvy"
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|[1, 2, 3]|
+    \item \lstinline|[1, "pirate", 3]|
+    \item \lstinline|[1, "pirate", "scurvy"]|
+    \item \lstinline|["pirate", "scurvy"]|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: More List Functions}
+  Which will cause \lstinline|x = [1, 2, 3, 4]|
+  \begin{lstlisting}[language=Python, autogobble]
+  x = [1, 2]
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|x.append([3, 4])|
+    \item \lstinline|x += [3, 4]|
+    \item \lstinline|x.extend([3, 4])|
+    \item \lstinline|A and B|
+    \item \lstinline|A and C|
+    \item \lstinline|B and C|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Loops}
+  What will this output?\\
+  \begin{minipage}{0.48\textwidth}
+    \begin{lstlisting}[language=Python, autogobble]
+    A = [5, 10, 15]
+    for i in range(len(A)):
+      A[i] = A[i] + 1
+    print("1: ", A, end=" ")
+
+    A = [5, 10, 15]
+    for e in A:
+      e = e + 1
+    print("2: ", A)
+    \end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\textwidth}
+    \begin{enumerate}[A]
+      \item \lstinline|1: [5,10,15] 2: [5,10,15]|
+      \item \lstinline|1: [6,11,16] 2: [6,11,16]|
+      \item \lstinline|1: [5,10,15] 2: [6,11,16]|
+      \item \lstinline|1: [6,11,16] 2: [5,10,15]|
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Removal Functions}
+  We want a function that removes all spaces form strings. Which is correct?\\
+  \hfill
+  \begin{minipage}{0.48\textwidth}
+    \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+  def A(s):
+    for c in s:
+      if c == "":
+        c = ""
+    return s
+
+  def B(s):
+    new_s = ""
+    for c in s:
+      if c != " ":
+        new_s = new_s + c
+    return new_s
+
+  def C(s):
+    for i in range(len(s)):
+      if s[i] == " ":
+        s[i] = ""
+    return s\end{lstlisting}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.48\textwidth}
+    \hfill
+    \begin{enumerate}[A]
+      \item A
+      \item B
+      \item C
+      \item A and C
+      \item B and C
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+
+\section{List Creation vs Modification}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Creating vs Modifying Lists}
+  Imagine lists \lstinline|x| and \lstinline|y|.\\
+  \vfill
+  \begin{minipage}{0.49\textwidth}
+    \textbf{Creates new list:}
+    \begin{enumerate}[A]
+      \item \lstinline|z = x.copy()|
+      \item \lstinline|z = x[:]|
+      \item \lstinline|z = x + y|
+      \item \lstinline|z = sorted(x)|
+      \item \lstinline|z = reversed(x)|
+    \end{enumerate}
+  \end{minipage}
+  \begin{minipage}{0.49\textwidth}
+    \textbf{Modifies a list:}
+    \begin{enumerate}[A]
+      \item \lstinline|x.sort()|
+      \item \lstinline|x.append(num)|
+      \item \lstinline|x.remove(num)|
+      \item \lstinline|x.extend([num1, num2, ...])|
+      \item \lstinline|x.pop(index)|
+      \item \lstinline|x.insert(num)|
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+
+
+
+\section{Nested Lists}
+
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Nested Lists}
+  Which of the following is used to access `e'?
+  \begin{lstlisting}[language=Python, autogobble]
+  my_list = [
+      ['a', 'b', 'c'],
+      ['d', 'e', 'f'],
+      ['g', 'h', 'i']
+    ]
+  x = my_list[1][2]
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|my_list[2][2]|
+    \item \lstinline|my_list[1][1]|
+    \item \lstinline|my_list[1][2]|
+    \item None of the above
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Nested Lists}
+  What is the result of x?
+  \begin{lstlisting}[language=Python, autogobble]
+  my_list = [
+      ['a', 'b', 'c'],
+      ['d', 'e', 'f'],
+      ['g', 'h', 'i']
+    ]
+  x = my_list[1][2]
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|'b'|
+    \item \lstinline|'d'|
+    \item \lstinline|'f'|
+    \item \lstinline|'h'|
+  \end{enumerate}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: Nested Lists}
+  What is the resulting value of z after this code runs?
+  \begin{lstlisting}[language=Python, autogobble]
+  my_list = [
+      ['a', 'b', 'c'],
+      ['d', 'e', 'f'],
+      ['g', 'h', 'i']
+    ]
+  z = ""
+  for y in my_list:
+    for x in y:
+      total += x
+  \end{lstlisting}
+  \vfill
+  \begin{enumerate}[A]
+    \item \lstinline|`abcdefghi'|
+    \item \lstinline|[`abc',`def',`ghi']|
+    \item \lstinline|[`[abc]',`[def]',`[ghi]']|
+    \item \lstinline|`[abcdefghi]'|
+  \end{enumerate}
+\end{frame}
+
+
+\section{numpy}
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{numpy.array vs lists}
+  \begin{enumerate}
+    \item Shape in numpy:
+      \begin{itemize}
+        \item Imagine we have a numpy array \lstinline|a|.
+        \item \lstinline|a.shape[0]| height of the array (y dimesion).
+        \item \lstinline|a.shape[1]| width of the array (x dimension).
+      \end{itemize}
+      \pause
+    \item To index into a 2d array: \lstinline|regular_python_list[y][x]| \textrightarrow \ \lstinline|np_array[y, x]|
+      \pause
+    \item To get a chunk of an numpy array: \lstinline|np_array[y_start: y_end, x_start: x_end]|
+      \pause
+    \item \lstinline|numpy.zeros((y, x))| \textrightarrow Produces a 2d numpy array of x by y dimensions
+      \pause 
+    \item Other than that, they behave very similar to regular python lists but come with a ton of helpful functions (See \lstinline|help(numpy.array))!
+  \end{enumerate}
+\end{frame}
+
+\end{document}
