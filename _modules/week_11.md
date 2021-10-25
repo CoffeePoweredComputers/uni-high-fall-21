@@ -1,5 +1,5 @@
 ---
-navtitle: Week 11 - Lists
+navtitle: ▶ Week 11 - Lists
 n: "l"
 ---
 
