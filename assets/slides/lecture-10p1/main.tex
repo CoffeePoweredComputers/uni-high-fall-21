@@ -138,26 +138,6 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: List Functions}
-  What is the value of \lstinline|a| after this code is run?
-  \begin{lstlisting}[language=Python, autogobble]
-  a = [2, 4, 6, 8]
-  a.remove(4)
-  a.pop(2)
-  \end{lstlisting}
-  \vfill
-  \begin{enumerate}[A]
-    \item \lstinline|[2, 4]|
-    \item \lstinline|[6, 8]|
-    \item \lstinline|[2, 6]|
-    \item \lstinline|[2, 8]|
-  \end{enumerate}
-\end{frame}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
   \frametitle{Poll Question: List Slicing/Indexing}
   What is the value of A after this code executes?
   \begin{lstlisting}[language=Python, autogobble]
@@ -231,13 +211,13 @@
 %
 \begin{frame}[fragile]
   \frametitle{Poll Question: Removal Functions}
-  We want a function that removes all spaces form strings. Which is correct?\\
+  We want a function that removes all spaces from a string. Which is correct?\\
   \hfill
   \begin{minipage}{0.48\textwidth}
     \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
   def A(s):
     for c in s:
-      if c == "":
+      if c == " ":
         c = ""
     return s
 
@@ -312,7 +292,6 @@
       ['d', 'e', 'f'],
       ['g', 'h', 'i']
     ]
-  x = my_list[1][2]
   \end{lstlisting}
   \vfill
   \begin{enumerate}[A]
@@ -362,7 +341,7 @@
   z = ""
   for y in my_list:
     for x in y:
-      total += x
+      z += x
   \end{lstlisting}
   \vfill
   \begin{enumerate}[A]
