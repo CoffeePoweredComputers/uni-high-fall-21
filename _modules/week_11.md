@@ -10,7 +10,7 @@ Oct 25
 Oct 26
 : **Lecture**{: .label .label-light-blue} Lists (Part 1)
 : **Lab**{: .label .label-purp} Game of Life
-    : [Invite Link](https://classroom.github.com/a/4S9FtF_0)
+    : [Invite Link](https://classroom.github.com/a/TnuB_gKD)
 : **zyBooks**{: .label .label-orange} Topic 10 (Part 2) - Participation, Topic 10 - Challenge
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 10 (Part 1)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312022), [Post-reading 10 (Part 2)](#)
