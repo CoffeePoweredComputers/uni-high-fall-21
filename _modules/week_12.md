@@ -4,7 +4,7 @@ n: "m"
 ---
 
 Nov 01
-: **Lab**{: .label .label-purp} [](#)
+: **Lab**{: .label .label-purp} Game of Life
 : **zyBooks**{: .label .label-orange} Topic 10 - Challenge Activities
     : **Due**{: .label .label-red}
 

@@ -27,15 +27,16 @@ Oct 27
 
 Oct 28
 : **Lecture**{: .label .label-light-blue} Lists (Part 2)
-: **zyBooks**{: .label .label-orange} Topic 11 (Part 1) - Participation
+    : [Lecture Slides]({{ site.baseurl }}{% link assets/slides/lecture-10p2/main.pdf %})
+: **zyBooks**{: .label .label-orange} Topic 11 - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 10 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312023), [Post-reading 10 (Part 1)](#)
     : **Assigned**{: .label .label-green}
 
 Oct 29
-: **zyBooks**{: .label .label-orange} Topic 10 (Part 2) - Participation
+: **zyBooks**{: .label .label-orange} Topic 11 - Participation
     : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} Homework 10 (Part 2), Post-reading 10 (Part 1)
+: **PrairieLearn**{: .label .label-dark-blue} Homework 10 (Part 2), Post-reading 11
     : **Due**{: .label .label-red}
 
 Oct 30
