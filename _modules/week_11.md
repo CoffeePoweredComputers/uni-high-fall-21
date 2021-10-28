@@ -9,6 +9,7 @@ Oct 25
 
 Oct 26
 : **Lecture**{: .label .label-light-blue} Lists (Part 1)
+    : [Lecture Slides]({{ site.baseurl }}{% link assets/slides/lecture-10p1/main.pdf %}), [Patterns]({{ site.baseurl }}{% link assets/slides/patterns/main.pdf %})
 : **Lab**{: .label .label-purp} Game of Life
     : [Invite Link](https://classroom.github.com/a/TnuB_gKD)
 : **zyBooks**{: .label .label-orange} Topic 10 (Part 2) - Participation, Topic 10 - Challenge
