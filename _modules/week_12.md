@@ -22,9 +22,9 @@ Nov 03
 
 
 Nov 04
-: **Quiz 3**{: .label .label-grey} 
 : **PrairieLearn**{: .label .label-dark-blue} Attempt Practice Quiz (50 pts.)
     : **Due before 10am**{: .label .label-red}
+: **Quiz 3**{: .label .label-grey} 
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 11](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312025)
     : **Assigned**{: .label .label-green}
 
