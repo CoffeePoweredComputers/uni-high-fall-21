@@ -10,25 +10,26 @@ Nov 01
     : **Due**{: .label .label-red}
 
 Nov 02
-: **Lecture**{: .label .label-light-blue} Dictionaries
+: **Lecture**{: .label .label-light-blue} Dictionaries & Review
 : **zyBooks**{: .label .label-orange} Topic 11 - Challenge
     : **Assigned**{: .label .label-green}
-: **PrairieLearn**{: .label .label-dark-blue} [Homework 11 (Part 1)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312024)
+: **PrairieLearn**{: .label .label-dark-blue} [Homework] Attempt Practice Quiz (50 pts.)
     : **Assigned**{: .label .label-green}
 
 
 Nov 03
-: **PrairieLearn**{: .label .label-dark-blue} Homework 11 (Part 1)
-    : **Due**{: .label .label-red}
+**Nothing Due (Study for quiz 3)** 
 
 
 Nov 04
 : **Quiz 3**{: .label .label-grey} 
-: **PrairieLearn**{: .label .label-dark-blue} [Homework 11 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312025)
+: **PrairieLearn**{: .label .label-dark-blue} [Homework] Attempt Practice Quiz (50 pts.)
+    : **Due before 10am**{: .label .label-red}
+: **PrairieLearn**{: .label .label-dark-blue} [Homework 11](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312025)
     : **Assigned**{: .label .label-green}
 
 Nov 05
-: **PrairieLearn**{: .label .label-dark-blue} Homework 11 (Part 2)
+: **PrairieLearn**{: .label .label-dark-blue} Homework 11
     : **Due**{: .label .label-red}
 
 Nov 06
