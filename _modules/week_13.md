@@ -4,7 +4,8 @@ n: "n"
 ---
 
 Nov 08
-: **Lab**{: .label .label-purp} [](#)
+: **Lab**{: .label .label-purp} Game of Life - Checkpoint 1 Due
+    : **Due**{: .label .label-red}
 : **zyBooks**{: .label .label-orange} Topic 11 - Challenge Activities
     : **Due**{: .label .label-red}
 
