@@ -18,7 +18,7 @@ Nov 02
 
 
 Nov 03
-**Nothing Due (Study for quiz 3)** 
+: **Nothing Due (Study for quiz 3)** 
 
 
 Nov 04
