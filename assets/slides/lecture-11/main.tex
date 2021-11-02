@@ -136,6 +136,7 @@
 
     email_text = informal_email(name_map, "dhsmith2")
   \end{lstlisting}
+  asdf
 \end{frame}
 
 %
@@ -150,6 +151,7 @@
     counts = {}
     for item in some_list:
         counts[item] += 1
+    return counts
 
   x = get_item_counts(["This", "This", "This", "Is", "A"])
   \end{lstlisting}
@@ -178,6 +180,7 @@
         counts[item] = 1
       else:
         counts[item] += 1
+    return counts
   \end{lstlisting}
 \end{frame}
 
@@ -249,7 +252,7 @@
   \frametitle{Poll Question: Dictionary Functions}
   What will be printed to the screen after the following has run?
   \begin{lstlisting}[language=Python, autogobble]
-  dict_1 = {"foo": 5, "bar": 10, "baz": 12}
+  dict_1 = {"foo": 5, "bar": 3, "baz": 10}
   for i in dict_1.items():
     print(i, end=" ")
   \end{lstlisting}
