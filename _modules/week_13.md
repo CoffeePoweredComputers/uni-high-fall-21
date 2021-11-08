@@ -1,5 +1,5 @@
 ---
-navtitle: Week 13 - Troubleshooting Process
+navtitle: ▶ Week 13 - Troubleshooting Process
 n: "n"
 ---
 
@@ -11,13 +11,13 @@ Nov 08
 
 Nov 09
 : **Lecture**{: .label .label-light-blue} HTML and the Internet
-: **PrairieLearn**{: .label .label-dark-blue} [Homework 12p1]()
+: **PrairieLearn**{: .label .label-dark-blue} [Homework 12]()
     : **Assigned**{: .label .label-green}
 : **zyBooks**{: .label .label-orange} Topic 12 - Participation
     : **Assigned**{: .label .label-green}
 
 Nov 10
-: **PrairieLearn**{: .label .label-dark-blue} [Homework 12p1]()
+: **zyBooks**{: .label .label-orange} Topic 12 - Participation
     : **Due**{: .label .label-red}
 
 Nov 11
