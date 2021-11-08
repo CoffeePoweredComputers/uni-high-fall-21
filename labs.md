@@ -1,6 +1,6 @@
 # Labs 
 
-Every Tuesday of the class will be a lab day where we will apply concepts that we learned the previous week to either small activities or large projects. Projects will need to be completed individually however you are both welcome and encouraged to work with your peers on the conceptual portions of the lab. However, any code that you turn in must be your own. To avoid copying one and others code I suggest discussing things at an abstract level or sketching out solutions.
+Every Monday of the class will be a lab day where we will apply concepts that we learned the previous week to either small activities or large projects. Projects will need to be completed individually however you are both welcome and encouraged to work with your peers on the conceptual portions of the lab. However, any code that you turn in must be your own. To avoid copying one and others code I suggest discussing things at an abstract level or sketching out solutions.
 
 ##### Labs
 1. Setup and Intro to Git/GitHub
