@@ -1,0 +1,332 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+\usepackage{textpos}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\usetheme{Madrid}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+  backgroundcolor=\color{backcolour},   
+  commentstyle=\color{codegreen},
+  keywordstyle=\color{magenta},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize,
+  breakatwhitespace=false,         
+  belowskip=-0.5em,
+  breaklines=true,                 
+  captionpos=b,                    
+  keepspaces=true,                 
+  numbers=left,                    
+  numbersep=5pt,                  
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,                  
+  tabsize=2
+}
+
+\lstset{style=python}
+
+\AtBeginSection[]{
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
+}
+% Setup the university's color pallette
+\definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
+\definecolor{UIUCblue}{RGB}{232, 74, 39} % UBC Grey (secondary)
+
+
+\setbeamercolor{palette primary}{bg=UIUCorange,fg=white}
+\setbeamercolor{palette secondary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=UIUCblue,fg=white}
+\setbeamercolor{palette quaternary}{bg=UIUCblue,fg=white}
+\setbeamercolor{structure}{fg=UIUCorange} % itemize, enumerate, etc
+\setbeamercolor{section in toc}{fg=UIUCblue} % TOC sections
+
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+\setbeamercolor{subsection in head/foot}{bg=UIUCorange,fg=UIUCblue}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+%Information to be included in the title page:
+\title{\textbf{HTML}}
+\author{\textbf{David H Smith IV}}
+\institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
+\date{\textbf{Mon, July 21 2021}}
+
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
+\addtobeamertemplate{title page}{
+  \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
+    \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
+  \end{textblock*} 
+}{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Reminders}
+
+%
+% Slide 1
+%
+\begin{frame}
+  \frametitle{Reminders}
+  \begin{itemize}
+    \item Please remember to sign-up or submit a conflict request for the quiz
+    \item Practice quiz is up, be sure to attempt it before the actual quiz
+    \item Homework 7 is due Friday 
+    \item The grace period for homework 6 ends Friday
+    \item The grace period for homework 7 will only be until Aug. 5
+  \end{itemize}
+\end{frame}
+
+\section{Hyper Text Markup Language}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{HTML5 = HTML, CSS, JS}
+  \pause
+  \begin{itemize}
+    \item \textbf{Separation of Concerns: }
+    \begin{itemize}
+      \item HTML = content
+      \item CSS = styling
+      \item JS = interactivity
+    \end{itemize}
+    \pause
+    \item \textbf{HTML Documents are Heirarchical: }
+    \begin{itemize}
+      \item Elements have begin/end tags
+      \item Elements can be nested in other elements
+    \end{itemize}
+    \pause
+    \item \textbf{CSS consists of:}
+    \begin{itemize}
+      \item \{attribute : value\} pairs
+      \item Like a Python dictionary
+    \end{itemize}
+    \pause
+    \item \textbf{JS}
+    \begin{itemize}
+      \item variables, expressions, function, conditionals, loops, etc\ldots
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Generating Web pages Dynamically}
+  \begin{enumerate}[A]
+    \item Amazon.com doesn't have people write web pages for each product. They're generated on the fly by a computer program according to a template.
+    \item \textbf{Templates: } Basically like Python format strings, like \lstinline|"Product: {} Price: {}".format(productname, product[productname])|.
+    \item Looping through collections
+  \end{enumerate}
+\end{frame}
+
+%
+% Slides
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: HTML}
+  What will the following code segment produce?\\
+  \begin{lstlisting}[language=html,autogobble]
+  <ul>
+    <li>CS 105<li>
+    <li>CS 125<li>
+  </ul>
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item Unordered list with CS 105 and CS 125
+    \item Ordered list with CS 105 and CS 125
+    \item Error
+  \end{enumerate}
+\end{frame}
+
+%
+% Slides
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: HTML}
+  What are the visible column header(s) in the table produced by this HTML?\\
+  \begin{minipage}{0.49\textwidth}
+    \begin{lstlisting}[language=html]
+<table>
+  <caption>CS 105</caption>
+  <tr>
+    <th></th>
+    <th>Assigned</th>
+    <th>Due</th>
+  </tr>
+  <tr>
+    <th>Homework 1</th>
+    <td>06/14/2021</td>
+    <td>06/21/2021</td>
+  </tr>
+</table>
+    \end{lstlisting} 
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \begin{enumerate}[A]
+      \item Assigned
+      \item Assigned \& Due
+      \item Homework 1
+      \item 06/14/2021 \& 06/21/2021
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+
+%
+% Slides
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: HTML}
+  How many rows are produced by this table?\\
+  \begin{minipage}{0.49\textwidth}
+  \begin{lstlisting}[language=html, basicstyle=\scriptsize]
+<table>
+  <tr>
+    <th>Assigned</th>
+    <th>Due</th>
+  </tr>
+  <tr>
+    <td>06/14/2021</td>
+    <td>06/21/2021</td>
+  </tr>
+  <tr>
+    <td>07/04/2021</td>
+    <td>07/14/2021</td>
+  </tr>
+  <tr>
+    <td>07/04/2021</td>
+    <td>07/14/2021</td>
+  </tr>
+</table>
+    \end{lstlisting} 
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.39\textwidth}
+    \begin{enumerate}[A]
+      \item 4
+      \item 3
+      \item 2
+      \item 1
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+
+%
+% Slides
+%
+\begin{frame}[fragile]
+  Given this directory structure and this sample HTML, which document do you think this HTML is in?\\
+  \begin{minipage}{0.65\textwidth}
+    \begin{lstlisting}
+    dev_website
+    |---index.html
+    |___elements
+        |--- about.html
+        |--- cv.html
+        |___ projects.html
+    \end{lstlisting} 
+    \hfill
+    \begin{lstlisting}[language=html, basicstyle=\scriptsize]
+    <a href="elements/about.html">About</a>
+    <a href="elements/cv.html">CV</a>
+    <a href="elements/projects.html">Projects</a>
+    \end{lstlisting} 
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.3\textwidth}
+    \begin{enumerate}[A]
+      \item index.html
+      \item about.html
+      \item cv.html
+      \item projects.html
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+%
+% Slides
+%
+\begin{frame}[fragile]
+  \begin{minipage}{0.49\textwidth}
+  What is produced on a webpage assuming the image referenced by href is broken or missing?
+  \begin{lstlisting}[language=html, basicstyle=\scriptsize]
+  <img src="img.jpg" alt="This is an image">
+  \end{lstlisting} 
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.39\textwidth}
+    \begin{enumerate}[A]
+      \item img.jpg
+      \item This is an image
+      \item Nothing, there is an error with the html
+    \end{enumerate}
+  \end{minipage}
+\end{frame}
+
+%
+% Slide
+%
+\begin{frame}[fragile]
+  \frametitle{Poll Question: HTML}
+  Which of these statements is false?
+  \begin{enumerate}[A]
+    \item Newlines and indentation in HTML are ignored.
+    \item There is more than one type of list in HTML.
+    \item Image tags don't require closing tags.
+    \item ``alt attributes'' for images help make web pages accessible.
+    \item ``favicon'' is a small picture to represent your web page, often shown in the browser tab.
+    \item None of the above
+  \end{enumerate}
+\end{frame}
+
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Reading data from the internet}
+  \begin{lstlisting}[language=Python]
+  import urllib.request
+
+  req = urllib.request.Request("https://wikipedia.com")
+  with urllib.request.urlopen(req) as response:
+    the_page = response.read()
+
+  print(the_page)
+  \end{lstlisting} 
+  \vfill
+  \begin{enumerate}[A]
+    \item From a Python program
+    \item urllib module: Given a URL, returns the document at that URL
+  \end{enumerate}
+\end{frame}
+
+\end{document}
