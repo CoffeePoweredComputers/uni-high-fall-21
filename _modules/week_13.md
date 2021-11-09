@@ -4,8 +4,6 @@ n: "n"
 ---
 
 Nov 08
-: **Lab**{: .label .label-purp} Game of Life - Checkpoint 2 Due
-    : **Due**{: .label .label-red}
 : **zyBooks**{: .label .label-orange} Topic 11 - Challenge Activities
     : **Due**{: .label .label-red}
 
@@ -29,6 +27,8 @@ Nov 11
     : **Assigned**{: .label .label-green}
 
 Nov 12
+: **Lab**{: .label .label-purp} Game of Life - Checkpoint 2 Due
+    : **Due**{: .label .label-red}
 : **zyBooks**{: .label .label-orange} Topic 13 (Part 1) - Participation
     : **Due**{: .label .label-red}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 12](), Post-reading 13 (Part 1)
