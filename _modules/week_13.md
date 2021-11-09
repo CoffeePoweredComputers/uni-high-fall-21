@@ -11,6 +11,7 @@ Nov 08
 
 Nov 09
 : **Lecture**{: .label .label-light-blue} HTML and the Internet
+	: [Lecture Slides]({{ site.baseurl }}{% link assets/slides/lecture-html/main.pdf %}) 
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 12]()
     : **Assigned**{: .label .label-green}
 : **zyBooks**{: .label .label-orange} Topic 12 - Participation
