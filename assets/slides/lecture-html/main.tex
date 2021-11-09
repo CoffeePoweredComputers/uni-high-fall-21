@@ -18,23 +18,23 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 \lstdefinestyle{python}{
-  backgroundcolor=\color{backcolour},   
-  commentstyle=\color{codegreen},
-  keywordstyle=\color{magenta},
-  numberstyle=\tiny\color{codegray},
-  stringstyle=\color{codepurple},
-  basicstyle=\ttfamily\footnotesize,
-  breakatwhitespace=false,         
-  belowskip=-0.5em,
-  breaklines=true,                 
-  captionpos=b,                    
-  keepspaces=true,                 
-  numbers=left,                    
-  numbersep=5pt,                  
-  showspaces=false,                
-  showstringspaces=false,
-  showtabs=false,                  
-  tabsize=2
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    belowskip=-0.5em,
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
 }
 
 \lstset{style=python}
@@ -76,9 +76,9 @@
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 \addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
 \addtobeamertemplate{title page}{
-  \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
-    \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
-  \end{textblock*} 
+    \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
+        \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
+    \end{textblock*} 
 }{}
 
 \begin{document}
@@ -91,90 +91,133 @@
 % Slide 1
 %
 \begin{frame}
-  \frametitle{Reminders}
-  \begin{itemize}
-    \item Please remember to sign-up or submit a conflict request for the quiz
-    \item Practice quiz is up, be sure to attempt it before the actual quiz
-    \item Homework 7 is due Friday 
-    \item The grace period for homework 6 ends Friday
-    \item The grace period for homework 7 will only be until Aug. 5
-  \end{itemize}
+    \frametitle{Reminders}
+    \begin{itemize}
+        \item Homework 12 is due Friday
+        \item Game of Life is due Friday
+        \item Topic 12 participation is due tommorow
+        \item Topic 12 post-reading is due tommorowa
+    \end{itemize}
 \end{frame}
 
-\section{Hyper Text Markup Language}
-
+\section{Basics of Website Construction}
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{HTML5 = HTML, CSS, JS}
-  \pause
-  \begin{itemize}
-    \item \textbf{Separation of Concerns: }
-    \begin{itemize}
-      \item HTML = content
-      \item CSS = styling
-      \item JS = interactivity
-    \end{itemize}
+    \frametitle{HTML5 = HTML, CSS, JS}
     \pause
-    \item \textbf{HTML Documents are Heirarchical: }
     \begin{itemize}
-      \item Elements have begin/end tags
-      \item Elements can be nested in other elements
+        \item \textbf{Separation of Concerns: }
+            \begin{itemize}
+                \item HTML = content
+                \item CSS = styling
+                \item JS = interactivity
+            \end{itemize}
+            \pause
+        \item \textbf{HTML Documents are Heirarchical: }
+            \begin{itemize}
+                \item Elements have begin/end tags (e.g., \lstinline|<body></body>|)
+                \item Elements can be nested in other elements
+                \item Newlines and indentation in HTML are ignored.
+            \end{itemize}
+            \pause
+        \item \textbf{CSS consists of:}
+            \begin{itemize}
+                \item \{attribute : value\} pairs
+                \item Like a Python dictionary
+            \end{itemize}
+            \pause
+        \item \textbf{JS}
+            \begin{itemize}
+                \item variables, expressions, function, conditionals, loops, etc\ldots
+            \end{itemize}
     \end{itemize}
-    \pause
-    \item \textbf{CSS consists of:}
-    \begin{itemize}
-      \item \{attribute : value\} pairs
-      \item Like a Python dictionary
-    \end{itemize}
-    \pause
-    \item \textbf{JS}
-    \begin{itemize}
-      \item variables, expressions, function, conditionals, loops, etc\ldots
-    \end{itemize}
-  \end{itemize}
 \end{frame}
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Generating Web pages Dynamically}
-  \begin{enumerate}[A]
-    \item Amazon.com doesn't have people write web pages for each product. They're generated on the fly by a computer program according to a template.
-    \item \textbf{Templates: } Basically like Python format strings, like \lstinline|"Product: {} Price: {}".format(productname, product[productname])|.
-    \item Looping through collections
-  \end{enumerate}
+    \frametitle{Generating Web pages Dynamically}
+    \begin{enumerate}[A]
+        \item Amazon.com doesn't have people write web pages for each product. They're generated on the fly by a computer program according to a template.
+        \item \textbf{Templates: } Basically like Python format strings, like \lstinline|"Product: {} Price: {}".format(productname, product[productname])|.
+        \item Looping through collections
+    \end{enumerate}
+\end{frame}
+
+\section{HTML}
+%
+% Slides
+%
+\begin{frame}[fragile]
+    \frametitle{The Starting Template}
+    \begin{lstlisting}[language=html,autogobble]
+    <!DOCTYPE html>
+    <html>
+        <body>
+            <h1>This is the header!</h1>
+            <p> And this is my first paragraph :D </p>
+        </body>
+    </html>
+    \end{lstlisting} 
+    \vfill
+    \begin{enumerate}
+        \item \lstinline|<!DOCTYPE html>| \textrightarrow This defines the type of document we are making (html5) so the browser knows how to interpret it.
+        \item \lstinline|<html>| \textrightarrow Defines the bounds of the HTML document.
+        \item \lstinline|<body>| \textrightarrow Defines the visible portion of the html document.
+        \item Headers:
+            \begin{itemize}
+                \item \lstinline|<h1>| \textrightarrow Largest header
+                \item \lstinline|<h2>| \textrightarrow Second largest header
+                \item \lstinline|<h3>| \textrightarrow You get the idea...
+            \end{itemize}
+        \item \lstinline|<p>| \textrightarrow Encapsulates a paragraph and formats the text as just plain text
+    \end{enumerate}
+\end{frame}
+
+
+%
+% Slides
+%
+\begin{frame}[fragile]
+    \frametitle{Ordered vs Unordered Lists}
+
+    \begin{minipage}{0.49\textwidth}
+        Unordered list:
+        \begin{lstlisting}[language=html,autogobble]
+          <ul>
+            <li>CS 105</li>
+            <li>CS 125</li>
+          </ul>
+        \end{lstlisting} 
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+        Ordered list:
+        \begin{lstlisting}[language=html,autogobble]
+          <ol>
+            <li>CS 105</li>
+            <li>CS 125</li>
+          </ol>
+        \end{lstlisting} 
+    \end{minipage}
+    \vfill
+    \begin{enumerate}
+        \item \lstinline|<ul></ul>| \textrightarrow Encapsulates the items and renders them as an unordered list.
+        \item \lstinline|<ol></ol>| \textrightarrow Encapsulates the items and renders them as an ordered list.
+        \item \lstinline|<li></li>| \textrightarrow Goes inside either the \lstinline|<ul></ul>| or \lstinline|<ol></ul>| and encapsulates a list item.
+    \end{enumerate}
 \end{frame}
 
 %
 % Slides
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: HTML}
-  What will the following code segment produce?\\
-  \begin{lstlisting}[language=html,autogobble]
-  <ul>
-    <li>CS 105<li>
-    <li>CS 125<li>
-  </ul>
-  \end{lstlisting} 
-  \vfill
-  \begin{enumerate}[A]
-    \item Unordered list with CS 105 and CS 125
-    \item Ordered list with CS 105 and CS 125
-    \item Error
-  \end{enumerate}
-\end{frame}
-
-%
-% Slides
-%
-\begin{frame}[fragile]
-  \frametitle{Poll Question: HTML}
-  What are the visible column header(s) in the table produced by this HTML?\\
-  \begin{minipage}{0.49\textwidth}
-    \begin{lstlisting}[language=html]
+    \frametitle{Tables}
+    What are the visible column header(s) in the table produced by this HTML?\\
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \begin{lstlisting}[language=html]
 <table>
   <caption>CS 105</caption>
   <tr>
@@ -188,27 +231,29 @@
     <td>06/21/2021</td>
   </tr>
 </table>
-    \end{lstlisting} 
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.45\textwidth}
-    \begin{enumerate}[A]
-      \item Assigned
-      \item Assigned \& Due
-      \item Homework 1
-      \item 06/14/2021 \& 06/21/2021
-    \end{enumerate}
-  \end{minipage}
+        \end{lstlisting} 
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+        {\footnotesize
+            \begin{enumerate}[A]
+                \item \lstinline|<table></table>| \textrightarrow Defines a new table and encapsulates every item below
+                \item \lstinline|<caption></caption>| \textrightarrow Defines a caption for the table
+                \item \lstinline|<tr></tr>| \textrightarrow Defines a new table row and encapsulates a series of \lstinline|td|.
+                \item \lstinline|<td></td>| \textrightarrow Defines an entry in the table row.
+                \item \lstinline|<th></th>| \textrightarrow Same thing as td but bold to indicate it's a header.
+        \end{enumerate}}
+    \end{minipage}
 \end{frame}
 
 %
 % Slides
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: HTML}
-  How many rows are produced by this table?\\
-  \begin{minipage}{0.49\textwidth}
-  \begin{lstlisting}[language=html, basicstyle=\scriptsize]
+    \frametitle{Poll Question: HTML}
+    How many rows are produced by this table?\\
+    \begin{minipage}{0.49\textwidth}
+        \begin{lstlisting}[language=html, basicstyle=\scriptsize]
 <table>
   <tr>
     <th>Assigned</th>
@@ -227,106 +272,219 @@
     <td>07/14/2021</td>
   </tr>
 </table>
-    \end{lstlisting} 
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.39\textwidth}
-    \begin{enumerate}[A]
-      \item 4
-      \item 3
-      \item 2
-      \item 1
-    \end{enumerate}
-  \end{minipage}
+        \end{lstlisting} 
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.39\textwidth}
+        \begin{enumerate}[A]
+            \item 4
+            \item 3
+            \item 2
+            \item 1
+        \end{enumerate}
+    \end{minipage}
 \end{frame}
 
 %
 % Slides
 %
 \begin{frame}[fragile]
-  Given this directory structure and this sample HTML, which document do you think this HTML is in?\\
-  \begin{minipage}{0.65\textwidth}
-    \begin{lstlisting}
+    \frametitle{Text with Links}
+    \begin{lstlisting}[language=html, basicstyle=\scriptsize]
+<a href="https://hamiltonfour.tech/#/cv">CV</a>
+<a href="https://hamiltonfour.tech/#/">About</a>
+<a href="https://hamiltonfour.tech/#/publications">Publications</a>
+    \end{lstlisting} 
+    \hfill
+    \begin{enumerate}[A]
+        \item \lstinline|<a></a>| \textrightarrow Encapsulates the text we wish to include the hyperlink.
+        \item \lstinline|href=""| \textrightarrow The link to either an external link to a page on another website (e.g., the examples above) or another internal page on the website. 
+    \end{enumerate}
+\end{frame}
+
+%
+% Slides
+%
+\begin{frame}[fragile]
+    Given this directory structure and this sample HTML, which document do you think this HTML is in?\\
+    \begin{minipage}{0.68\textwidth}
+    \begin{lstlisting}[autogobble]
     dev_website
     |---index.html
     |___elements
         |--- about.html
         |--- cv.html
         |___ projects.html
-    \end{lstlisting} 
-    \hfill
-    \begin{lstlisting}[language=html, basicstyle=\scriptsize]
+        \end{lstlisting} 
+        \hfill
+        \begin{lstlisting}[language=html,autogobble, basicstyle=\scriptsize]
     <a href="elements/about.html">About</a>
     <a href="elements/cv.html">CV</a>
     <a href="elements/projects.html">Projects</a>
-    \end{lstlisting} 
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.3\textwidth}
-    \begin{enumerate}[A]
-      \item index.html
-      \item about.html
-      \item cv.html
-      \item projects.html
-    \end{enumerate}
-  \end{minipage}
+        \end{lstlisting} 
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.25\textwidth}
+        \begin{enumerate}[A]
+            \item index.html
+            \item about.html
+            \item cv.html
+            \item projects.html
+        \end{enumerate}
+    \end{minipage}
 \end{frame}
+
+
 %
 % Slides
 %
 \begin{frame}[fragile]
-  \begin{minipage}{0.49\textwidth}
-  What is produced on a webpage assuming the image referenced by href is broken or missing?
-  \begin{lstlisting}[language=html, basicstyle=\scriptsize]
+    \frametitle{HTML Images}
+    \begin{lstlisting}[language=html, basicstyle=\scriptsize]
   <img src="img.jpg" alt="This is an image">
-  \end{lstlisting} 
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.39\textwidth}
+    \end{lstlisting} 
+    \vfill
     \begin{enumerate}[A]
-      \item img.jpg
-      \item This is an image
-      \item Nothing, there is an error with the html
+        \item \lstinline|src=""| Link to that image either locally or online.
+        \item \lstinline|alt=""| Text to display instead of the image incase a browser does not support that image or the image link becomes broken.
+        \item One of the only html tags that is self contained and therefore does not have an end tag.
     \end{enumerate}
-  \end{minipage}
 \end{frame}
+
 
 %
 % Slide
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: HTML}
-  Which of these statements is false?
-  \begin{enumerate}[A]
-    \item Newlines and indentation in HTML are ignored.
-    \item There is more than one type of list in HTML.
-    \item Image tags don't require closing tags.
-    \item ``alt attributes'' for images help make web pages accessible.
-    \item ``favicon'' is a small picture to represent your web page, often shown in the browser tab.
-    \item None of the above
-  \end{enumerate}
+    \frametitle{The div tag}
+    \begin{lstlisting}[language=html, basicstyle=\scriptsize, autogobble]
+    <div class=""> 
+    ...
+    <div>
+    \end{lstlisting} 
+    \vfill
+    \begin{enumerate}[A]
+        \item Encapsulates an arbitrary amount of other html tags
+        \item Defines how the stuff it encapsulates is rendered using class + css
+    \end{enumerate}
+\end{frame}
+
+\section{CSS}
+%
+% Slides
+%
+\begin{frame}[fragile]
+    \frametitle{CSS Attributes for Tag Types}
+    \begin{minipage}{0.44\textwidth}
+        \begin{lstlisting}[language=python, basicstyle=\scriptsize, autogobble]
+    body{
+        background-color: orange;
+    }
+
+    h1{
+        color: navy;
+        text-align: center;
+        font-size: 50;
+    }
+
+    p{
+        color: blue;
+    }
+
+    li{
+        font-variant: small-caps;
+    }
+        \end{lstlisting} 
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.44\textwidth}
+        {\footnotesize
+        \begin{enumerate}[A]
+            \item A file containing attributes wrapped in curly brackets.
+            \item Attributes change how the tag they're attached to get rendered on the webpage.
+            \item Each attribute value pair ends with a \lstinline|;|.
+            \item There's a lot of attributes you can change. These are just a few...
+        \end{enumerate}}
+    \end{minipage}
+\end{frame}
+
+%
+% Slides
+%
+\begin{frame}[fragile]
+    \frametitle{Defining your own classes}
+    \begin{minipage}{0.44\textwidth}
+        \begin{lstlisting}[language=css, basicstyle=\scriptsize, autogobble]
+        .myclass{
+            background-color: orange;
+            padding: 10px;
+            font-size: 10px;
+        }
+        \end{lstlisting} 
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.44\textwidth}
+        \begin{enumerate}[A]
+            \item Starts with a .
+            \item Otherwise identical to the previous example
+        \end{enumerate}
+    \end{minipage}
+\end{frame}
+
+%
+% Slides
+%
+\begin{frame}[fragile]
+    \frametitle{div + css classes = unlimited power}
+    \begin{minipage}{0.48\textwidth}
+    \begin{lstlisting}[language=html, basicstyle=\tiny, autogobble]
+        <div class="myclass">
+            <p> This is a paragraph </p>
+            <p> This is another paragraph </p>
+            <ul>
+                <li> I </li>
+                <li> am </li>
+                <li> Groot </li>
+            </ul>
+        </div>
+    \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.44\textwidth}
+    \begin{lstlisting}[language=html, basicstyle=\tiny, autogobble]
+        .myclass{
+            background-color: orange;
+            padding: 10px;
+            font-size: 10px;
+        }
+    \end{lstlisting} 
+    \end{minipage}
+    \vfill
+    \begin{enumerate}[A]
+        \item A file containing attributes wrapped in curly brackets.
+        \item Attributes change how the tag they're attached to get rendered on the webpage.
+        \item Each attribute value pair ends with a \lstinline|;|
+        \item There's a lot of attributes you can change. These are just a few...
+    \end{enumerate}
 \end{frame}
 
 
+\section{Next bat time. Next bat channel.}
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Reading data from the internet}
-  \begin{lstlisting}[language=Python]
-  import urllib.request
+    \frametitle{Reading data from the internet}
+    \begin{lstlisting}[language=Python, autogoggle]
+    import requests
 
-  req = urllib.request.Request("https://wikipedia.com")
-  with urllib.request.urlopen(req) as response:
-    the_page = response.read()
-
-  print(the_page)
-  \end{lstlisting} 
-  \vfill
-  \begin{enumerate}[A]
-    \item From a Python program
-    \item urllib module: Given a URL, returns the document at that URL
-  \end{enumerate}
+    response = requests.get("https://www.google.com")
+    \end{lstlisting} 
+    \vfill
+    \begin{enumerate}[A]
+        \item From a Python program
+        \item resquests module: Given a URL, returns the document at that URL
+    \end{enumerate}
 \end{frame}
 
 \end{document}
