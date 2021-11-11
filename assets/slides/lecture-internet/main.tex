@@ -115,7 +115,15 @@
             \pause
         \item Now, we can get it from the internet. The world's biggest file collection.
             \begin{itemize}
-                \item Recall, websites are just collections of files hosted on a computer.
+                \item Recall, websites are just collections of files on another person's computer (server):
+                    \begin{lstlisting}[autogobble]
+        dev_website
+        |---index.html
+        |___elements
+            |--- about.html
+            |--- cv.html
+            |___ projects.html
+                    \end{lstlisting} 
             \end{itemize}
     \end{enumerate}
 \end{frame}
@@ -164,27 +172,8 @@
                     \pause
                 \item A set of rules (protocol), for transferring these files (HTTP).
             \end{itemize}
-        \item Recall, websites are just collections of files on another person's computer (server):
-        \begin{lstlisting}[autogobble, basicstyle=\tiny]
-        dev_website
-        |---index.html
-        |___elements
-            |--- about.html
-            |--- cv.html
-            |___ projects.html
-        \end{lstlisting} 
 
     \end{itemize}
-\end{frame}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-    \frametitle{Internet Usage}
-    \begin{figure}
-        \includegraphics[width=\textswidth]{./imgs/chart.png}
-    \end{figure}
 \end{frame}
 
 %
@@ -227,6 +216,16 @@
     \end{itemize}
 \end{frame}
 
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+    \frametitle{Internet Usage}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./imgs/chart.png}
+    \end{figure}
+\end{frame}
+
 \section{IP Addresses, Domain Names, and URLS}
 
 %
@@ -235,7 +234,14 @@
 \begin{frame}[fragile]
     \frametitle{IP Addresses}
     \begin{figure}
+        \includegraphics[width=0.35\textwidth]{./imgs/ip.png}
     \end{figure}
+    \begin{itemize}
+        \item Internet Protocol (IP) Address \textrightarrow \ The 32 bit (four 8-bit groups) address that specifies.
+        \item Goes from 0.0.0.0-255.255.255.255
+        \item Each domain name (e.g., www.google.com) has an IP address 
+        \item We use a Domain Name System (DNS) server to lookup the IP attached to a domain name
+    \end{itemize}
 \end{frame}
 
 %
@@ -243,6 +249,23 @@
 %
 \begin{frame}[fragile]
     \frametitle{Domain Names}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./im}
+    \end{figure}
+    \begin{itemize}
+        \item Levels of Domains:
+        \begin{itemize}
+            \item Top-Level Domain (TLD): .com, .edu, .net, .org 
+            \item Country Code Top-Level Domain (ccTLD): .uk, .ru, .ca
+            \item Second-Level Domain: google, wikipedia, youtube
+            \item Sub-Domain: sub-domain(s) that fall under the second level domain. 
+            \item For example, if the top and second-level domain is illinois.edu:
+            \begin{itemize}
+                \item cs.illinois.edu
+                \item law.illinois.edu
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
 \end{frame}
 
 %
@@ -250,17 +273,48 @@
 %
 \begin{frame}[fragile]
     \frametitle{URLS}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{./im}
+    \end{figure}
+    The Uniform Resource Locator (URL) is composed of the following parts:
+    \begin{itemize}
+        \item \textbf{Protocol Scheme} \textrightarrow \  The protocol that is being used 
+        \item \textbf{Hostname} \textrightarrow \ The complete domain name of the server you're trying to connect to.
+        \item \textbf{Path} \textrightarrow \ The path to the resource and (sometimes) query parameters.
+    \end{itemize}
 \end{frame}
 
 
 
 \section{HTTP Protocol}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+    \frametitle{HTTP Basics}
+    \begin{minipage}{0.49\textwidth}
+        \begin{figure}
+            \includegraphics[width=\textwidth]{./imgs/httprequest.png}
+        \end{figure}
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+        \begin{itemize}
+            \item \textbf{GET} \textrightarrow \
+            \item \textbf{HEAD} \textrightarrow \
+            \item \textbf{POST} \textrightarrow \
+            \item \textbf{PUT} \textrightarrow \
+            \item \textbf{DELETE} \textrightarrow \
+        \end{itemize}
+    \end{minipage}
+\end{frame}
+
 %
 % Slide 2
 %
 \begin{frame}[fragile]
     \frametitle{Reading data from the internet}
-    \begin{lstlisting}[language=Python, autogoggle]
+    \begin{lstlisting}[language=Python, autogobble]
     import requests
 
     response = requests.get("https://www.google.com")
