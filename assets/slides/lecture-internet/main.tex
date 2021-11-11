@@ -71,7 +71,7 @@
 \title{\textbf{The Internet}}
 \author{\textbf{David H Smith IV}}
 \institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
-\date{\textbf{Thurs, Nov 21 2021}}
+\date{\textbf{Thurs, Nov 11 2021}}
 
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 \addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
@@ -109,13 +109,14 @@
     \frametitle{Where Data Comes From}
     \begin{enumerate}
         \item Started with the data being hard-coded
+            \pause
         \item Then we got data from the user: \lstinline|input()|
             \pause
         \item Then we got it from files: \lstinline|open(filepath)|.
             \pause
-        \item Now, we can get it from the internet. The world's biggest file collection.
+        \item Now, we can get it from the internet. 
             \begin{itemize}
-                \item Recall, websites are just collections of files on another person's computer (server):
+                \item Recall, websites are just collections of files and software on another person's computer (server):
                     \begin{lstlisting}[autogobble]
         dev_website
         |---index.html
@@ -146,7 +147,6 @@
             \item Only a few users at government research facilities and universities
             \item Used for file transfer, not websites
             \item File Transfer Protocol (FTP, 1971) is still available and used today.
-            \item Example: 
         \end{itemize}
     \end{minipage}
 \end{frame}
@@ -158,9 +158,11 @@
     \frametitle{Tim Berners-Lee and the Internet}
     \begin{itemize}
         \item TBL was a physicist at CERN (another scientist interested in sharing work).
-        \item Invented in the 1990s:
+            \pause
+        \item Invented in the 1990s.
+            \pause
         \item Composed of the following components:
-            \begin{itemize}
+            \begin{enumerate}
                 \pause
                 \item HTML files containing links to other HTML files
                     \pause
@@ -168,10 +170,11 @@
                         \item Link: First proposed by Vannevar Bush in "As we may think".
                         \item Proposed a hypothetical machine that could let a user jump to different locations across multiple documents. Sound familiar?
                     \end{itemize}
+                    \pause
                 \item A browser, which could read and render the files.
                     \pause
                 \item A set of rules (protocol), for transferring these files (HTTP).
-            \end{itemize}
+            \end{enumerate}
 
     \end{itemize}
 \end{frame}
@@ -250,21 +253,23 @@
 \begin{frame}[fragile]
     \frametitle{Domain Names}
     \begin{figure}
-        \includegraphics[width=\textwidth]{./im}
+        \includegraphics[width=0.75\textwidth]{./imgs/domain.png}
     \end{figure}
     \begin{itemize}
         \item Levels of Domains:
-        \begin{itemize}
+        \begin{enumerate}
             \item Top-Level Domain (TLD): .com, .edu, .net, .org 
-            \item Country Code Top-Level Domain (ccTLD): .uk, .ru, .ca
+                \pause
             \item Second-Level Domain: google, wikipedia, youtube
+                \pause
             \item Sub-Domain: sub-domain(s) that fall under the second level domain. 
+                \pause
             \item For example, if the top and second-level domain is illinois.edu:
             \begin{itemize}
                 \item cs.illinois.edu
                 \item law.illinois.edu
             \end{itemize}
-        \end{itemize}
+        \end{enumerate}
     \end{itemize}
 \end{frame}
 
@@ -274,14 +279,14 @@
 \begin{frame}[fragile]
     \frametitle{URLS}
     \begin{figure}
-        \includegraphics[width=\textwidth]{./im}
+        \includegraphics[width=0.75\textwidth]{./imgs/url.png}
     \end{figure}
     The Uniform Resource Locator (URL) is composed of the following parts:
-    \begin{itemize}
+    \begin{enumerate}
         \item \textbf{Protocol Scheme} \textrightarrow \  The protocol that is being used 
         \item \textbf{Hostname} \textrightarrow \ The complete domain name of the server you're trying to connect to.
         \item \textbf{Path} \textrightarrow \ The path to the resource and (sometimes) query parameters.
-    \end{itemize}
+    \end{enumerate}
 \end{frame}
 
 
@@ -299,12 +304,32 @@
         \end{figure}
     \end{minipage}
     \begin{minipage}{0.49\textwidth}
+        {\footnotesize
         \begin{itemize}
-            \item \textbf{GET} \textrightarrow \
-            \item \textbf{HEAD} \textrightarrow \
-            \item \textbf{POST} \textrightarrow \
-            \item \textbf{PUT} \textrightarrow \
-            \item \textbf{DELETE} \textrightarrow \
+            \item \textbf{GET} \textrightarrow \ Requests a resource from the server.
+            \item \textbf{HEAD} \textrightarrow \ Same as get but without the response body.
+            \item \textbf{POST} \textrightarrow \ Requests the server accept the request body as a new child resource or modify one.
+            \item \textbf{PUT} \textrightarrow \ Requests the server accept the request body as a modification to an existing resource.
+            \item \textbf{DELETE} \textrightarrow \ Requests the deletion of an existing resource.
+        \end{itemize}}
+    \end{minipage}
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+    \frametitle{HTTP Basics}
+    \begin{minipage}{0.49\textwidth}
+        \begin{figure}
+            \includegraphics[width=\textwidth]{./imgs/httprequest.png}
+        \end{figure}
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+        The main ones we care about:
+        \begin{itemize}
+            \item \textbf{GET} \textrightarrow \ Resource requests.
+            \item \textbf{POST} \textrightarrow \ Data modifying or creation requests.
         \end{itemize}
     \end{minipage}
 \end{frame}
