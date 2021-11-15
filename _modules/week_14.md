@@ -4,7 +4,8 @@ n: "o"
 ---
 
 Nov 15
-: **Lab**{: .label .label-purp} [](#)
+: **Lab**{: .label .label-purp} Cybersec
+	: [Invite Link](https://classroom.github.com/a/v4BsHtI1)
 
 Nov 16
 : **Lecture**{: .label .label-light-blue} Advanced Functions (Part 1)
