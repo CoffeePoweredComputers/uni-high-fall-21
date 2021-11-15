@@ -21,6 +21,7 @@ Nov 10
 
 Nov 11
 : **Lecture**{: .label .label-light-blue} Internet Continued - Lab 2
+	: [Lecture Slides]({{ site.baseurl }}{% link assets/slides/lecture-internet/main.pdf %}) 
 : **zyBooks**{: .label .label-orange} Topic 13 (Part 1) - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Post-reading 13 (Part 1)](#)
