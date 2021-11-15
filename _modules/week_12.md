@@ -5,7 +5,7 @@ n: "m"
 
 Nov 01
 : **Lab**{: .label .label-purp} Game of Life - Checkpoint 1 Due
-    : **Due**{: .label .label-red}
+    : [Invite Link](https://classroom.github.com/a/v4BsHtI1)
 : **zyBooks**{: .label .label-orange} Topic 10 - Challenge Activities
     : **Due**{: .label .label-red}
 

@@ -1,5 +1,5 @@
 ---
-navtitle: ▶ Week 13 - Troubleshooting Process
+navtitle: Week 13 - Troubleshooting Process
 n: "n"
 ---
 
