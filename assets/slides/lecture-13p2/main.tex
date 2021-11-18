@@ -113,21 +113,21 @@
 %
 \begin{frame}[fragile]
   \frametitle{Namespaces, Scope, and Scope Resolution}
-  \begin{enumerate}
+  \begin{itemize}
     \item \textbf{Namespaces: } A mapping between names and objects.
     \pause 
     \item \textbf{Scope: } The hierarchy that defines where we have access to what variables.
     \pause
     \item \textbf{Scope Resolution (LEGB rule):}
       \begin{enumerate}
-        \item Local: Things defined in a function.
-        \item Enclosed: Things defined in a nested function.
-        \item Global: Things defined in the program as a whole.
-        \item Built-in: Names that are built-in to Python like \lstinline|int()|.
+        \item \textit{Local:} Things defined in a function.
+        \item \textit{Enclosed:} Things defined in a nested function.
+        \item \textit{Global:} Things defined in the program as a whole.
+        \item \textit{Built-in:} Names that are built-in to Python like \lstinline|int()|.
       \end{enumerate}
     \pause
     \item Searches up the levels of the hierarchy.
-  \end{enumerate}
+  \end{itemize}
 \end{frame}
 
 
@@ -227,15 +227,17 @@
   \begin{lstlisting}[language=Python, autogobble]
   x = 1
   def foo():
-    x -= 2
+    x += 1
+  print(x)
   foo()
+  print(x)
   \end{lstlisting}
   \vfill
   \begin{enumerate}[A]
     \item \lstinline|1 2|
     \item \lstinline|1 1|
     \item \lstinline|2 2|
-    \item NameError
+    \item UnboundedLocal
   \end{enumerate}
 \end{frame}
 
@@ -283,18 +285,18 @@
     \item \lstinline|1 2|
     \item \lstinline|1 1|
     \item \lstinline|2 2|
-    \item NameError
+    \item UnboundedLocal
   \end{enumerate}
 \end{frame}
 
 
-\section{Named Arguments}
+\section{Default Arguments}
 
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   \begin{lstlisting}[language=Python, autogobble]
   def foo(sep=",", num):
     x = []
@@ -316,7 +318,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   \begin{lstlisting}[language=Python, autogobble]
   def foo(num, sep=",", mult=2):
     x = []
@@ -338,7 +340,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   \begin{lstlisting}[language=Python, autogobble]
   def foo(num, sep=",", mult=2):
     x = []
@@ -360,7 +362,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   \begin{lstlisting}[language=Python, autogobble]
   def foo(num, step=1, mult=2):
     x = []
@@ -401,7 +403,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   \begin{lstlisting}[language=Python, autogobble]
   def foo(*args):
     print(type(args))
@@ -419,7 +421,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   What is returned and printed by the function call at the bottom?
   \begin{lstlisting}[language=Python, autogobble]
   def foo(*things):
@@ -444,7 +446,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   What is returned by the function call at the bottom?
   \begin{lstlisting}[language=Python, autogobble]
   def foo(*stuff, num):
@@ -468,7 +470,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   What about now?
   \begin{lstlisting}[language=Python, autogobble]
   def foo(*stuff, num):
@@ -493,7 +495,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   What is returned by the function call in the code below?
   \begin{lstlisting}[language=Python, autogobble]
   def foo(total, *vals):
@@ -513,7 +515,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments}
+  \frametitle{Default Arguments}
   This$\cdots$
   \vfill
   \begin{lstlisting}[language=Python, autogobble]
@@ -537,7 +539,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Why?}
+  \frametitle{Default Arguments: Why?}
   This$\cdots$
   \vfill
   \begin{lstlisting}[language=Python, autogobble]
@@ -585,7 +587,7 @@
     \begin{lstlisting}[language=Python, autogobble]
     def foo(num, *vals):
       ...
-    foo(num=100, 1, 2, 3)
+    foo(100, 1, 2, 3)
     \end{lstlisting}
   \end{enumerate}
 \end{frame}
@@ -597,11 +599,11 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   What is printed out when the code below runs?
   \begin{lstlisting}[language=Python, autogobble]
   def foo(**kwargs):
-    print(type(args))
+    print(type(kwargs))
   foo(a="thing", b="thing2", c=3)
   \end{lstlisting}
   \vfill
@@ -618,7 +620,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   \begin{lstlisting}[language=Python, autogobble]
   def foo(**named_stuff, num):
     x = []
@@ -644,14 +646,14 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   \begin{lstlisting}[language=Python, autogobble]
   def foo(num, **more_named_stuff):
     x = ""
     for key, value in more_named_stuff.items():
       if value % num == 0:
         x += key
-    return key
+    return x
   foo(2, a=2, b=4, c=5, d=6)
   \end{lstlisting}
   \vfill
@@ -667,9 +669,9 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   \begin{lstlisting}[language=Python, autogobble]
-  def foo(arg1, arg2=5, **args):
+  def foo(arg1, arg2=2, **args):
     return arg1, arg2, args
   foo(5, a=1, b=2, c=3)
   \end{lstlisting}
@@ -686,9 +688,9 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Default Arguments: Poll Question}
   \begin{lstlisting}[language=Python, autogobble]
-  def foo(arg1, arg2=5, **args):
+  def foo(arg1, arg2=2, **args):
     return arg1, arg2, args
   foo(5, a=1, b=2, c=3, arg2=-1)
   \end{lstlisting}
