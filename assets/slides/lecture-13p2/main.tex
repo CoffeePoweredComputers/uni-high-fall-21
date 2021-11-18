@@ -85,7 +85,7 @@
 
 \frame{\titlepage}
 
-\section{Course Overview}
+\section{Reminders}
 
 %
 % Slide 1
@@ -112,13 +112,13 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{LEGB}
+  \frametitle{Namespaces, Scope, and Scope Resolution}
   \begin{enumerate}
     \item \textbf{Namespaces: } A mapping between names and objects.
     \pause 
     \item \textbf{Scope: } The hierarchy that defines where we have access to what variables.
     \pause
-    \item Scope Resolution (LEGB rule):
+    \item \textbf{Scope Resolution (LEGB rule):}
       \begin{enumerate}
         \item Local: Things defined in a function.
         \item Enclosed: Things defined in a nested function.
@@ -513,7 +513,7 @@
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Named Arguments: Poll Question}
+  \frametitle{Named Arguments}
   This$\cdots$
   \vfill
   \begin{lstlisting}[language=Python, autogobble]
@@ -532,6 +532,37 @@
   \vfill
   So arbitrary arguments are more syntactic sugar added by Python to make your code more versatile.
 \end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+  \frametitle{Named Arguments: Why?}
+  This$\cdots$
+  \vfill
+  \begin{lstlisting}[language=Python, autogobble]
+  def foo(*vals):
+    total = 0
+    for val in vals:
+      total += val
+    return total
+  foo(1, 2)
+  foo(1, 2, 3)
+  \end{lstlisting}
+  \vfill
+  avoids the need for this\dots
+  \vfill
+  \begin{lstlisting}[language=Python, autogobble]
+  def foo1(a,b):
+    return a + b 
+  def foo2(a,b,c):
+    return a + b + c
+  foo1(1, 2)
+  foo1(1, 2, 3)
+  \end{lstlisting}
+  \vfill
+\end{frame}
+
 
 %
 % Slide 2
@@ -690,7 +721,7 @@
       \pause
     \item **kwargs CANNOT precede *args:
       \begin{lstlisting}[language=Python, autogobble]
-    def foo(num, *vals):
+    def foo(num, **vals, *args):
       ...
     foo(num=100, 1, 2, 3)
       \end{lstlisting}
