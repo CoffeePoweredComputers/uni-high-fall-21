@@ -29,6 +29,8 @@ Dec 02
     : **Assigned**{: .label .label-green}
 
 Dec 03
+: **Lab**{: .label .label-purp} [](#) Password Guess Cont'd
+    : **Due**{: .label .label-red}
 : **zyBooks**{: .label .label-orange} Topic 15 - Participation
     : **Due**{: .label .label-red}
 : **PrairieLearn**{: .label .label-dark-blue} Homework 14 (Part 2), Post-reading 15
