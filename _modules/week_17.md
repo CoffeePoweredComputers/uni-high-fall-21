@@ -4,7 +4,7 @@ n: "r"
 ---
 
 Dec 06
-: **Lab**{: .label .label-purp} [](#)
+: **Lab**{: .label .label-purp} [](#) Review Lab
 : **zyBooks**{: .label .label-orange} Topic 14 - Challenge Activities
     : **Due**{: .label .label-red}
 
