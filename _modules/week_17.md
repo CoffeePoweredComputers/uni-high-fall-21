@@ -4,7 +4,8 @@ n: "r"
 ---
 
 Dec 06
-: **Lab**{: .label .label-purp} [](#) Review Lab
+: **Lab**{: .label .label-purp} [](#) Password Guess Cont'd
+    : **Due**{: .label .label-red}
 : **zyBooks**{: .label .label-orange} Topic 14 - Challenge Activities
     : **Due**{: .label .label-red}
 

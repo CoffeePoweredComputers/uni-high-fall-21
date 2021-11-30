@@ -1,5 +1,5 @@
 ---
-navtitle: ▶ Week 15 - Special Topic and Thanksgiving Break 🦃
+navtitle: Week 15 - Special Topic and Thanksgiving Break 🦃
 n: "p"
 ---
 
