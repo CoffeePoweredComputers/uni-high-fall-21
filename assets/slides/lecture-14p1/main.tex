@@ -177,24 +177,29 @@
 %
 \begin{frame}[fragile]
     \frametitle{Poll Question: Calling Class Functions in the Class}
-    What is printed in when the following code is run?
-    \begin{lstlisting}[language=Python, autogobble]
-    class Loc:
-        def __init__(self, name, age):
-            myname = name
-            myage = age
-        def get_date_of_birth(current_year):
-            print(current_year - self.age)
+    What code should replace the question marks?
+    \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+    class People:
+        def __init__(self, *people):
+            self.people_list = people
 
-    p1 = Person("Dave", 22)
-    print(p1.get_date_of_birth(2021))
+        def _get_age_difference(self, p2):
+            return abs(self.age - p2.age)
+            
+        def get_age_differences(self, person, current_year):
+            for p in self.people_list:
+                if p is not self:
+                    n1 = self.name
+                    n2 = p.name
+                    diff = ??
+                    print("{} and {} are {} years apart".format(n2, n1, diff))
+                        
     \end{lstlisting}
     \vfill
     \begin{enumerate}[A]
-        \item 1999
-        \item -1977
-        \item NameError
-        \item TypeError
+        \item \lstinline|self._get__age_difference(p2)|
+        \item \lstinline|_get__age_difference(p2)|
+        \item \lstinline|_get__age_difference(self, p2)|
     \end{enumerate}
 \end{frame}
 
