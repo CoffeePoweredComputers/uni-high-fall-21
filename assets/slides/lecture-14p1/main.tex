@@ -71,7 +71,7 @@
 \title{\textbf{Classes}}
 \author{\textbf{David H Smith IV}}
 \institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
-\date{\textbf{Tues, Nov 30 2021}}
+\date{\textbf{Thur, Dec 02 2021}}
 
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 \addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
@@ -155,10 +155,10 @@
     \begin{lstlisting}[language=Python, autogobble]
     class Person:
         def __init__(self, name, age):
-            myname = name
-            myage = age
+            self.name = name
+            self.age = age
         def get_date_of_birth(current_year):
-            print(current_year - self.age)
+             return current_year - self.age
 
     p1 = Person("Dave", 22)
     print(p1.get_date_of_birth(2021))
@@ -178,38 +178,27 @@
 \begin{frame}[fragile]
     \frametitle{Poll Question: Calling Class Functions in the Class}
     What code should replace the question marks?
-    \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
-    class People:
-        def __init__(self, *people):
-            self.people_list = people
+    \begin{lstlisting}[language=Python, basicstyle=\tiny]
+class People:
+		def __init__(self, *people):
+			self.people_list = people
 
-        def _get_age_difference(self, p2):
-            return abs(self.age - p2.age)
-            
-        def get_age_differences(self, person, current_year):
-            for p in self.people_list:
-                if p is not self:
-                    n1 = self.name
-                    n2 = p.name
-                    diff = ??
-                    print("{} and {} are {} years apart".format(n2, n1, diff))
-                        
-    \end{lstlisting}
+		def _get_age_difference(self, p1, p2):
+			return abs(p1.age - p2.age)
+
+		def get_age_differences(self, person, current_year):
+			for otherperson in self.people_list:
+				if otherperson is not person:
+					n1 = otherperson.name
+					n2 = person.name
+					diff = ??
+					print(n1, n2, diff)
+	\end{lstlisting}
     \vfill
     \begin{enumerate}[A]
-        \item \lstinline|self._get__age_difference(p2)|
-        \item \lstinline|_get__age_difference(p2)|
-        \item \lstinline|_get__age_difference(self, p2)|
-    \end{enumerate}
-\end{frame}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-    \frametitle{Key Takeaways}
-    \begin{enumerate}[A]
-        \item 
+        \item \lstinline|self._get_age_difference(otherperson, person)|
+        \item \lstinline|_get_age_difference(otherperson, person)|
+        \item \lstinline|_get_age_difference(self, otherperson, person)|
     \end{enumerate}
 \end{frame}
 
@@ -224,10 +213,14 @@
     \vfill
     \begin{enumerate}[A]
         \item Encapsulation is a fundamental concept in object oriented programming (OOP).
-        \item Private vs Public Variables
+        \pause
+        \item Private vs Public Variables:
+        \pause
         \begin{enumerate}[A]
             \item \textbf{Public: } The values/methods can be used outside of the class.
+        \pause
             \item \textbf{Private } The values/methods can't be used outside of the class.
+        \pause
         \end{enumerate}
     \item \textbf{Python doesn't have encapsulation!} (I have opinions on this...)
     \end{enumerate}
@@ -254,8 +247,11 @@
     \end{lstlisting}
     \vfill
     \begin{enumerate}[A]
+        \pause
         \item Functions/variables \textit{intended} to only be used in the classes start with an "\_". Python's version of private.
+        \pause
         \item Functions/variables \textit{intended} to be used anywhere don't start with an "\_".
+        \pause
         \item \textbf{This is only by convention and has no impact on how the code runs or is interpreted.}
     \end{enumerate}
 \end{frame}
@@ -344,10 +340,10 @@
         def __getitem__(self, item):
             """Commonly uses a generator"""
             value = self.start + item 
-            if item < value:
+            if value < self.end:
                 return value
 
-    x = Foo(10)
+    x = Foo(2,10)
     print(x[3])
     \end{lstlisting}
 \end{frame}
