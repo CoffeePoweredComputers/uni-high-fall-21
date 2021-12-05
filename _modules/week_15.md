@@ -4,7 +4,6 @@ n: "p"
 ---
 
 Nov 22
-
 : **zyBooks**{: .label .label-orange} Topic 13 - Challenge Activities
     : **Due**{: .label .label-red}
 

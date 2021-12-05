@@ -1,5 +1,5 @@
 ---
-navtitle: Week 17 - Intro to Exceptions and Modules
+navtitle: ▶ Week 17 - Intro to Exceptions and Modules
 n: "r"
 ---
 
@@ -20,15 +20,15 @@ Dec 07
 Dec 08
 : **zyBooks**{: .label .label-orange} Topic 15 - Participation
     : **Due**{: .label .label-red}
-: **PrairieLearn**{: .label .label-dark-blue} Homework 15
-    : **Due**{: .label .label-red}
-
 
 Dec 09
+: **PrairieLearn**{: .label .label-dark-blue} Attempt Practice Quiz (50 pts.)
+    : **Due before 10am**{: .label .label-red}
 : **Quiz**{: .label .label-grey}
 
 Dec 10
-: **Nothing Due**
+: **PrairieLearn**{: .label .label-dark-blue} Homework 15
+    : **Due**{: .label .label-red}
 
 Dec 11
 : **Nothing Due**

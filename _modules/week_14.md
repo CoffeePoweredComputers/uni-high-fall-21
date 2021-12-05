@@ -9,6 +9,7 @@ Nov 15
 
 Nov 16
 : **Lecture**{: .label .label-light-blue} Advanced Functions (Part 1)
+	: [Lecture Slides]({{ site.baseurl }}{% link assets/slides/lecture-13p1/main.pdf %}) 
 : **zyBooks**{: .label .label-orange} Topic 13 (Part 2) - Participation, Topic 13 - Challenge
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 13 (Part 1)](#), [Post-reading 13 (Part 2)](#)
@@ -24,6 +25,7 @@ Nov 17
 
 Nov 18
 : **Lecture**{: .label .label-light-blue} Advanced Functions (Part 2)
+	: [Lecture Slides]({{ site.baseurl }}{% link assets/slides/lecture-13p2/main.pdf %}) 
 : **zyBooks**{: .label .label-orange} Topic 14 (Part 1) - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 13 (Part 2)](#), [Post-reading 14 (Part 1)](#)

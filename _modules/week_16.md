@@ -1,5 +1,5 @@
 ---
-navtitle: ▶ Week 16 - Classes
+navtitle: Week 16 - Classes
 n: "q"
 ---
 
@@ -8,6 +8,7 @@ Nov 29
 
 Nov 30
 : **Lecture**{: .label .label-light-blue} Topic 14 (Part 1)
+	: [Lecture Slides]({{ site.baseurl }}{% link assets/slides/lecture-14p1/main.pdf %}) 
 : **zyBooks**{: .label .label-orange} Topic 14 (Part 2) - Participation, Topic 14 - Challenge
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 14 (Part 1)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312026), [Post-reading 14 (Part 2)](#)
@@ -23,6 +24,7 @@ Dec 01
 
 Dec 02
 : **Lecture**{: .label .label-light-blue} Topic 14 (Part 2)
+	: [Lecture Slides]({{ site.baseurl }}{% link assets/slides/lecture-14p2/main.pdf %}) 
 : **zyBooks**{: .label .label-orange} Topic 15 - Participation
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 14 (Part 2)](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312027), [Post-reading 15](#)
