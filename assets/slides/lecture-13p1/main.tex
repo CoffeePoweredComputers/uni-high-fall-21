@@ -68,7 +68,7 @@
 \usepackage{graphicx}
 
 %Information to be included in the title page:
-\title{\textbf{Functions - Scope}}
+\title{\textbf{Adv. Functions}}
 \author{\textbf{David H Smith IV}}
 \institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
 \date{\textbf{Tues, Nov 16 2021}}
@@ -144,12 +144,17 @@
   \end{lstlisting}
   \vfill
   \begin{enumerate}[A]
+    \pause
     \item Compiled vs Interpreted:
       \begin{enumerate}
-        \item \textbf{compiled} \textrightarrow \ Convert source code directly to machine code (just another language).
+        \pause
+      \item \textbf{compiled} \textrightarrow \ Convert source code into another language. Typically, though not exclusively, a higher level language (e.g., Python) into a lower level language (e.g., bytecode).
+        \pause
         \item \textbf{interpreted} \textrightarrow \ Another program reads the code you wrote one line at a time and performs those operations.
       \end{enumerate}
+    \pause
     \item There's generally crossover between these.
+    \pause
     \item Why bother? Because interpreting bytecode is faster.
   \end{enumerate}
 \end{frame}
@@ -194,12 +199,18 @@
   \end{lstlisting}
   \vfill
   \begin{itemize}
+    \pause
     \item \lstinline|foo.__doc__| \textrightarrow \ The docstring for the function.
+    \pause
     \item \lstinline|foo.__code__| \textrightarrow \ Gives the address of the code portion of the foo object in memory.
       \begin{itemize}
+        \pause
         \item \lstinline|foo.__code__.co_argcount| \textrightarrow \ The number of arguments in the function object.
+        \pause
         \item \lstinline|foo.__code__.co_consts| \textrightarrow \ The literals present in the function object.
+        \pause
         \item \lstinline|foo.__code__.co_name| \textrightarrow \ The name of the function.
+        \pause
         \item \lstinline|foo.__code__.co_varnames| \textrightarrow \ A tuple of the names of variables present in the function object.
       \end{itemize}
   \end{itemize}
@@ -243,8 +254,10 @@
   \vfill
   \begin{enumerate}
     \item Maps names to objects.
+    \pause
     \item You can check the local namespace with \lstinline|locals()| and it returns a dictionary of names and values
-    \item You can check the global namespace with \lstinline|globals()|... same as above.
+    \pause
+    \item You can check the global namespace with \lstinline|globals()|.
   \end{enumerate}
   \pause
   \vfill
@@ -338,14 +351,20 @@
   \frametitle{Scope}
   \begin{enumerate}[A]
     \item Namespaces and scopes go hand-in-hand.
+    \pause
     \item Types of scope:
       \begin{itemize}
         \item Built-in Scope \textrightarrow \ Contains all of the built-in's in Python (e.g., \lstinline|int()|, \lstinline|range()|)
+        \pause
         \item Global Scope \textrightarrow \ Contains variables located outside of functions in the global scope.
+        \pause
         \item Local Scope \textrightarrow \ The scope that is only accessible to a given function.
+        \pause
       \end{itemize}
     \item Scope resolution \textrightarrow \ The processing searching a namespace for a variable.
+    \pause
     \item NameError \textrightarrow \ An error that's generated when scope resolution fails. In otherwords, the name isn't in global or local namespace.
+    \pause
     \item A function will search it's local namespace first then the global namespace.
   \end{enumerate}
 \end{frame}
