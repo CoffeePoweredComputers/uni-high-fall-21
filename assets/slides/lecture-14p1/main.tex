@@ -71,7 +71,7 @@
 \title{\textbf{Classes}}
 \author{\textbf{David H Smith IV}}
 \institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
-\date{\textbf{Thur, Dec 02 2021}}
+\date{\textbf{Tues, Nov 16 2021}}
 
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 \addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
@@ -93,260 +93,599 @@
 \begin{frame}
     \frametitle{Reminders}
     \begin{itemize}
-        \item Usual mix of homework (see the website)
-        \item Quiz next Thursday, practice quiz will be up Saturday
-        \item Practice final will be up next Tuesday.
+        \item 
     \end{itemize}
 \end{frame}
 
-
-\section{Review + New Stuff: Class Constructors}
+\section{The Birds Eye View}
 
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-    \frametitle{Poll Question: Constructors}
-    Which of the following are valid constructor function defs?
-    \begin{enumerate}
-        \item \lstinline|def __init__(self):|
-        \item \lstinline|def __init__(self, foo):|
-        \item \lstinline|def _init_(self):|
-        \item \lstinline|def __init__(self, foo, *args, **kwargs):|
-        \item \lstinline|def __init__(self, foo, bar=0, *baz, **qux):|
-        \item \lstinline|def __init__(self, bar=0, foo, **qux, *baz):|
+    \frametitle{Classes, Objects, Instances, oh my!}
+    \begin{enumerate}[A]
+        \item \textbf{Classes:} The actual Python code that provides instructions on how to build a class (\lstinline|__init__()|), the attributes in the class, and definitions for the class functions.
+            \pause
+            \begin{itemize}
+                \item \textbf{Class Attribute: } A value in the class that is accessible to all instances of that class.
+                    \pause
+                \item \textbf{Instance Attribute: } A value that is only accessible to a given instance.
+                    \pause
+                \item \textbf{Instance Method: } A function that is callable from within a given instance. The words `method' and `function' mean the same thing.
+            \end{itemize}
+            \pause
+        \item \textbf{Instance:} An object that was created using a given class. We can have multiple instances of the same class.
+            \pause
+        \item \textbf{Object:} Just another name for the thing we instantiated.
     \end{enumerate}
+\end{frame}
+
+\section{Making a Class}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+    \frametitle{Making a Class: Poll Question}
+    Which of the following is the correct way of instantiating the class \lstinline|Foo|?
+    \begin{lstlisting}[language=Python, autogobble]
+    class Foo:
+        def __init__(self):
+            print("I'm a class!")
+    \end{lstlisting}
     \vfill
-    \textbf{Consider each individually in groups and I will go through and ask which are valid.}
+    \begin{enumerate}[A]
+        \item \lstinline|foo = Foo()|
+        \item \lstinline|foo = Foo(self)|
+        \item \lstinline|foo = Foo.__init__()|
+        \item \lstinline|foo = __init__()|
+    \end{enumerate}
 \end{frame}
 
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-    \frametitle{Poll Question: Setting Things Up}
-    What is printed in when the following code is run?
+    \frametitle{Making a Class: Poll Question}
+    What is the result of the following code?
     \begin{lstlisting}[language=Python, autogobble]
-    class Person:
-        def __init__(self, name, age):
-            myname = name
-            myage = age
-        def get_name(self):
-            print(myname)
+    class Foo:
+        def bar(self, x, y):
+            return x + y
 
-    p1 = Person("Dave", 22)
-    print(p1.get_name())
+    foo = Foo()
+    x = foo.bar(1, 2)
+    print(x)
     \end{lstlisting}
     \vfill
     \begin{enumerate}[A]
+        \item SyntaxError
         \item NameError
-        \item 22
-        \item Dave
-        \item self
-    \end{enumerate}
-\end{frame}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-    \frametitle{Poll Question: Setting Things Up}
-    What is printed in when the following code is run?
-    \begin{lstlisting}[language=Python, autogobble]
-    class Person:
-        def __init__(self, name, age):
-            self.name = name
-            self.age = age
-        def get_date_of_birth(current_year):
-             return current_year - self.age
-
-    p1 = Person("Dave", 22)
-    print(p1.get_date_of_birth(2021))
-    \end{lstlisting}
-    \vfill
-    \begin{enumerate}[A]
-        \item 1999
-        \item -1977
-        \item NameError
+        \item 3
         \item TypeError
     \end{enumerate}
 \end{frame}
 
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-    \frametitle{Poll Question: Calling Class Functions in the Class}
-    What code should replace the question marks?
-    \begin{lstlisting}[language=Python, basicstyle=\tiny]
-class People:
-		def __init__(self, *people):
-			self.people_list = people
-
-		def _get_age_difference(self, p1, p2):
-			return abs(p1.age - p2.age)
-
-		def get_age_differences(self, person, current_year):
-			for otherperson in self.people_list:
-				if otherperson is not person:
-					n1 = otherperson.name
-					n2 = person.name
-					diff = ??
-					print(n1, n2, diff)
-	\end{lstlisting}
-    \vfill
-    \begin{enumerate}[A]
-        \item \lstinline|self._get_age_difference(otherperson, person)|
-        \item \lstinline|_get_age_difference(otherperson, person)|
-        \item \lstinline|_get_age_difference(self, otherperson, person)|
-    \end{enumerate}
-\end{frame}
-
-
-\section{Class Interfaces, Internal Methods, and Encapsulation}
 
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-    \frametitle{Encapsulation: Private vs Public}
-    \vfill
-    \begin{enumerate}[A]
-        \item Encapsulation is a fundamental concept in object oriented programming (OOP).
-        \pause
-        \item Private vs Public Variables:
-        \pause
-        \begin{enumerate}[A]
-            \item \textbf{Public: } The values/methods can be used outside of the class.
-        \pause
-            \item \textbf{Private } The values/methods can't be used outside of the class.
-        \pause
-        \end{enumerate}
-    \item \textbf{Python doesn't have encapsulation!} (I have opinions on this...)
-    \end{enumerate}
-    \vfill
-\end{frame}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-    \frametitle{}
+    \frametitle{Making a Class: \lstinline|self|}
+    What is the result of the following code?
     \begin{lstlisting}[language=Python, autogobble]
-    def Foo:
-        _private_func(self):
-            #...
+    class Foo:
 
-        public_func(self):
-            self._private_func() #Good practice
-            #...
+        def __init__(self):
+            print("I'm a class!")
 
-    f = Foo()
-    f._private_func() #Not good practice
-    f.pubic_func() #Good practice
+        def get_id(self):
+            return id(self)
+
+    foo = Foo()
+    print(id(foo) == foo.get_id())
     \end{lstlisting}
     \vfill
     \begin{enumerate}[A]
-        \pause
-        \item Functions/variables \textit{intended} to only be used in the classes start with an "\_". Python's version of private.
-        \pause
-        \item Functions/variables \textit{intended} to be used anywhere don't start with an "\_".
-        \pause
-        \item \textbf{This is only by convention and has no impact on how the code runs or is interpreted.}
+        \item True
+        \item False
+        \item Trick question
     \end{enumerate}
 \end{frame}
 
-\section{Overloading}
-
 %
-% Slide 2
+% slide 2
 %
 \begin{frame}[fragile]
-    \frametitle{Common Operators to Overload}
-    \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
-    # Example
-    class Person:
-        def __init__(self, name, age):
-            self.name = name
-            self.age = age
-        def __sub__(self, other):
-            return self.age - other.age
+    \frametitle{\lstinline|self| as an automatic first argument}
+    Given this class...\\
+    \vfill
+    \begin{lstlisting}[language=python, autogobble]
+    class Foo:
+        def __init__(self):
+            print("class created!")
 
-    p1 = Person("Alice", 22)
-    p2 = Person("Bob", 27)
-    age_difference = p2 - p1
+        def bar(self, x, y):
+            return x + y
+    \end{lstlisting}
+    \pause
+    \vspace{0.5cm}
+    This...
+    \vfill
+    \begin{lstlisting}[language=python, autogobble]
+    f = Foo()
+    x = f.bar(5, 6)
+    \end{lstlisting}
+    \pause
+    \vspace{0.5cm}
+    Is the same as this...\\
+    \vfill
+    \begin{lstlisting}[language=python, autogobble]
+    f= Foo()
+    x = Foo.get_id(f, 5, 6)
+    \end{lstlisting}
+\end{frame}
+
+%
+% slide 2
+%
+\begin{frame}[fragile]
+    \frametitle{Classses in General}
+    You've seen this before, you just didn't know it... Any thoughts?
+    \pause
+    \begin{lstlisting}[language=python, autogobble]
+    lst = list()
+    s = set()
+    d1 = dict()
     \end{lstlisting}
     \vfill
     \begin{minipage}{0.49\textwidth}
-    \begin{itemize}
-        \item \lstinline|>| \ \textrightarrow \ \lstinline|__gt__(self, other)| 
-        \item \lstinline|>=| \textrightarrow \ \lstinline|__ge__(self, other)|
-        \item \lstinline|<| \ \textrightarrow \ \lstinline|__lt__(self, other)|
-        \item \lstinline|<=| \textrightarrow \ \lstinline|__le__(self, other)|
-        \item \lstinline|==| \textrightarrow \ \lstinline|__eq__(self, other)|
-    \end{itemize}
+        \pause
+        These...
+        \begin{enumerate}
+            \item \lstinline|lst.append(x)|
+            \item \lstinline|s.add(x)|
+            \item \lstinline|d1.update(d2)|
+        \end{enumerate}
     \end{minipage}
     \hfill
     \begin{minipage}{0.49\textwidth}
-    \begin{itemize}
-        \item \lstinline|-| \ \textrightarrow \ \lstinline|__sub__(self, other)|
-        \item \lstinline|+| \ \textrightarrow \ \lstinline|__add__(self, other)|
-        \item \lstinline|*| \ \textrightarrow \ \lstinline|__mul__(self, other)|
-        \item \lstinline|/| \ \textrightarrow \ \lstinline|__truediv__(self, other)|
-        \item \lstinline|%| \ \textrightarrow \ \lstinline|__mod__(self, other)|
-        \item \lstinline|__str__(self)|
-    \end{itemize}
+        \pause
+        Are the same as these
+        \begin{enumerate}
+            \item \lstinline|list.append(lst, x)|
+            \item \lstinline|set.add(s, x)|
+            \item \lstinline|dict.update(d1, d2)|
+        \end{enumerate}
+    \end{minipage}
+    \vfill
+    \pause
+    \textbf{This is more syntactic sugar brought to you by Python. The key takeaway is that \lstinline|self| is automatically added in front and refers to the object before the dot (\lstinline|.|).}
+\end{frame}
+
+
+%
+% slide 2
+%
+\begin{frame}[fragile]
+    \frametitle{Making Classes: Key Takeaways}
+
+    \begin{enumerate}
+        \item Classes are a list of instructions for how to instantiate an object just as functions are a list of instructions on how to perform an operation given some data.
+            \pause
+        \item Classes are abstract descriptions, objects are concrete and actually exist.
+            \pause
+        \item \lstinline|__init__| Is called when you create a function but is never explicitly called.
+            \begin{itemize}
+                \item Example: \lstinline|foo = Foo()|
+            \end{itemize}
+            \pause
+        \item Self is automatically passed in and refers to the object bound to the variable before the dot.
+            \begin{itemize}
+                \item Example: \lstinline|foo.call_function()|
+            \end{itemize}
+            \pause
+        \item \lstinline|__init__| is not required. If it is not present in a class definition a default one will be provided and used to instantiate the object.
+    \end{enumerate}
+
+\end{frame}
+
+\section{Attributes and Methods}
+
+%
+%
+%
+\begin{frame}[fragile]
+    \frametitle{Poll Question: }
+    \begin{minipage}{0.35\textwidth}
+        \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+        class Name:
+            name_count = 0
+            def __init__(self, name):
+                ??
+                self.name = name
+
+        n1 = Name("foo")
+        n2 = Name("bar")
+        n3 = Name("baz")
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.59\textwidth}
+        Which of the following lines can be used to increment the class attribute count of Name instances that have been instantiated?
+        \begin{itemize}
+            \item \lstinline|Name.name_count += 1|
+            \item \lstinline|self.name_count += 1|
+            \item \lstinline|name_count += 1|
+            \item \lstinline|self.name_count = Name.name_count + 1|
+            \item \lstinline|Name.name_count = self.name_count + 1|
+        \end{itemize}
+    \end{minipage}
+    \vfill
+    \textbf{Consider each and then I'll go through and ask true (A) or false (B) for each.}
+\end{frame}
+
+%
+%
+%
+\begin{frame}[fragile]
+    \frametitle{Poll Question: }
+    \begin{minipage}{0.49\textwidth}
+        \begin{lstlisting}[language=Python, autogobble]
+        class Name:
+            name_count = 0
+            def __init__(self, name):
+                self.name_count += 1
+                self.name = name
+
+        n1 = Name("foo")
+        n2 = Name("bar")
+        n3 = Name("baz")
+        print(n1.name_count, n2.name_count, n3.name_count)
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        What is the output of the program on the right?
+        \begin{enumerate}[A]
+            \item \lstinline|1 1 1|
+            \item \lstinline|1 2 3|
+            \item \lstinline|3 3 3|
+            \item NameError
+        \end{enumerate}
     \end{minipage}
 \end{frame}
 
 %
-% Slide 2
+%
 %
 \begin{frame}[fragile]
-    \frametitle{Iteration and Subscripting Overloads }
-    To define the behaviour of the class when (1) a collection are being iterated over or a (2) single instance is being unpacked use the \lstinline|__iter__(self)| function.
-    \begin{lstlisting}[language=Python, autogobble]
-    class Foo:
-        def __init__(self, end):
-            self.end = end
+    \frametitle{Scoping in Python Sucks (I Hate it Very Much)}
+    \begin{minipage}{0.47\textwidth}
+        This...
+        \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+        class Name:
+            name_count = 0
+            def __init__(self, name):
+                self.name_count += 1
+                self.name = name
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.52\textwidth}
+        Is the same as this.
+        \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+        class Name:
+            name_count = 0
+            def __init__(self, name):
+                self.name_count = self.name_count + 1
+                self.name = name
+        \end{lstlisting}
+    \end{minipage}
+    \vfill
+    \pause
+    Looking at the one on the right:
+    \begin{enumerate}
+        \item Python starts by evaluating the expression on the right.
+            \pause
+        \item \lstinline|self.name_count + 1|:  \lstinline|self.name_count| isn't an instance attribute so it resolves to the class attribute.
+            \pause
+        \item \lstinline|self.name_count = 1|: \lstinline|self.name_count| doesn't exist as an instance level attribute so scope resolution decides to create a new instance attribute, thus leaving the class attribute unaffected.
+    \end{enumerate}
+    \pause
+    \textbf{Always use the class name to change class attributes. Bad confusing things happen otherwise.}
+\end{frame}
 
-        def __iter__(self):
-            """Commonly uses a generator"""
-            c = 0
-            while c < self.end:
-                yield c
-                c += 1
+%
+%
+%
+\begin{frame}[fragile]
+    \frametitle{Poll Question: }
+    \begin{minipage}{0.49\textwidth}
+        \begin{lstlisting}[language=Python, autogobble]
+        class Name:
+            name_count = 0
+            def __init__(self, name):
+                Name.name_count += 1
+                self.name = name
 
-    x = Foo(10)
-    for i in foo:
-        print(i)
-    \end{lstlisting}
+        n1 = Name("foo")
+        n2 = Name("bar")
+        n3 = Name("baz")
+        print(??)
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        Which of the following lines CANNOT be used to identify how many name\_count were created?
+        \begin{enumerate}[A]
+            \item \lstinline|Name.name_count|
+            \item Either \lstinline|n1.name_count| or \lstinline|n2.name_count| or \lstinline|n3.name_count|
+            \item \lstinline|Name().name_count|
+        \end{enumerate}
+    \end{minipage}
+    \vfill
+    \textbf{Which should be used?}
 \end{frame}
 
 
 %
-% Slide 2
+%
 %
 \begin{frame}[fragile]
-    \frametitle{Subscripting Overloads}
-    To define the behaviour of the \lstinline|[]| operator when using variable unpacking or iteration use the \lstinline|__getitem__(self)| function.
+    \frametitle{Poll Question: The Race Class}
+    \begin{minipage}{0.69\textwidth}
+        \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+        class Racer:
 
-    \begin{lstlisting}[language=Python, autogobble]
-    class Foo:
-        def __init__(self, start, end):
-            self.start = start
-            self.end = end
+            finished_list = []
 
-        def __getitem__(self, item):
-            """Commonly uses a generator"""
-            value = self.start + item 
-            if value < self.end:
-                return value
+            def __init__(self, name, number):
+                self.name = name
+                self.number = number
 
-    x = Foo(2,10)
-    print(x[3])
-    \end{lstlisting}
+            def finished(self):
+                Racer.finished_list.append(self)
+                print("finished in", len(Racer.finished_list))
+
+        \end{lstlisting}
+        \pause
+        \vspace{0.5cm}
+        What is produced by the following code?
+        \vfill
+        \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+
+        r1 = Racer("David", 13)
+        r2 = Racer("Dipti", 142)
+        print(Racer.finished_list)
+        r2.finished()
+        r1.finished()
+        print([r.name for r in Racer.finished_list])
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.29\textwidth}
+        \begin{enumerate}[A]
+            \item 
+                \begin{lstlisting}[autogobble, basicstyle=\tiny]
+                []
+                finished in 2
+                finished in 1
+                ['David', 'Dipti']
+                \end{lstlisting}
+            \item AttributeError
+            \item 
+                \begin{lstlisting}[autogobble, basicstyle=\tiny]
+                []
+                finished in 1
+                finished in 2
+                ['Dipti', 'David']
+                \end{lstlisting}
+            \item 
+                \begin{lstlisting}[autogobble, basicstyle=\tiny]
+                []
+                finished in 1
+                finished in 1
+                []
+                \end{lstlisting}
+        \end{enumerate}
+    \end{minipage}
 \end{frame}
 
+%
+%
+%
+\begin{frame}[fragile]
+    \frametitle{Poll Question: Ready-to-Go}
+    \begin{minipage}{0.69\textwidth}
+        \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+        class ReadyToGo:
+
+                ready = 0
+                instances = 0
+
+                def __init__(self, name):
+                        self.name = name
+                        self.ready = False
+                        ReadyToGo.instances += 1
+
+                def set_ready(self):
+                        ReadyToGo.ready += 1
+                        self.ready = True
+        \end{lstlisting}
+        \pause
+        \vspace{0.1cm}
+        What is produced by the following code?
+        \vfill
+        \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+        p1 = ReadyToGo("Alice")
+        p2 = ReadyToGo("Bob")
+        p3 = ReadyToGo("Charlie")
+        players = [p1, p2, p3]
+
+        p1.set_ready()
+        p3.set_ready()
+
+        for player in players:
+                if not player.ready:
+                        print(player.name, "is not ready")
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.29\textwidth}
+        \begin{enumerate}[A]
+            \item 
+                \begin{lstlisting}[autogobble, basicstyle=\tiny]
+                Bob is not ready
+                \end{lstlisting}
+            \item SyntaxError
+            \item NameError
+            \item AttributeError
+            \item 
+                \begin{lstlisting}[autogobble, basicstyle=\tiny]
+                Alice is not ready
+                Bob is not ready
+                Charlie is not ready
+                \end{lstlisting}
+        \end{enumerate}
+    \end{minipage}
+\end{frame}
+
+\section{Modifying Attributes after Instantiation}
+%
+%
+%
+\begin{frame}[fragile]
+    \frametitle{Poll Question: }
+    \begin{minipage}{0.69\textwidth}
+        What is produced by the following code?
+        \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+        class Name:
+            name_count = 0
+            def __init__(self, name):
+                self.name = name
+                Name.name_count += 1
+
+        foo = Name("foo")
+        bar = Name("bar")
+        foo.name = "Fred"
+        print(bar.name, foo.name)
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.29\textwidth}
+        \begin{enumerate}[A]
+            \item AttributeError
+            \item NameError
+            \item \lstinline|bar foo|
+            \item \lstinline|bar Fred|
+        \end{enumerate}
+    \end{minipage}
+\end{frame}
+
+%
+%
+%
+\begin{frame}[fragile]
+    \frametitle{Poll Question: }
+    \begin{minipage}{0.69\textwidth}
+        What is produced by the following code?
+        \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+        class Name:
+            name_count = 0
+            def __init__(self, name):
+                self.name = name
+                Name.name_count += 1
+
+        foo = Name("foo")
+        bar = Name("bar")
+        Name.name_count = 1000
+        print(bar.name_count)
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.29\textwidth}
+        \begin{enumerate}[A]
+            \item AttributeError
+            \item NameError
+            \item 1000
+            \item 2
+        \end{enumerate}
+    \end{minipage}
+\end{frame}
+
+%
+%
+%
+\begin{frame}[fragile]
+    \frametitle{Poll Question: }
+    \begin{minipage}{0.69\textwidth}
+        What is produced by the following code?
+        \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
+        class Name:
+            name_count = 0
+            def __init__(self, name):
+                self.name = name
+                Name.name_count += 1
+
+        foo = Name("foo")
+        bar = Name("bar")
+        foo.name_count = 1000
+        print(bar.name_count)
+        \end{lstlisting}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.29\textwidth}
+        \begin{enumerate}[A]
+            \item AttributeError
+            \item NameError
+            \item 1000
+            \item 2
+        \end{enumerate}
+    \end{minipage}
+\end{frame}
+
+%
+% slide 2
+%
+\begin{frame}[fragile]
+    \frametitle{Key Takeaways}
+    \begin{enumerate}
+        \item How to reference attributes best practices:
+            \begin{itemize}
+                \item Reference class attributes using the class name:
+                    \vspace{-0.2cm}
+                    \begin{lstlisting}[language=python, autogobble, basicstyle=\tiny]
+                class Foo:
+                    count = 0
+                    def __init__(self):
+                        Foo.count += 1
+                    \end{lstlisting}
+                    \vfill
+                \item Reference instance attributes and methods using self \textit{when inside the class}.
+                    \vspace{-0.2cm}
+                    \begin{lstlisting}[language=python, autogobble, basicstyle=\tiny]
+                class Foo:
+                    def __init__(self, name):
+                        self.name = name
+                    def print_name(self):
+                        print(self.name)
+                    \end{lstlisting}
+                    \vfill
+                \item Reference instance attributes and methods using instance's variable name \textit{when outside the class}.
+                    \vspace{-0.2cm}
+                    \begin{lstlisting}[language=python, autogobble, basicstyle=\tiny]
+                class Foo:
+                    def __init__(self, name):
+                        self.name = name
+                x = Foo("bar")
+                print(x.name)
+                    \end{lstlisting}
+                    \vfill
+            \end{itemize}
+        \item \lstinline|self| must be the first parameter in every instance methods arguments.
+    \end{enumerate}
+\end{frame}
 
 \end{document}
