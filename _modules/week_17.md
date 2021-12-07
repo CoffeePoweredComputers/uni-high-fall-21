@@ -11,15 +11,14 @@ Dec 06
 
 Dec 07
 : **Lecture**{: .label .label-light-blue} 15
-: **zyBooks**{: .label .label-orange} Topic 15 - Participation, Topic 15 - Challenge
+: **zyBooks**{: .label .label-orange} Topic 15 - Challenge
     : **Assigned**{: .label .label-green}
 : **PrairieLearn**{: .label .label-dark-blue} [Homework 15](https://www.prairielearn.org/pl/course_instance/128740/assessment/2312028)
     : **Assigned**{: .label .label-green}
 
 
 Dec 08
-: **zyBooks**{: .label .label-orange} Topic 15 - Participation
-    : **Due**{: .label .label-red}
+: **Nothing due. Please study**
 
 Dec 09
 : **PrairieLearn**{: .label .label-dark-blue} Attempt Practice Quiz (50 pts.)
