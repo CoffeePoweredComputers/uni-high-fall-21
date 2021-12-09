@@ -18,36 +18,36 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 \lstdefinestyle{python}{
-  backgroundcolor=\color{backcolour},   
-  commentstyle=\color{codegreen},
-  keywordstyle=\color{magenta},
-  numberstyle=\tiny\color{codegray},
-  stringstyle=\color{codepurple},
-  basicstyle=\ttfamily\footnotesize,
-  breakatwhitespace=false,         
-  belowskip=-0.5em,
-  breaklines=true,                 
-  captionpos=b,                    
-  keepspaces=true,                 
-  %numbers=left,                    
-  numbersep=5pt,                  
-  showspaces=false,                
-  showstringspaces=false,
-  showtabs=false,                  
-  tabsize=2
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    belowskip=-0.5em,
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    %numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
 }
 
 \lstset{style=python}
 
 \AtBeginSection[]{
-  \begin{frame}
-    \vfill
-    \centering
-    \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
-      \usebeamerfont{title}\insertsectionhead\par%
-    \end{beamercolorbox}
-    \vfill
-  \end{frame}
+    \begin{frame}
+        \vfill
+        \centering
+        \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+            \usebeamerfont{title}\insertsectionhead\par%
+        \end{beamercolorbox}
+        \vfill
+    \end{frame}
 }
 % Setup the university's color pallette
 \definecolor{UIUCorange}{RGB}{19, 41, 75} % UBC Blue (primary)
@@ -68,409 +68,285 @@
 \usepackage{graphicx}
 
 %Information to be included in the title page:
-\title{\textbf{Adv. Functions}}
+\title{\textbf{Classes}}
 \author{\textbf{David H Smith IV}}
 \institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
-\date{\textbf{Tues, Nov 16 2021}}
+\date{\textbf{Thur, Dec 02 2021}}
 
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 \addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
 \addtobeamertemplate{title page}{
-  \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
-    \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
-  \end{textblock*} 
+    \begin{textblock*}{\paperwidth}(-1.0em, -1.2em)
+        \includegraphics[width=\paperwidth, height=\paperheight]{imgs/uiuc.png}
+    \end{textblock*} 
 }{}
 
 \begin{document}
 
 \frame{\titlepage}
 
-\section{Course Overview}
+\section{Reminders}
 
 %
 % Slide 1
 %
 \begin{frame}
-  \frametitle{Reminders}
-  \begin{itemize}
-    \item Things are due. Check the calendar.
-  \end{itemize}
+    \frametitle{Reminders}
+    \begin{itemize}
+        \item Usual mix of homework (see the website)
+        \item Quiz next Thursday, practice quiz will be up Saturday
+        \item Practice final will be up next Tuesday.
+    \end{itemize}
 \end{frame}
 
-\section{}
+
+\section{Review + New Stuff: Class Constructors}
 
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Bytecode: Looking under the hood}
-  \textbf{Python code:}\\
-  \begin{lstlisting}[language=Python, autogobble]
-  def hello():
-      print("Hello, World!")
-  \end{lstlisting}
-  \vfill
-  \textbf{Bytecode:}\\
-  \begin{lstlisting}[language=Python, autogobble]
-              0 LOAD_GLOBAL              0 (print)
-              2 LOAD_CONST               1 ('Hello, World!')
-              4 CALL_FUNCTION            1
-              6 POP_TOP
-              8 LOAD_CONST               0 (None)
-             10 RETURN_VALUE
-  \end{lstlisting}
-  \vfill
-  \begin{enumerate}[A]
-    \item The computer doesn't just read the code you write.
-      \pause
-    \item Python is a (kinda) interpreted language: source.py \textrightarrow \ bytecode.pyc \textrightarrow \ interpreter
-      \pause
-  \end{enumerate}
+    \frametitle{Poll Question: Constructors}
+    Which of the following are valid constructor function defs?
+    \begin{enumerate}
+        \item \lstinline|def __init__(self):|
+        \item \lstinline|def __init__(self, foo):|
+        \item \lstinline|def _init_(self):|
+        \item \lstinline|def __init__(self, foo, *args, **kwargs):|
+        \item \lstinline|def __init__(self, foo, bar=0, *baz, **qux):|
+        \item \lstinline|def __init__(self, bar=0, foo, **qux, *baz):|
+    \end{enumerate}
+    \vfill
+    \textbf{Consider each individually in groups and I will go through and ask which are valid.}
 \end{frame}
 
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Bytecode: Looking under the hood}
-  You can view the bytecode of any function via the following:
-  \begin{lstlisting}[language=Python, autogobble]
-  import dis
+    \frametitle{Poll Question: Setting Things Up}
+    What is printed in when the following code is run?
+    \begin{lstlisting}[language=Python, autogobble]
+    class Person:
+        def __init__(self, name, age):
+            myname = name
+            myage = age
+        def get_name(self):
+            print(myname)
 
-  def hello():
-    print("Hello, World!")
-
-  dis.dis(hello)
-  \end{lstlisting}
-  \vfill
-  \begin{enumerate}[A]
-    \pause
-    \item Compiled vs Interpreted:
-      \begin{enumerate}
-        \pause
-      \item \textbf{compiled} \textrightarrow \ Convert source code into another language. Typically, though not exclusively, a higher level language (e.g., Python) into a lower level language (e.g., bytecode).
-        \pause
-        \item \textbf{interpreted} \textrightarrow \ Another program reads the code you wrote one line at a time and performs those operations.
-      \end{enumerate}
-    \pause
-    \item There's generally crossover between these.
-    \pause
-    \item Why bother? Because interpreting bytecode is faster.
-  \end{enumerate}
-\end{frame}
-
-\section{Functions are Objects}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-  \frametitle{Poll Question: Functions}
-  What, if anything, gets printed to the screen after this code executes?
-  \begin{lstlisting}[language=Python, autogobble]
-  def add1(x): return x + 1
-  def mul2(x): return x * 2
-
-  x = 1
-  fns = [add1, mul2, mul2, print]
-  for f in fns:
-    x = f(x)
-  \end{lstlisting}
-  \vfill
-  \begin{enumerate}[A]
-    \item 1
-    \item 4
-    \item 8
-    \item SyntaxError
-  \end{enumerate}
+    p1 = Person("Dave", 22)
+    print(p1.get_name())
+    \end{lstlisting}
+    \vfill
+    \begin{enumerate}[A]
+        \item NameError
+        \item 22
+        \item Dave
+        \item self
+    \end{enumerate}
 \end{frame}
 
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Functions are Objects}
+    \frametitle{Poll Question: Setting Things Up}
+    What is printed in when the following code is run?
+    \begin{lstlisting}[language=Python, autogobble]
+    class Person:
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+        def get_date_of_birth(current_year):
+             return current_year - self.age
 
-  \begin{lstlisting}[language=Python, autogobble]
-  def foo(arg1, arg2):
-    if arg1 == arg2:
-      return "They're equal"
-    return "They're not equal"
-  \end{lstlisting}
-  \vfill
-  \begin{itemize}
-    \pause
-    \item \lstinline|foo.__doc__| \textrightarrow \ The docstring for the function.
-    \pause
-    \item \lstinline|foo.__code__| \textrightarrow \ Gives the address of the code portion of the foo object in memory.
-      \begin{itemize}
-        \pause
-        \item \lstinline|foo.__code__.co_argcount| \textrightarrow \ The number of arguments in the function object.
-        \pause
-        \item \lstinline|foo.__code__.co_consts| \textrightarrow \ The literals present in the function object.
-        \pause
-        \item \lstinline|foo.__code__.co_name| \textrightarrow \ The name of the function.
-        \pause
-        \item \lstinline|foo.__code__.co_varnames| \textrightarrow \ A tuple of the names of variables present in the function object.
-      \end{itemize}
-  \end{itemize}
+    p1 = Person("Dave", 22)
+    print(p1.get_date_of_birth(2021))
+    \end{lstlisting}
+    \vfill
+    \begin{enumerate}[A]
+        \item 1999
+        \item -1977
+        \item NameError
+        \item TypeError
+    \end{enumerate}
 \end{frame}
-
-\section{Namespace}
 
 %
 % Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Namespace}
-  \begin{minipage}{0.49\textwidth}
+    \frametitle{Poll Question: Calling Class Functions in the Class}
+    What code should replace the question marks?
+    \begin{lstlisting}[language=Python, basicstyle=\tiny]
+class People:
+		def __init__(self, *people):
+			self.people_list = people
+
+		def _get_age_difference(self, p1, p2):
+			return abs(p1.age - p2.age)
+
+		def get_age_differences(self, person, current_year):
+			for otherperson in self.people_list:
+				if otherperson is not person:
+					n1 = otherperson.name
+					n2 = person.name
+					diff = ??
+					print(n1, n2, diff)
+	\end{lstlisting}
+    \vfill
+    \begin{enumerate}[A]
+        \item \lstinline|self._get_age_difference(otherperson, person)|
+        \item \lstinline|_get_age_difference(otherperson, person)|
+        \item \lstinline|_get_age_difference(self, otherperson, person)|
+    \end{enumerate}
+\end{frame}
+
+
+\section{Class Interfaces, Internal Methods, and Encapsulation}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+    \frametitle{Encapsulation: Private vs Public}
+    \vfill
+    \begin{enumerate}[A]
+        \item Encapsulation is a fundamental concept in object oriented programming (OOP).
+        \pause
+        \item Private vs Public Variables:
+        \pause
+        \begin{enumerate}[A]
+            \item \textbf{Public: } The values/methods can be used outside of the class.
+        \pause
+            \item \textbf{Private } The values/methods can't be used outside of the class.
+        \pause
+        \end{enumerate}
+    \item \textbf{Python doesn't have encapsulation!} (I have opinions on this...)
+    \end{enumerate}
+    \vfill
+\end{frame}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+    \frametitle{}
+    \begin{lstlisting}[language=Python, autogobble]
+    def Foo:
+        _private_func(self):
+            #...
+
+        public_func(self):
+            self._private_func() #Good practice
+            #...
+
+    f = Foo()
+    f._private_func() #Not good practice
+    f.pubic_func() #Good practice
+    \end{lstlisting}
+    \vfill
+    \begin{enumerate}[A]
+        \pause
+        \item Functions/variables \textit{intended} to only be used in the classes start with an "\_". Python's version of private.
+        \pause
+        \item Functions/variables \textit{intended} to be used anywhere don't start with an "\_".
+        \pause
+        \item \textbf{This is only by convention and has no impact on how the code runs or is interpreted.}
+    \end{enumerate}
+\end{frame}
+
+\section{Overloading}
+
+%
+% Slide 2
+%
+\begin{frame}[fragile]
+    \frametitle{Common Operators to Overload}
     \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
-      print('Initial global namespace: ')
-      print(globals())
+    # Example
+    class Person:
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+        def __sub__(self, other):
+            return self.age - other.age
 
-      my_var = "This is a variable"
-      print('\nCreated new variable')
-      print(globals())
-
-      def my_func():
-          pass
-
-      print('\nCreated new function')
-      print(globals())
+    p1 = Person("Alice", 22)
+    p2 = Person("Bob", 27)
+    age_difference = p2 - p1
     \end{lstlisting}
-  \end{minipage}
-  \begin{minipage}{0.49\textwidth}
-    \begin{lstlisting}[language=Python, autogobble, basicstyle=\tiny]
-      Initial global namespace: 
-      {}
-
-      Created new variable
-      {'my_var': 'This is a variable'}
-
-      Created new function
-      {'my_func': <function my_func at 0x2349d4>, 'my_var': 'This is a variable'}
-    \end{lstlisting}
-  \end{minipage}
-  \vfill
-  \begin{enumerate}
-    \item Maps names to objects.
-    \pause
-    \item You can check the local namespace with \lstinline|locals()| and it returns a dictionary of names and values
-    \pause
-    \item You can check the global namespace with \lstinline|globals()|.
-  \end{enumerate}
-  \pause
-  \vfill
-  Go to example 1.
+    \vfill
+    \begin{minipage}{0.49\textwidth}
+    \begin{itemize}
+        \item \lstinline|>| \ \textrightarrow \ \lstinline|__gt__(self, other)| 
+        \item \lstinline|>=| \textrightarrow \ \lstinline|__ge__(self, other)|
+        \item \lstinline|<| \ \textrightarrow \ \lstinline|__lt__(self, other)|
+        \item \lstinline|<=| \textrightarrow \ \lstinline|__le__(self, other)|
+        \item \lstinline|==| \textrightarrow \ \lstinline|__eq__(self, other)|
+    \end{itemize}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+    \begin{itemize}
+        \item \lstinline|-| \ \textrightarrow \ \lstinline|__sub__(self, other)|
+        \item \lstinline|+| \ \textrightarrow \ \lstinline|__add__(self, other)|
+        \item \lstinline|*| \ \textrightarrow \ \lstinline|__mul__(self, other)|
+        \item \lstinline|/| \ \textrightarrow \ \lstinline|__truediv__(self, other)|
+        \item \lstinline|%| \ \textrightarrow \ \lstinline|__mod__(self, other)|
+        \item \lstinline|__str__(self)|
+    \end{itemize}
+    \end{minipage}
 \end{frame}
 
-\section{Scope}
-
 %
-%
+% Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: Function Scoping}
-  \begin{minipage}{0.69\textwidth}
-    What is produced by the following code?
+    \frametitle{Iteration and Subscripting Overloads }
+    To define the behaviour of the class when (1) a collection are being iterated over or a (2) single instance is being unpacked use the \lstinline|__iter__(self)| function.
     \begin{lstlisting}[language=Python, autogobble]
-    my_var = 11
-    def change_my_var():
-      my_var = 12
+    class Foo:
+        def __init__(self, end):
+            self.end = end
 
-    change_my_var()
-    print(my_var)
+        def __iter__(self):
+            """Commonly uses a generator"""
+            c = 0
+            while c < self.end:
+                yield c
+                c += 1
+
+    x = Foo(10)
+    for i in foo:
+        print(i)
     \end{lstlisting}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.29\textwidth}
-    \begin{enumerate}[A]
-      \item 11
-      \item 12
-      \item NameError
-      \item None
-    \end{enumerate}
-  \end{minipage}
 \end{frame}
 
+
 %
-%
+% Slide 2
 %
 \begin{frame}[fragile]
-  \frametitle{Poll Question: Function Scoping}
-  \begin{minipage}{0.69\textwidth}
-    What is produced by the following code?
+    \frametitle{Subscripting Overloads}
+    To define the behaviour of the \lstinline|[]| operator when using variable unpacking or iteration use the \lstinline|__getitem__(self)| function.
+
     \begin{lstlisting}[language=Python, autogobble]
-    my_var = 11
-    def print_my_var():
-      print(my_var)
+    class Foo:
+        def __init__(self, start, end):
+            self.start = start
+            self.end = end
 
-    print_my_var()
+        def __getitem__(self, item):
+            """Commonly uses a generator"""
+            value = self.start + item 
+            if value < self.end:
+                return value
+
+    x = Foo(2,10)
+    print(x[3])
     \end{lstlisting}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.29\textwidth}
-    \begin{enumerate}[A]
-      \item 11
-      \item 12
-      \item NameError
-      \item None
-    \end{enumerate}
-  \end{minipage}
-  \pause
-  \vfill
-  \begin{enumerate}
-    \item We have read access but not write access in the function's scope. 
-    \item How do we get write access to the global scope from within a function?
-  \end{enumerate}
 \end{frame}
 
-%
-%
-%
-\begin{frame}[fragile]
-  \frametitle{Poll Question: Function Scoping}
-  What goes where the ?? is in order to (1) change the \textbf{global} value of my\_var and (2) such that the user enters is printed to the screen when the code finishes running?
-  \vfill
-  \begin{lstlisting}[language=Python, autogobble]
-    my_var = 11
-    def change_my_var(new_my_var):
-      ??
-
-    change_my_var(int(input("Enter a new number: ")))
-    print(my_var)
-  \end{lstlisting}
-\end{frame}
-
-
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-  \frametitle{Scope}
-  \begin{enumerate}[A]
-    \item Namespaces and scopes go hand-in-hand.
-    \pause
-    \item Types of scope:
-      \begin{itemize}
-        \item Built-in Scope \textrightarrow \ Contains all of the built-in's in Python (e.g., \lstinline|int()|, \lstinline|range()|)
-        \pause
-        \item Global Scope \textrightarrow \ Contains variables located outside of functions in the global scope.
-        \pause
-        \item Local Scope \textrightarrow \ The scope that is only accessible to a given function.
-        \pause
-      \end{itemize}
-    \item Scope resolution \textrightarrow \ The processing searching a namespace for a variable.
-    \pause
-    \item NameError \textrightarrow \ An error that's generated when scope resolution fails. In otherwords, the name isn't in global or local namespace.
-    \pause
-    \item A function will search it's local namespace first then the global namespace.
-  \end{enumerate}
-\end{frame}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-  \frametitle{Poll Question: Function Scoping}
-  \begin{minipage}{0.69\textwidth}
-    What is produced by the following code?
-    \begin{lstlisting}[language=Python, autogobble]
-    thing = 11
-    def find_var(my_var):
-      return "thing" in local()
-
-    print(find_var("thing"))
-    \end{lstlisting}
-  \end{minipage}
-  \hfill
-  \begin{minipage}{0.29\textwidth}
-    \begin{enumerate}[A]
-      \item True
-      \item False
-      \item SyntaxError
-      \item NameError
-    \end{enumerate}
-  \end{minipage}
-\end{frame}
-
-
-\section{Functions}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-  \frametitle{Function Returns}
-  How many objects are returned by the following function?
-  \begin{lstlisting}[language=Python, autogobble]
-  def return_first_and_lst(a_list):
-    return a_list[0], a_list[-1]
-  \end{lstlisting}
-  \vfill
-  \begin{enumerate}[A]
-    \item 1
-    \item 2
-    \item 3
-    \item None
-  \end{enumerate}
-  \vfill
-  \pause
-  The above code is equivalent to this:
-  \begin{lstlisting}[language=Python, autogobble]
-  def return_first_and_lst(a_list):
-    return (a_list[0], a_list[-1])
-  \end{lstlisting}
-\end{frame}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-  \frametitle{Poll Question: Function Args and Mutability}
-  What is the value of \lstinline|x[0]| after this code executes:
-  \begin{lstlisting}[language=Python, autogobble]
-  def remove_first(a_list):
-    a_list = a_list[1:]
-
-  x = [1, 2, 3, 4]
-  remove_first(x)
-  \end{lstlisting}
-  \vfill
-  \begin{enumerate}[A]
-    \item 1
-    \item 2
-    \item 3
-    \item 4
-    \item Something else
-    \item An error occurs
-  \end{enumerate}
-\end{frame}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-  \frametitle{Poll Question: Scope}
-  What are the values of \lstinline|w, x, y|, and \lstinline|z| in the global scope after this code executes? What might we include in the line with the ?? to verify this?
-  \begin{lstlisting}[language=Python, autogobble]
-  x, y, z = (7, 5, 10)
-  def a_function(y):
-    x = 2 * y
-    return x * z
-
-  w = a_function(x)
-  ??
-  \end{lstlisting}
-  \vfill
-  \begin{enumerate}[A]
-    \item \lstinline|50, 7, 5, 10|
-    \item \lstinline|100, 10, 5, 10|
-    \item \lstinline|140, 7, 5, 10|
-    \item \lstinline|140, 14, 5, 10|
-    \item SyntaxError
-  \end{enumerate}
-\end{frame}
 
 \end{document}
