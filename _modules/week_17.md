@@ -24,6 +24,8 @@ Dec 09
 : **PrairieLearn**{: .label .label-dark-blue} Attempt Practice Quiz (50 pts.)
     : **Due before 10am**{: .label .label-red}
 : **Quiz**{: .label .label-grey}
+    : [Review Sheet]({{ site.baseurl }}{% link assets/docs/final-review-sheet.pdf %})
+
 
 Dec 10
 : **PrairieLearn**{: .label .label-dark-blue} Homework 15
