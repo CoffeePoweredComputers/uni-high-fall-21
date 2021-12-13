@@ -1,5 +1,5 @@
 ---
-navtitle: ▶ Week 17 - Intro to Exceptions and Modules
+navtitle: Week 17 - Intro to Exceptions and Modules
 n: "r"
 ---
 
