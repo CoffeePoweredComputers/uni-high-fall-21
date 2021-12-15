@@ -1,5 +1,6 @@
-\documentclass{beamer}
+\documentclass[xcolor=table]{beamer}
 
+\usepackage[table,xcdraw]{xcolor}
 \usepackage{graphicx}
 \usepackage{textpos}
 \usepackage{listings}
@@ -68,10 +69,10 @@
 \usepackage{graphicx}
 
 %Information to be included in the title page:
-\title{\textbf{Try-Except and Testing}}
+\title{\textbf{Study Reminders}}
 \author{\textbf{David H Smith IV}}
 \institute[\textbf{UIUC}]{\textbf{University of Illinois Urbana-Champaign}}
-\date{\textbf{Tues, Dec 07 2021}}
+\date{\textbf{Tues, Dec 14 2021}}
 
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 \addtobeamertemplate{title page}{\vspace{3\baselineskip}}{}
@@ -85,233 +86,116 @@
 
 \frame{\titlepage}
 
-\section{Reminders}
+\section{Topics to Review}
 
-%
-% Slide 1
-%
+\section{input and print}
 \begin{frame}
-    \frametitle{Reminders}
-    \begin{itemize}
-        \item Quiz Thursday
-        \item Attempt Practice Quiz before Thursday 10am
-        \item Topic 15 Participation due Wednesday
-    \end{itemize}
+  \frametitle{Input and Print}
+  \begin{itemize}
+    \item \underline{\textbf{The Input Function}}: A builtin function that gets a string from the user.
+      \pause
+      \begin{itemize}
+        \item \textbf{input()} \textrightarrow Doesn't give a prompt.
+          \pause
+        \item \textbf{input(`A test input: ')} \textrightarrow Will output the message \textit{"A test input:"} to the screen and let the user type their input in after it.
+          \pause
+      \end{itemize}
+    \item \underline{\textbf{The Print Function}}: A builtin function that takes a string as a parameter (in between the parentheses) and outputs that string
+      \pause
+      \begin{itemize}
+        \item \textbf{print(`Hello, World!')} \textrightarrow Will output the `Hello, World!\n''. 
+        \item \textbf{print(`Hello, World!', end="")} \textrightarrow Will output the `Hello, World!''. 
+      \end{itemize}
+  \end{itemize}
 \end{frame}
 
-\section{Try-Except}
+\section{Data Types and Functions}
+
 
 %
-% Slide 2
+% Slide 9
 %
 \begin{frame}[fragile]
-    \frametitle{Making a Class: Poll Question}
-    What is the result of the following code?
-    \begin{lstlisting}[language=Python, autogobble]
-    strings = ["This", "Is", "A", "String", "For", "Testing"]
-    for string in strings:
-        print(string[3], end=" ")
-    \end{lstlisting}
-    \vfill
-    \begin{enumerate}[A]
-        \item IndexError
-        \item s i t
-        \item This String Testing
-        \item This Stri Test
-    \end{enumerate}
+  \frametitle{Order and Mutability}
+  % Please add the following required packages to your document preamble:
+  \begin{table}[]
+    \begin{tabular}{l|l|l}
+      \hline
+      \multicolumn{1}{c|}{}       & \multicolumn{1}{c|}{Ordered}                  & \multicolumn{1}{c}{Mutable}                  \\ \hline
+      \multicolumn{1}{c|}{String} & \multicolumn{1}{c|}{\cellcolor[HTML]{34FF34}} & \multicolumn{1}{c}{\cellcolor[HTML]{FE0000}} \\ \hline
+      List                        & \cellcolor[HTML]{34FF34}                      & \cellcolor[HTML]{34FF34}                     \\ \hline
+      Tuple                       & \cellcolor[HTML]{34FF34}                      & \cellcolor[HTML]{FE0000}                     \\ \hline
+      Set                         & \cellcolor[HTML]{FE0000}                      & \cellcolor[HTML]{34FF34}                     \\ \hline
+      Dict                        & \cellcolor[HTML]{FE0000}                      & \cellcolor[HTML]{34FF34}                     \\ \hline
+    \end{tabular}
+  \end{table}
+  \pause
+  \begin{itemize}
+      \pause
+      \item This is a lot to remember. So memorize it through practice rather than through standard memorization. 
+      \pause
+      \item Remember to use the \lstinline|help()| function to lookup the list of functions you can use with each data types.
+      \pause
+      \item Python documentation.
+      \pause
+      \item \textbf{Test your code before submitting a resposne!}
+  \end{itemize}
 \end{frame}
 
 
+\section{HTML}
 %
-% Slide 2
-%
-\begin{frame}[fragile]
-    \frametitle{Making a Class: Poll Question}
-    What is the result of the following code?
-    \begin{lstlisting}[language=Python, autogobble]
-    strings = ["This", "Is", "A", "String", "For", "Testing"]
-    for string in strings:
-        try:
-            print(string[3], end=" ")
-        except IndexError:
-            continue
-    \end{lstlisting}
-    \vfill
-    \begin{enumerate}[A]
-        \item IndexError
-        \item s i t
-        \item This String Testing
-        \item This Stri Test
-    \end{enumerate}
-\end{frame}
-
-
-%
-% Slide 2
+% Slides
 %
 \begin{frame}[fragile]
-    \frametitle{Types of Exceptions}
-    \vfill
-    \begin{enumerate}[A]
-        \item \textbf{EOFError: } input() hits an end-of-file condition (EOF) without reading any input.
-        \item \textbf{KeyError: } A dictionary key is not found in the set of keys.
-        \item \textbf{ZeroDivisionError: } Divide by zero error.
-        \item \textbf{ValueError: } Invalid value.
-        \item \textbf{IndexError: } Index out of bounds.
-    \end{enumerate}
-    \vfill
-\end{frame}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-    \frametitle{Try-Catch Template}
-    \vfill
-    \begin{lstlisting}[language=Python, autogobble]
-    try:
-        print(string[3], end=" ")
-    except <ExceptionType>:
-        # Some code ...
-    \end{lstlisting}
-    \vfill
-    or
-    \vfill
-    \begin{lstlisting}[language=Python, autogobble]
-    try:
-        print(string[3], end=" ")
-    except <ExceptionType> as e:
-        # Other code....
-        print(e)
-    \end{lstlisting}
-    \vfill
-\end{frame}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-    \frametitle{A Warning Against Bare Excepts}
-    Will this ever exit if the user trys to hit press Ctrl+C?
-    \begin{lstlisting}[language=Python, autogobble]
-    while True:
-        try:
-            print("Hi")
-        except:
-            continue
-    \end{lstlisting}
-    \pause
-    \vfill
-    No, it wont. So be sure to always have at least:
-    \vfill
-    \begin{lstlisting}[language=Python, autogobble]
-    while True:
-        try:
-            print("Hi")
-        except Exception:
-            continue
-    \end{lstlisting}
-    \vfill
-\end{frame}
-
-\section{Modules}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-    \frametitle{Modules and the Standard Library}
-    Let's import some modules we've used in the class...
-    \begin{lstlisting}[language=Python, autogobble]
-    import sys
-    import numpy
-    import requests
-    import math
-    import pygame
-
-    for module in sys.modules:
-        print(module)
-    \end{lstlisting}
-    \pause
+    \frametitle{The Starting Template}
+    \begin{lstlisting}[language=html,autogobble]
+    <!DOCTYPE html>
+    <html>
+        <body>
+            <h1>This is the header!</h1>
+            <p> And this is my first paragraph :D </p>
+        </body>
+    </html>
+    \end{lstlisting} 
     \vfill
     \begin{enumerate}
-        \item There's lots of other modules:
-        \begin{enumerate}[A]
-            \item \lstinline|flask| \textrightarrow http server
-            \item \lstinline|bottle| \textrightarrow a simple http server
-            \item \lstinline|BeautifulSoup| \textrightarrow an html processing library.
-            \item \lstinline|pandas| \textrightarrow a data processing library.
-        \end{enumerate}
-        \item \textbf{Standard Library: } Modules that have been imported for you.
+        \item \lstinline|<!DOCTYPE html>| \textrightarrow This defines the type of document we are making (html5) so the browser knows how to interpret it.
+        \item \lstinline|<html>| \textrightarrow Defines the bounds of the HTML document.
+        \item \lstinline|<body>| \textrightarrow Defines the visible portion of the html document.
+        \item Headers:
+            \begin{itemize}
+                \item \lstinline|<h1>| \textrightarrow Largest header
+                \item \lstinline|<h2>| \textrightarrow Second largest header
+                \item \lstinline|<h3>| \textrightarrow You get the idea...
+            \end{itemize}
+        \item \lstinline|<p>| \textrightarrow Encapsulates a paragraph and formats the text as just plain text
     \end{enumerate}
 \end{frame}
 
-\section{unittest}
-
-%
-% Slide 2
-%
+\section{requests}
 \begin{frame}[fragile]
-    \frametitle{Meet how PrairieLearn grades your code}
-    \begin{lstlisting}[language=Python, autogobble]
-    import unittest 
-
-    class TestFoo(unittest.TestCase):
-        def test0(self):
-            # assert something 
-        def test1(self):
-            # assert something 
-        # ...
-        def testn(self):
-            # assert something 
-    \end{lstlisting}
-    \vfill
-    \begin{enumerate}
-        \pause
-        \item \lstinline|unittest| \textrightarrow \ This is a very large module with lots of classes and functionality.
-        \pause
-        \item \lstinline|class TestFoo(unittest.TestCase)| \textrightarrow Our new class \textit{extends} unittest.TestCase and thus gets all of it's functionality plus whatever test cases we add..
+    \frametitle{Basics of Requests}
+    \begin{enumerate}[A]
+        \item Know how to make a get request and store a response object: \lstinline|r = requests.get(url)|
+        \item Know the following main fields:
+            \begin{itemize}
+                \item \lstinline|r.text|
+                \item \lstinline|r.status_code|
+                \item \lstinline|r.content_headers|
+            \end{itemize}
+        \item Know basic status codes: 404, 200, 404, 502
     \end{enumerate}
 \end{frame}
 
-
-%
-% Slide 2
-%
+\section{General Review}
 \begin{frame}[fragile]
-    \frametitle{\lstinline|unittest| Assertions}
-    \begin{table}[]
-        \small
-        \begin{tabular}{l|l}
-            \hline
-            assertEqual(a, b)        & assert a == b               \\ \hline
-            assertNotEqual(a,b)      & assert a != b               \\ \hline
-            assertTrue(x)            & assert bool(x) is True      \\ \hline
-            assertFalse(x)           & assert bool(x) is False     \\ \hline
-            assertIs(a, b)           & assert a is b               \\ \hline
-            assertIsNot(a,b)         & assert a is not b           \\ \hline
-            assertIsNone(x)          & assert x is None            \\ \hline
-            assertIsNotNone(x)       & assert x is not None        \\ \hline
-            assertIn(a, b)           & assert a in b               \\ \hline
-            assertNotIn(a, b)        & assert a not in b           \\ \hline
-            assertAlmostEqual(a, b)  & assert round(a - b, 7) == 0 \\ \hline
-            assertGreater(a, b)      & assert a \textgreater b     \\ \hline
-            assertGreaterEqual(a, b) & assert a \textgreater{}= b  \\ \hline
-            assertLess(a, b)         & assert a \textless b        \\ \hline
-            assertLessEqual(a, b)    & assert a \textless{}= b     \\ \hline
-        \end{tabular}
-    \end{table}
-\end{frame}
-
-%
-% Slide 2
-%
-\begin{frame}[fragile]
-    \frametitle{Meet how PrairieLearn grades your code}
-    \centering
-    \vfill
-    Lets see how this works in practice. Look at class info for a Colab link.
-    \vfill
+    \frametitle{General Review Advice}
+    \begin{enumerate}[A]
+        \item The final will be much more representative of all topics.
+        \item Be sure to review the review sheet. I make the review sheet as I make the tests so it's reflective of the content you can expect. 
+        \item Be sure to practice testing your inputs during the practice exam.
+    \end{enumerate}
 \end{frame}
 
 

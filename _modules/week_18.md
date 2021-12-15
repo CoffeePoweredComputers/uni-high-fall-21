@@ -18,7 +18,9 @@ Dec 15
 
 
 Dec 16
-: **Finals**
+: **Finals - Final Day!!**
+: **Quiz**{: .label .label-grey}
+    : [Review Sheet]({{ site.baseurl }}{% link assets/docs/final-review-sheet-updated.pdf %})
 
 
 Dec 17
