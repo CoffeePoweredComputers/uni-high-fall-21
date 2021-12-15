@@ -1,10 +1,9 @@
 ---
-navtitle: Week 18 - Finals Week and Winter Break Begins ❄️
+navtitle: ▶ Week 18 - Finals Week and Winter Break Begins ❄️
 n: "s"
 ---
 
 Dec 13
-: **Lab**{: .label .label-purp} [Review Lab](#)
 : **zyBooks**{: .label .label-orange} Topic 15 - Challenge Activities
     : **Due**{: .label .label-red}
 
